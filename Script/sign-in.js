@@ -53,17 +53,14 @@ var uiConfig = {
       document.getElementById('loader').style.display = 'none';
     }
   },
-  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'redirect',
-    // we will determine sign in success url in the future
-  signInSuccessUrl: '<url-to-redirect-to-on-success>',
+  // signInSuccessURL pending
+  // signInSuccessUrl: '<url-to-redirect-to-on-success>',
   signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID
   ],
-  // Terms of service url.
-  tosUrl: '<your-tos-url>',
-  // Privacy policy url.
-  privacyPolicyUrl: '<your-privacy-policy-url>'
+  // tos and privacy policy pending
+  // tosUrl: '<your-tos-url>',
+  // privacyPolicyUrl: '<your-privacy-policy-url>'
 };
