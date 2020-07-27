@@ -22,6 +22,12 @@
             justify-content: space-evenly;
 
         }
+        .jumbotron {
+            display: flex;
+            justify-content: space-evenly;
+            
+        }
+       
         
 
 
@@ -31,46 +37,49 @@
   <body>
 <!--------------------Nav bar----------------------->
     <main>
-            
-                <div class="container-fluid pb-2 bg-dark ">
-                    <img class="mx-auto d-block span img-fluid" src="images/logo.png" id="top-logo">
+        <section  class="fixed-top">
+            <div class="container-fluid pb-2  bg-dark">
+                <img  class="mx-auto d-block  span img-fluid" src="images/logo.png" id="top-logo">
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light  m-0" id="top-navi">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item border-md-right active">
+                    <a class="nav-link" href="homepage.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item border-md-right">
+                    <a class="nav-link" href="#">Plan a date</a>
+                    </li>
+                    <li class="nav-item border-md-right">
+                    <a class="nav-link border-md-right" href="#">Find an event</a>
+                    </li>
+                    <li class="nav-item border-md-right">
+                        <a class="nav-link border-md-right" href="#">Find some food</a>
+                    </li>
+                    <li class="nav-item border-md-right">
+                        <a class="nav-link" href="#">Make some food</a>
+                    </li>   
+                </ul>
                 </div>
-                <nav class="navbar navbar-expand-lg navbar-light  m-0" id="top-navi ">
-                   
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item border-md-right active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item border-md-right">
-                            <a class="nav-link" href="#">Plan a date</a>
-                            </li>
-                            <li class="nav-item border-md-right">
-                            <a class="nav-link border-md-right" href="#">Find an event</a>
-                            </li>
-                            <li class="nav-item border-md-right">
-                                <a class="nav-link border-md-right" href="#">Find some food</a>
-                            </li>
-                            <li class="nav-item border-md-right">
-                                <a class="nav-link" href="#">Make some food</a>
-                            </li>   
-                        </ul>
-                        </div>
-                </nav>
-            
-  
-            
-        
-        
+            </nav>    
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
     <!----------4 Easy Steps------------->
         <div>
-            <div class="card bg-dark text-black">         
-                <div class="notification has-background-danger">
+            <div class="card bg-dark text-black container is-fluid ">         
+                <div class="notification ">
                     <div class="content has-text-centered">
-                        <p><strong><h1>GET STARTED IN 4 EASY STEPS<h2></strong></p>
+                        <p style="font-family:Courier; font-size: 60px;"><strong><h1>GET STARTED IN 4 EASY STEPS<h2></strong></p>
                     </div>
                     <div class="columns has-text-centered">      
                         <div class="column">
@@ -110,11 +119,11 @@
                 </div> 
             </div> 
         </div>
-        <br>
+        
         <hr>
     <!----------------image for breakfast,lunch,or dinner and text box--------->
-        <article>
-            <div class="tile is-ancestor">
+        
+        <div class="tile is-ancestor container is-fluid bg-dark">
                 <div class="tile is-parent is-12" id="EAT-box">
                     <article class="tile is-child box">
                     <p class="title text-center">...Lets EATS</p>
@@ -142,12 +151,12 @@
                     </div>
                     </article>
                 </div>
-                </div>
+        </div>
                 
-        </article>
+   
     <!-----------------Events Images section  and text box----->
-        <article>
-            <div class="tile is-ancestor">
+       
+        <div class="tile is-ancestor container is-fluid  bg-dark">
                 <div class="tile is-parent is-12" id="EAT-box">
                     <article class="tile is-child box">
                     <p class="title text-center">Lets have Fun!</p>
@@ -166,7 +175,7 @@
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
-                            <img src="images/dinner-date.jpg" class="card-img-top" alt="...">
+                            <img src="images/top-golf.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
@@ -181,33 +190,32 @@
                     </div>
                     </article>
                 </div>
-                </div>
+        </div>
                 
-        </article>
+        
         <br>
     <!------------------jumbotron STAY AT HOME RECIEPES------>
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-7">
-                            <div class="column">
-                                <h1 class="display-3">Staying Home</h1>
-                                <p class="lead">We have your covered! Tons of Reciepes to Make for a Romantic date from the confort of your home.</p>
-                            </div>
-                            
-                            </div class="col-5">
-                                <img src="images/Romantic-Dinner-At-Home.jpg" width="450 px" height="250 px" alt="couple making dinner at home" auto>
-                            <div>
-    
+        <div class="container is-fullhd bg-light">
+            <!--<div class="notification">--->
+                <div class="row">
+                    <div class="col">
+                        <h2>Stay Home?</h2>
+                        <p>Why go out when you can stay and make a romantic dinner together</p>
+                        <p>With our vast selction of recipes.</p>
+
+                    </div>
+                    <div class="col">
+                        <div class="col">
+                            <img src="images/Romantic-Dinner-At-Home.jpg">
                         </div>
                     </div>
-                    
-            
                 </div>
             </div>
+        </div>
+          
     <!------------------center content on the page with video---------->
             
-                <section class="hero is-light is-bold ">
+                <section class="hero is-light is-bold bg-dark">
                     <div class="hero-body">
                     <div class="container">
                         <div class="level">
