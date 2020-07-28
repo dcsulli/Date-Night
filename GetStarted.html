@@ -1,11 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Get Started Page</title>
+    <!--bulma link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
+    <!--bootsrap link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="style.css" rel="stylesheet">
     
-</body>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+         body {
+            background-color: black;
+        }
+        #EAT-box {
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+        .jumbotron {
+            display: flex;
+            justify-content: space-evenly;
+            
+        }
+       
+        
+
+
+    </style>
+
+</head>
+  <body>
+<!--------------------Nav bar----------------------->
+    <main>
+        <section  class="fixed-top">
+            <div class="container-fluid pb-2  bg-dark">
+                <img  class="mx-auto d-block  span img-fluid" src="images/logo.png" id="top-logo">
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light  m-0" id="top-navi">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item border-md-right active">
+                    <a class="nav-link" href="homepage.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item border-md-right">
+                    <a class="nav-link" href="#">Plan a date</a>
+                    </li>
+                    <li class="nav-item border-md-right">
+                    <a class="nav-link border-md-right" href="#">Find an event</a>
+                    </li>
+                    <li class="nav-item border-md-right">
+                        <a class="nav-link border-md-right" href="#">Find some food</a>
+                    </li>
+                    <li class="nav-item border-md-right">
+                        <a class="nav-link" href="#">Make some food</a>
+                    </li>   
+                </ul>
+                </div>
+            </nav>    
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <!----------4 Easy Steps------------->
+        <div>
+            <div class="card bg-dark text-black container is-fluid ">         
+                <div class="notification ">
+                    <div class="content has-text-centered">
+                        <p style="font-family:Courier; font-size: 40px;"><strong><bold>GET STARTED IN 4 EASY STEPS</bold></strong></p>
+                    </div>
+                    <div class="columns has-text-centered">      
+                        <div class="column">
+                            <h1>#1</h1>
+                            <hr>
+                            <h2>Sign up</h2>
+                            <p>Create a new account with us to et started!</p>
+                                        
+                        </div>
+                                
+                        <div class="column">
+                            <h1>#2</h1>
+                            <hr>
+                            <h2>Selecting</h2>
+                            <ul>
+                                <li>Pick a Date</li>
+                                <li>Generate a Restuarant</li>
+                                <li>Generate an Event</li>
+                                <li>..or Choose a Recipe to Make</li>
+                            </ul>
+                        </div>
+                                
+                        <div class="column">
+                            <h1>#3</h1>
+                            <hr>
+                            <h4>Review</h4>
+                            <p>Time to Review the Date that was Generated</p>
+                        </div>
+                                
+                        <div class="column">
+                            <h1>#4</h1>
+                            <hr>
+                            <h4>Enjoy!</h4>
+                            <p>Time to create Memories!</p>
+                        </div>   
+                    </div>
+                </div> 
+            </div> 
+        </div>   
+        
+    <!----------------image for breakfast,lunch,or dinner and text box--------->     
+        <div class="tile is-ancestor container is-fluid bg-dark">
+                <div class="tile is-parent is-12" id="EAT-box">
+                    <article class="tile is-child box">
+                    <p class="title text-center">...Lets EATS</p>
+                    <p class="subtitle text-center" >Breakfast Lunch Dinner</p>
+                    <div class="content row card-deck">
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/breakfast-date.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/lunch-date.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/dinner-date.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    </article>
+                </div>
+        </div>
+                
+   
+    <!-----------------Events Images section  and text box----->
+       
+        <div class="tile is-ancestor container is-fluid  bg-dark">
+                <div class="tile is-parent is-12" id="EAT-box">
+                    <article class="tile is-child box">
+                    <p class="title text-center">Lets have Fun!</p>
+                    <p class="subtitle text-center" >Tons of Events and Activities </p>
+                    <div class="content row card-deck">
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/outdoor-concert-couple.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/couple-hiking.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/top-golf.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/movie-date-night.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    </article>
+                </div>
+        </div>
+<!------------------jumbotron STAY AT HOME RECIEPES------>
+        <div class="container is-fullhd bg-light">
+            <!--<div class="notification">--->
+                <div class="row">
+                    <div class="col">
+                        <h2>Stay Home?</h2>
+                        <p>Why go out when you can stay and make a romantic dinner together</p>
+                        <p>With our vast selction of recipes.</p>
+
+                    </div>
+                    <div class="col">
+                        <div class="col">
+                            <img src="images/Romantic-Dinner-At-Home.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+    <!------------------center content on the page with video---------->
+            
+                <section class="hero is-light is-bold bg-dark">
+                    <div class="hero-body">
+                    <div class="container">
+                        <div class="level">
+                            <div class="level-left">
+                                <div class="level-item">
+                                    <section id="getStarted">
+                                        <div class="getStarted">
+                                            <div class="card text-center">
+                                                <div class="card-header">
+                                                <h2>Need Tips for your Date</h2>
+                                                </div>
+                                                <div class="card-body">
+                                                <h5 class="card-title">Watch the Video on the right for helpful tips</h5>
+                                                <p class="card-text"></p>
+                                                
+                                                <a href="GetStarted.html" class="btn btn-primary">Get Started</a>
+                                                </div>   
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="level-right">
+                                <div class="level-item">
+                                    <figure>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/JTpkpLxXtmc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </figure>   
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </section>
+            
+        <hr> 
+    </main>
+<!-------------------script---------------------->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>    
+    <script src="script/GetStarted.js"></script>
+</body> 
+
+<!-----------------footer----------->
+  <footer class="footer-distributed">
+
+                <div class="footer-left">
+
+                    <h3>Date<span>Night</span></h3>
+
+                    <p class="footer-links">
+                        <a href="#" class="link-1">Home</a>
+                        
+                        <a href="#">Plan a date</a>
+                    
+                        <a href="#">Find an event</a>
+                    
+                        <a href="#">Find some food</a>
+                        
+                        <a href="#">Make some food</a>
+                        
+                        <a href="#">Contact</a>
+                    </p>
+
+                    <p class="footer-company-name">Date Night © 2020</p>
+                </div>
+
+                <div class="footer-center">
+
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <p>+1.555.555.5555</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p><a href="#">email@example.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-company-about">
+                        <span>About the company</span>
+                        Founded to help Struggling Couples plan a Date. Taking away the decison making and leting our customer just worry about making memories.
+                    </p>
+                </div>
+
+            </footer>
+  </footer>
 </html>
