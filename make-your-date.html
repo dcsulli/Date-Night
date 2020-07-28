@@ -5,11 +5,12 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <script src="scripts/make-your-date-script.js"></script>
+        
+
+        <script src="Script/make-your-date-script.js"></script>
 
         <meta charset="UTF-8">
 
@@ -34,13 +35,36 @@
             }
         }
 
+        /* html {
+            font-size: 2vw;
+        } */
+
+        /* @include media-breakpoint-up(sm) {
+          html {
+            font-size: 1vw;
+          }
+        }
+
+        @include media-breakpoint-up(md) {
+          html {
+            font-size: 1vw;
+          }
+        }
+
+        @include media-breakpoint-up(lg) {
+          html {
+            font-size: 1vw;
+          }
+        } */
+        
+
 
         </style>
     </head>
     <body>
         <!-- NAVIGATION -->
         <div class="container-fluid pb-2  bg-dark">
-            <img class="mx-auto d-block  span img-fluid" src="images/logo.png" id="top-logo">
+            <img class="mx-auto d-block span img-fluid" src="images/logo.png" id="top-logo">
         </div>
         <nav class="navbar navbar-expand-lg navbar-light  m-0" id="top-navi">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,36 +131,93 @@
               </div>
             </div>
 
-          
-            <div class="container-fluid" id="recipe-select-container" style="display:none">
-              <div class="form-group text-center col-md-12">
-                <label><h4>What kind of food are you in the mood for?</h4></label>
-                  <select id="inputCuisine" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>American</option>
-                    <option>Asian</option>
-                    <option>British</option>
-                    <option>Caribbean</option>
-                    <option>Central Europe</option>
-                    <option>Chinese</option>
-                    <option>Eastern Europe</option>
-                    <option>French</option>
-                    <option>Indian</option>
-                    <option>Italian</option>
-                    <option>Japanese</option>
-                    <option>Kosher</option>
-                    <option>Mediterranean</option>
-                    <option>Mexican</option>
-                    <option>Middle Eastern</option>
-                    <option>Nordic</option>
-                    <option>South American</option>
-                    <option>South East Asian</option>
-                  </select>
+            <div class="container-fluid" id="zip-code-container" style="display:none">
+              <div class="row mt-3">
+                <div class="col-5"></div>
+                <div class="col-2 text-center">
+                  <div class="form-group">
+                    <h4 class='pb-2'>What is your zip code?</h4>
+                    <input class="form-control form-control-lg text-center" type="text" placeholder="" id='zipCodeForm'>
+                  </div>
+                </div>
               </div>
-              <div class="row text-center">
-                <button  id="continueToActivities" type="submit" class="mx-auto btn-lg btn btn-primary">Continue</button>
-              </div> 
+              <div class="row pt-3 pb-3" id="select-restaurant-cuisine-container">
+                <div class="col-3"></div>
+                  <div class="form-group text-center col-6">
+                    <label><h4>What kind of food are you in the mood for?</h4></label>
+                    <select id="inputRestaurantCuisine" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>African</option>
+                      <option>American</option>
+                      <option>British</option>
+                      <option>Cajun</option>
+                      <option>Caribbean</option>
+                      <option>Chinese</option>
+                      <option>Eastern European</option>
+                      <option>French</option>
+                      <option>Indian</option>
+                      <option>Irish</option>
+                      <option>Italian</option>
+                      <option>Japanese</option>
+                      <option>Korean</option>
+                      <option>Latin American</option>
+                      <option>Mexican</option>
+                      <option>Middle Eastern</option>
+                      <option>Southern</option>
+                      <option>Spanish</option>
+                      <option>Thai</option>
+                      <option>Vietnamese</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="row text-center">
+                  <button  id="continueToMoreActivities" type="submit" class="mx-auto btn-lg btn btn-primary">Continue</button>
+                </div>
+              </div>
+            
+
+              <div class="container-fluid" id="cook-cuisine-select-container" style="display:none">
+                <div class='row'>
+                  <div class='col-3'></div>
+                  <div class="form-group text-center col-6">
+                    <label><h4>What kind of food are you in the mood for?</h4></label>
+                    <select id="inputCookingCuisine" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>African</option>
+                      <option>American</option>
+                      <option>British</option>
+                      <option>Cajun</option>
+                      <option>Caribbean</option>
+                      <option>Chinese</option>
+                      <option>Eastern European</option>
+                      <option>French</option>
+                      <option>Indian</option>
+                      <option>Irish</option>
+                      <option>Italian</option>
+                      <option>Japanese</option>
+                      <option>Korean</option>
+                      <option>Latin American</option>
+                      <option>Mexican</option>
+                      <option>Middle Eastern</option>
+                      <option>Southern</option>
+                      <option>Spanish</option>
+                      <option>Thai</option>
+                      <option>Vietnamese</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row text-center pb-4 mb-4">
+                  <button  id="continueToRecipes" type="submit" class="mx-auto btn-lg btn btn-primary">Continue</button>
+                </div>
+                <h4 style='display:none' id='loading-text' class='text-center'> Loading recipes...</h4> 
+              </div>
+
+          
+            <div id='great-text' class='text-center' style="display:none">
+              <h2>Great choice!</h2>
+              <h4>Now let's choose an activity for your date.</h4>
             </div>
+            
 
           
 
@@ -163,28 +244,339 @@
               </div>
           </div>
 
-          <div class="container-fluid" id="results-container" style="display:none">
+          <!-- Recipe Selector -->
+
+          <div class="container-fluid" id="recipe-select-container" style="display:none">
             <h2 class='text-center'>Choose Your Recipe</h2>
             <div class="row form-group text-center">
-              <div class="form-check col-4 card">
-                <h3 id='recipeLabelOne'></h3>
-                <input type="image" name="recipeSelection" id="recipeImgOne" value="option1" src='' class='img-fluid card-img-top'  checked>
+              
+              <div class='col-4'>
+                <div class="form-check pr-4 pt-4 card w-80">
+                  <input type="image" name="recipeSelection" id="recipeImgOne" value="option3" src='' class='img-fluid' checked>
+                  <h4 id='recipeLabelOne' class='card-text '></h4>
+                  <div class='row'>
+                    <div class="col-12">
+                      <div class='card-text text-center' id='minutesRecipeOne'></div>
+                    </div>
+                    <button type='submit' id='chooseRecipeOne' class='mx-auto btn btn-lg btn-primary mb-4 mt-2'>Choose this recipe</button>
+                  </div>
+                  
+                  <div class="accordion mb-4" id="accordionRecipeOne">
+
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Description
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionRecipeOne">
+                        <div class="card-body" id='recipeSummaryOne'></div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            Recipe
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionRecipeOne">
+                        <div class="card-body" id='recipeTextOne'></div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            Ingredients
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionRecipeOne">
+                        <div class="card-body" id='recipeIngredientsOne'></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="mt-3"></div>
-              <div class="form-check col-4 card">
-                <h3 id='recipeLabelTwo'></h3>
-                <input type="image" name="recipeSelection" id="recipeImgTwo" value="option2" src=''class='img-fluid'  checked>
+
+              <div class='col-4'>
+                <div class="form-check pr-4 pt-4 card w-80">
+                  <input type="image" name="recipeSelection" id="recipeImgTwo" value="option3" src='' class='img-fluid' checked>
+                  <h4 id='recipeLabelTwo' class='card-text '></h4>
+                  <div class='row'>
+                    <div class="col-12">
+                      <div class='card-text text-center' id='minutesRecipeTwo'></div>
+                    </div>
+                    <button type='submit' id='chooseRecipeTwo' class='mx-auto btn btn-lg btn-primary mb-4 mt-2'>Choose this recipe</button>
+                  </div>
+                  
+                  <div class="accordion mb-4" id="accordionRecipeTwo">
+
+                    <div class="card">
+                      <div class="card-header" id="headingFour">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                            Description
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionRecipeTwo">
+                        <div class="card-body" id='recipeSummaryTwo'></div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header" id="headingFive">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseEight">
+                            Recipe
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionRecipeTwo">
+                        <div class="card-body" id='recipeTextTwo'></div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header" id="headingSix">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                            Ingredients
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionRecipeTwo">
+                        <div class="card-body" id='recipeIngredientsTwo'></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="mt-3"></div>
-              <div class="form-check col-4 card">
-                <h3 id='recipeLabelThree'></h3>
-                <input type="image" name="recipeSelection" id="recipeImgThree" value="option3" src='' class='img-fluid'  checked>
+
+              <div class='col-4'>
+                <div class="form-check pr-4 pt-4 card w-80">
+                  <input type="image" name="recipeSelection" id="recipeImgThree" value="option3" src='' class='img-fluid' checked>
+                  <h4 id='recipeLabelThree' class='card-text '></h4>
+                  <div class='row'>
+                    <div class="col-12">
+                      <div class='card-text text-center' id='minutesRecipeThree'></div>
+                    </div>
+                    <button type='submit' id='chooseRecipeThree' class='mx-auto btn btn-lg btn-primary mb-4 mt-2'>Choose this recipe</button>
+                  </div>
+                  
+                  <div class="accordion mb-4" id="accordionRecipeThree">
+
+                    <div class="card">
+                      <div class="card-header" id="headingSeven">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                            Description
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionRecipeThree">
+                        <div class="card-body" id='recipeSummaryThree'></div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header" id="headingEight">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                            Recipe
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionRecipeThree">
+                        <div class="card-body" id='recipeTextThree'></div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header" id="headingNine">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                            Ingredients
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionRecipeThree">
+                        <div class="card-body" id='recipeIngredientsThree'></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>  
-          </div> 
-        </div>
+            </div>
+          </div>
+          
+          <!-- Restaurant Selector -->
+
+          <div class="container-fluid" id="restaurant-select-container" style="display:none">
+            <h2 class='text-center'>Select a Restaurant</h2>
+            <div class="row form-group text-center">
+              
+              <div class='col-4'>
+                <div class="form-check pr-4 pt-4 card w-80">
+                  <input type="image" name="restaurantSelection" id="restaurantImgOne" value="option3" src='' class='img-fluid' checked>
+                  <h4 id='restaurantLabelOne' class='card-text '></h4>
+                  <div class='row'>
+                    <button type='submit' id='chooseRestaurantOne' class='mx-auto btn btn-lg btn-primary mb-4 mt-2'>Choose this restaurant</button>
+                  </div>
+                  <div class='row'>
+                    
+                    <div class='col-12' style='line-height: 1em'>
+                      <p class='text-center'><strong id='restaurantAddressOne'></strong></p>
+                      <p class='text-center' id='restaurantHoursOne'></p>
+                      <p class='text-center' id='restaurantPhoneNumberOne'></p>
+                    </div>
+                    
+                  </div>
+
+                  <div class='row'>
+                      <a role='button' id='restuarantMenuOne' class='mx-auto btn btn-lg btn-primary mb-4 mt-2'>View the menu</a>
+                    </div>
+
+                  <div class="accordion mb-4" id="accordionRestaurantOne">
+
+                    <div class="card">
+                      <div class="card-header" id="headingRestaurantOne">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Restaurant Features
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionRestaurantOne">
+                        <div class="card-body" id='restaurantFeaturesOne'></div>
+                      </div>
+                    </div>
+
+                    
+
+              <!-- <div class='col-4'>
+                <div class="form-check pr-4 pt-4 card w-80">
+                  <input type="image" name="recipeSelection" id="recipeImgTwo" value="option3" src='' class='img-fluid' checked>
+                  <h4 id='recipeLabelTwo' class='card-text '></h4>
+                  <div class='row'>
+                    <div class="col-12">
+                      <div class='card-text text-center' id='minutesRecipeTwo'></div>
+                    </div>
+                    <button type='submit' id='chooseRecipeTwo' class='mx-auto btn btn-lg btn-primary mb-4 mt-2'>Choose this recipe</button>
+                  </div>
+                  
+                  <div class="accordion mb-4" id="accordionRecipeTwo">
+
+                    <div class="card">
+                      <div class="card-header" id="headingFour">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                            Description
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionRecipeTwo">
+                        <div class="card-body" id='recipeSummaryTwo'></div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header" id="headingFive">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseEight">
+                            Recipe
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionRecipeTwo">
+                        <div class="card-body" id='recipeTextTwo'></div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header" id="headingSix">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                            Ingredients
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionRecipeTwo">
+                        <div class="card-body" id='recipeIngredientsTwo'></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class='col-4'>
+                <div class="form-check pr-4 pt-4 card w-80">
+                  <input type="image" name="recipeSelection" id="recipeImgThree" value="option3" src='' class='img-fluid' checked>
+                  <h4 id='recipeLabelThree' class='card-text '></h4>
+                  <div class='row'>
+                    <div class="col-12">
+                      <div class='card-text text-center' id='minutesRecipeThree'></div>
+                    </div>
+                    <button type='submit' id='chooseRecipeThree' class='mx-auto btn btn-lg btn-primary mb-4 mt-2'>Choose this recipe</button>
+                  </div>
+                  
+                  <div class="accordion mb-4" id="accordionRecipeThree">
+
+                    <div class="card">
+                      <div class="card-header" id="headingSeven">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                            Description
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionRecipeThree">
+                        <div class="card-body" id='recipeSummaryThree'></div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header" id="headingEight">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                            Recipe
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionRecipeThree">
+                        <div class="card-body" id='recipeTextThree'></div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-header" id="headingNine">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                            Ingredients
+                          </button>
+                        </h5>
+                      </div>
+                      <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionRecipeThree">
+                        <div class="card-body" id='recipeIngredientsThree'></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>   -->
+          
                           
                               
-            
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" ></script>       
     </body>
 </html>
