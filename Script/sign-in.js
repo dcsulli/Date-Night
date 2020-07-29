@@ -69,3 +69,46 @@ tosUrl: '<your-tos-url>',
 // Privacy policy url.
 privacyPolicyUrl: '<your-privacy-policy-url>'
 };
+// get sign-in.html elements
+const txtEmail = document.getElementById('txtEmail');
+const txtPassword = document.getElementById('txtPassword');
+const btnLogin = document.getElementById('btnLogin');
+const btnSignUp = document.getElementById('btnSignUp');
+const btnLogout = document.getElementById('btnLogout');
+
+//login event for sign-in.html
+btnLogin.addEventListener('click', e => {
+  // Get email and pass
+  const email = txtEmail.value;
+  const pass = txtPassword.value;
+  
+firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error){
+  console.log(error);
+});
+});
+// signup event
+btnSignUp.addEventListener('click', e=> {
+  const email = txtEmail.value;
+  const pass = txtPassword.value;
+  
+firebase.auth().createUserWithEmailAndPassword(email, pass).then(user => console.log()).catch(function(error){
+  console.log(error);
+});
+});
+
+// Log Out event
+btnLogout.addEventListener('click', e => {
+  firebase.auth().signOut();
+});
+
+
+//realtime authentication listener
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  if(firebaseUser) {
+    console.log(firebaseUser);
+    btnLogout.classList.remove('hide');
+  } else {
+    console.log('not logged in');
+    btnLogout.classList.add('hide');
+  }
+});
