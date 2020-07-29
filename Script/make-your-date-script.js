@@ -16,7 +16,7 @@ $("#continueToFoodTypes").click(function() {
   event.preventDefault();
   var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
   console.log(cookOrRestaurant)
-  for(i=0; i<cookOrRestaurant.length ;i++) {
+  
     if(cookOrRestaurant[0].checked) {
       console.log("selected to cook")
       $('#cook-or-restaurant-container').fadeOut() 
@@ -33,7 +33,6 @@ $("#continueToFoodTypes").click(function() {
         $("#select-restaurant-cuisine-container").fadeIn()
       }, 500)
     }
-  }
 })
 
   
@@ -173,6 +172,16 @@ $("#continueToRecipes").click(function() {
       $('#recipeIngredientsOne').html('<ul type="circle">' + recipeOneIngredients.join('') + '</ul>')
       $('#recipeIngredientsTwo').html('<ul type="circle">' + recipeTwoIngredients.join('') + '</ul>')
       $('#recipeIngredientsThree').html('<ul type="circle">' + recipeThreeIngredients.join('') + '</ul>')
+
+      $('#recipeURLOne').click(function(){
+        window.open(randomRecipeOne.sourceUrl, target='_blank')
+      })
+      $('#recipeURLTwo').click(function(){
+        window.open(randomRecipeTwo.sourceUrl, target='_blank')
+      })
+      $('#recipeURLThree').click(function(){
+        window.open(randomRecipeThree.sourceUrl, target='_blank')
+      })
         
     })
 
@@ -184,6 +193,9 @@ $("#continueToRecipes").click(function() {
   setTimeout(function(){
     $('#continueToRecipes').html('Search again')
     $("#recipe-select-container").fadeIn()
+    $("#recipe-one-container").attr('style', 'display: flex')
+    $("#recipe-two-container").attr('style', 'display: flex')
+    $("#recipe-three-container").attr('style', 'display: flex')
   }, 2500);
 
 })
@@ -400,6 +412,9 @@ $("#continueToRestaurants").click(function() {
     $('#whatKindRestaurantLabel').html('Try a different cuisine?')
     $('#continueToRestaurants').html('Search again')
     $("#restaurant-select-container").fadeIn()
+    $("#restaurant-one-container").attr('style', 'display: flex')
+    $("#restaurant-two-container").attr('style', 'display: flex')
+    $("#restaurant-three-container").attr('style', 'display: flex')
   }, 2500);
   
     
@@ -447,15 +462,250 @@ $("#continueToRestaurants").click(function() {
           $("#indoor-outdoor-container").fadeIn()
         }, 3500);
         })
-  
-
   })
 
+  // function getRandomInt(min, max) {
+  //   min = Math.ceil(min);
+  //   max = Math.floor(max);
+  //   return Math.floor(Math.random() * (max - min)) + min;
+  // }
 
+  function shuffle(array) {
+    var i = array.length,
+        j = 0,
+        temp;
+
+    while (i--) {
+
+        j = Math.floor(Math.random() * (i+1));
+
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
 
   
 
+  $("#continueToActivities").click(function() {
+    event.preventDefault();
+    console.log('button clicked')
 
+    var indoorActivities = [
+      {activity: 'See a movie!',
+       image: 'images/activities/movies.jpg',
+       text: "The dinner and a movie combo is timeless for a reason. Whether you're seeing a romantic comedy or a superhero flick, you can't go wrong with a movie date.",
+       url: 'https://www.fandango.com/'
+      },
+      {activity: 'Hit the Barcade!',
+       image: 'images/activities/arcade.jpeg',
+       text: "Arcades have returned in the form of the Barcade! Have a few drinks and take the opportunity to show off your Hadoken.  Your date will love it.",
+       url: 'https://www.google.com/search?q=find+a+barcade&oq=find+a+barcade&sourceid=chrome&ie=UTF-8'
+      },
+      {activity: 'Go on a hike!',
+       image: 'images/activities/hiking.jpg',
+       text: "Nothing promotes couple's bonding like the call of nature. Take a drive to your closest nature trail and spend some time in the great outdoors with that special someone.",
+       url: 'https://www.google.com/search?q=nature+trails+near+me&oq=nature+trails+near+me&aqs=chrome..69i57.4164j0j9&sourceid=chrome&ie=UTF-8'
+      },
+    ]
+  
+    var outdoorActivities = [
+      {activity: 'See a movie!',
+       image: 'images/activities/movies.jpg',
+       text: "The dinner and a movie combo is timeless for a reason. Whether you're seeing a romantic comedy or a superhero flick, you can't go wrong with a movie date.",
+       url: 'https://www.fandango.com/'
+      },
+      {activity: 'Hit the Barcade!',
+       image: 'images/activities/arcade.jpeg',
+       text: "Arcades have returned in the form of the Barcade! Have a few drinks and take the opportunity to show off your Hadoken.  Your date will love it.",
+       url: 'https://www.google.com/search?q=find+a+barcade&oq=find+a+barcade&sourceid=chrome&ie=UTF-8'
+      },
+      {activity: 'Go on a hike!',
+       image: 'images/activities/hiking.jpg',
+       text: "Nothing promotes couple's bonding like the call of nature. Take a drive to your closest nature trail and spend some time in the great outdoors with that special someone.",
+       url: 'https://www.google.com/search?q=nature+trails+near+me&oq=nature+trails+near+me&aqs=chrome..69i57.4164j0j9&sourceid=chrome&ie=UTF-8'
+      },
+    ]
+  
+    var shuffledIndoorActivities = shuffle (indoorActivities)
+    var shuffledOutdoorActivities = shuffle (outdoorActivities)
+
+    var indoorOrOutdoor = document.getElementsByName("indoorOrOutdoor")
+
+    
+    
+    if(indoorOrOutdoor[0].checked) {
+      console.log("selected indoor activity")
+        
+      console.log([shuffledIndoorActivities[0],shuffledIndoorActivities[1],shuffledIndoorActivities[2]])
+
+      $("#indoorActivityLabelOne").html(shuffledIndoorActivities[0].activity);
+      $("#indoorActivityTextOne").html(shuffledIndoorActivities[0].text);
+      $('#indoorActivityImgOne').attr({src: shuffledIndoorActivities[0].image, class:'img-fluid'});
+      $("#indoorActivityInfoOne").click(function() {window.open(shuffledIndoorActivities[0].url, target='_blank')})
+
+      $("#indoorActivityLabelTwo").html(shuffledIndoorActivities[1].activity);
+      $("#indoorActivityTextTwo").html(shuffledIndoorActivities[1].text);
+      $('#indoorActivityImgTwo').attr({src: shuffledIndoorActivities[1].image, class:'img-fluid'});
+      $("#indoorActivityInfoTwo").click(function() {window.open(shuffledIndoorActivities[2].url, target='_blank')})
+
+      $("#indoorActivityLabelThree").html(shuffledIndoorActivities[2].activity);
+      $("#indoorActivityTextThree").html(shuffledIndoorActivities[2].text);
+      $('#indoorActivityImgThree').attr({src: shuffledIndoorActivities[2].image, class:'img-fluid'});
+      $("#indoorActivityInfoThree").click(function() {window.open(shuffledIndoorActivities[2].url, target='_blank')})
+
+      $('#indoor-outdoor-container').fadeOut() 
+      setTimeout(function(){
+        $("#indoor-activity-select-container").fadeIn()
+      }, 500);
+      setTimeout(function(){
+        $("#indoor-activity-header").fadeIn()
+      }, 500);
+        
+      $("#showMoreIndoorActivities").click(function() {
+
+        $('#indoor-activity-select-container').fadeOut() 
+
+        setTimeout(function(){
+          var shuffledIndoorActivities = shuffle (indoorActivities)
+          console.log([shuffledIndoorActivities[0],shuffledIndoorActivities[1],shuffledIndoorActivities[2]])
+        }, 500);
+
+        $("#indoorActivityLabelOne").html(shuffledIndoorActivities[0].activity);
+        $("#indoorActivityTextOne").html(shuffledIndoorActivities[0].text);
+        $('#indoorActivityImgOne').attr({src: shuffledIndoorActivities[0].image, class:'img-fluid'});
+        $("#indoorActivityInfoOne").click(function() {window.open(shuffledIndoorActivities[0].url, target='_blank')})
+
+        $("#indoorActivityLabelTwo").html(shuffledIndoorActivities[1].activity);
+        $("#indoorActivityTextTwo").html(shuffledIndoorActivities[1].text);
+        $('#indoorActivityImgTwo').attr({src: shuffledIndoorActivities[1].image, class:'img-fluid'});
+        $("#indoorActivityInfoTwo").click(function() {window.open(shuffledIndoorActivities[2].url, target='_blank')})
+
+        $("#indoorActivityLabelThree").html(shuffledIndoorActivities[2].activity);
+        $("#indoorActivityTextThree").html(shuffledIndoorActivities[2].text);
+        $('#indoorActivityImgThree').attr({src: shuffledIndoorActivities[2].image, class:'img-fluid'});
+        $("#indoorActivityInfoThree").click(function() {window.open(shuffledIndoorActivities[2].url, target='_blank')})
+
+        
+        setTimeout(function(){
+          $("#indoor-activity-select-container").fadeIn()
+        }, 1000);
+      })
+
+      $("#chooseIndoorActivityOne").click(function() {
+        event.preventDefault();
+        console.log('option 1 selected')
+        $('#indoor-activity-select-container').fadeOut() 
+          setTimeout(function(){
+            $("#final-results-container").fadeIn()
+          }, 500);
+        })
+      
+      $("#chooseIndoorActivityTwo").click(function() {
+        event.preventDefault();
+        console.log('option 2 selected')
+        $('#indoor-activity-select-container').fadeOut() 
+          setTimeout(function(){
+            $("#final-results-container").fadeIn()
+          }, 500);
+        })
+
+      $("#chooseIndoorActivityThree").click(function() {
+        event.preventDefault();
+        console.log('option 3 selected')
+        $('#indoor-activity-select-container').fadeOut() 
+          setTimeout(function(){
+            $("#final-results-container").fadeIn()
+          }, 500);
+        })
+    } else { 
+
+      console.log([shuffledOutdoorActivities[0],shuffledOutdoorActivities[1],shuffledOutdoorActivities[2]])
+
+      $("#outdoorActivityLabelOne").html(shuffledOutdoorActivities[0].activity);
+      $("#outdoorActivityTextOne").html(shuffledOutdoorActivities[0].text);
+      $('#outdoorActivityImgOne').attr({src: shuffledOutdoorActivities[0].image, class:'img-fluid'});
+      $("#outdoorActivityInfoOne").click(function() {window.open(shuffledOutdoorActivities[0].url, target='_blank')})
+
+      $("#outdoorActivityLabelTwo").html(shuffledOutdoorActivities[1].activity);
+      $("#outdoorActivityTextTwo").html(shuffledOutdoorActivities[1].text);
+      $('#outdoorActivityImgTwo').attr({src: shuffledOutdoorActivities[1].image, class:'img-fluid'});
+      $("#outdoorActivityInfoTwo").click(function() {window.open(shuffledOutdoorActivities[2].url, target='_blank')})
+
+      $("#outdoorActivityLabelThree").html(shuffledOutdoorActivities[2].activity);
+      $("#outdoorActivityTextThree").html(shuffledOutdoorActivities[2].text);
+      $('#outdoorActivityImgThree').attr({src: shuffledOutdoorActivities[2].image, class:'img-fluid'});
+      $("#outdoorActivityInfoThree").click(function() {window.open(shuffledOutdoorActivities[2].url, target='_blank')})
+
+      console.log("selected outdoor activity")
+      $('#indoor-outdoor-container').fadeOut() 
+      setTimeout(function(){
+        $("#outdoor-activity-select-container").fadeIn()
+      }, 500);
+      setTimeout(function(){
+        $("#outdoor-activity-header").fadeIn()
+      }, 500);
+        
+      $("#showMoreOutdoorActivities").click(function() { 
+
+        $('#outdoor-activity-select-container').fadeOut() 
+
+        setTimeout(function(){
+          var shuffledOutdoorActivities = shuffle (outdoorActivities)
+          console.log([shuffledOutdoorActivities[0],shuffledOutdoorActivities[1],shuffledOutdoorActivities[2]])
+        }, 500);
+
+          $("#outdoorActivityLabelOne").html(shuffledOutdoorActivities[0].activity);
+          $("#outdoorActivityTextOne").html(shuffledOutdoorActivities[0].text);
+          $('#outdoorActivityImgOne').attr({src: shuffledOutdoorActivities[0].image, class:'img-fluid'});
+          $("#outdoorActivityInfoOne").click(function() {window.open(shuffledOutdoorActivities[0].url, target='_blank')})
+
+          $("#outdoorActivityLabelTwo").html(shuffledOutdoorActivities[1].activity);
+          $("#outdoorActivityTextTwo").html(shuffledOutdoorActivities[1].text);
+          $('#outdoorActivityImgTwo').attr({src: shuffledOutdoorActivities[1].image, class:'img-fluid'});
+          $("#outdoorActivityInfoTwo").click(function() {window.open(shuffledOutdoorActivities[2].url, target='_blank')})
+
+          $("#outdoorActivityLabelThree").html(shuffledOutdoorActivities[2].activity);
+          $("#outdoorActivityTextThree").html(shuffledOutdoorActivities[2].text);
+          $('#outdoorActivityImgThree').attr({src: shuffledOutdoorActivities[2].image, class:'img-fluid'});
+          $("#outdoorActivityInfoThree").click(function() {window.open(shuffledOutdoorActivities[2].url, target='_blank')})
+
+          setTimeout(function(){
+          $("#outdoor-activity-select-container").fadeIn()
+        }, 1000);
+      })
+
+      $("#chooseOutdoorActivityOne").click(function() {
+        event.preventDefault();
+        console.log('option 1 selected')
+        $('#outdoor-activity-select-container').fadeOut() 
+          setTimeout(function(){
+            $("#final-results-container").fadeIn()
+          }, 500);
+        })
+      
+      $("#chooseOutdoorActivityTwo").click(function() {
+        event.preventDefault();
+        console.log('option 2 selected')
+        $('#outdoor-activity-select-container').fadeOut() 
+          setTimeout(function(){
+            $("#final-results-container").fadeIn()
+          }, 500);
+        })
+
+      $("#chooseOutdoorActivityThree").click(function() {
+        event.preventDefault();
+        console.log('option 3 selected')
+        $('#outdoor-activity-select-container').fadeOut() 
+          setTimeout(function(){
+            $("#final-results-container").fadeIn()
+          }, 500);
+        })
+
+      }
+    
+  })
 })
 
 
