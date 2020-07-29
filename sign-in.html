@@ -21,6 +21,15 @@
 <!-- Navbar -->
     <div class="container-fluid pb-2  bg-dark">
         <img class="mx-auto d-block  span img-fluid" src="Images/logo.png" id="top-logo">
+        <div class="dropdown d-flex justify-content-start">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sign up/Sign In
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div id="firebaseui-auth-container"></div>
+            </div>
+        </div>
+        </div>
     </div>
         <nav class="navbar navbar-expand-lg navbar-light  m-0" id="top-navi">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,9 +56,15 @@
             </div>
         </nav>
 
-    <h1>Sign in to Date Night</h1>
-    <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
+        <div class="container">
+            <input id="txtEmail" type="email" placeholder="Email">
+            <input id="txtPassword" type="password" placeholder="Password">
+            <button id="btnLogin" class="btn btn-action">Log in</button>
+            <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+            <button id="btnLogout" class="btn btn-action hide">Log Out</button>
+        </div>
+  
+
 
 
 
