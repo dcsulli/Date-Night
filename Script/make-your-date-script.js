@@ -3,15 +3,6 @@ $(document).ready(function() {
   var appID = '2db851a1'
 
 
-
-        
-
-  // function renderRecipe(image){
-  //   return `
-  //   <img src="${image}" class="mw-100" /></a>
-  //   `;
-  // }
-
 $("#makeMyDateButton").click(function() {
   event.preventDefault();
   $('#make-my-date-container').fadeOut() 
@@ -27,19 +18,25 @@ $("#continueToFoodTypes").click(function() {
   console.log(cookOrRestaurant)
   for(i=0; i<cookOrRestaurant.length ;i++) {
     if(cookOrRestaurant[0].checked) {
-    console.log("selected to cook")
-    $('#cook-or-restaurant-container').fadeOut() 
-    setTimeout(function(){
-      $("#cook-cuisine-select-container").fadeIn()
-    }, 500);
+      console.log("selected to cook")
+      $('#cook-or-restaurant-container').fadeOut() 
+      setTimeout(function(){
+        $("#cook-cuisine-select-container").fadeIn()
+      }, 500);
+      } else { 
+      console.log("selected to dine")
+      $('#cook-or-restaurant-container').fadeOut() 
+      setTimeout(function(){
+        $("#zip-code-container").fadeIn()
+      }, 500);
+      setTimeout(function(){
+        $("#select-restaurant-cuisine-container").fadeIn()
+      }, 500)
     }
-    else if (cookOrRestaurant[1].checked) {
-    console.log("selected to dine")
-    $('#cook-or-restaurant-container').fadeOut() 
-    setTimeout(function(){
-      $("#zip-code-container").fadeIn()
-    }, 500);}}
-  })
+  }
+})
+
+  
 
 
 $("#continueToRecipes").click(function() {
@@ -49,7 +46,7 @@ $("#continueToRecipes").click(function() {
   var selectedFoodTypeCook = selectedFoodTypeCook.toLowerCase()
   console.log(selectedFoodTypeCook)
 
-  $('#loading-text').fadeIn() 
+  $('#loading-text-one').fadeIn() 
   
   $.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${selectedFoodTypeCook}&number=6&sort=random&addRecipeInformation=true&dishTypes=dinner&veryPopular=true&fillIngredients=true`).done
     (function (data) {
@@ -183,7 +180,7 @@ $("#continueToRecipes").click(function() {
 
   $('#recipe-select-container').fadeOut() 
   setTimeout(function(){
-    $('#loading-text').fadeOut() },2300);
+    $('#loading-text-one').fadeOut() },2300);
   setTimeout(function(){
     $('#continueToRecipes').html('Search again')
     $("#recipe-select-container").fadeIn()
@@ -242,8 +239,16 @@ $("#continueToRecipes").click(function() {
 
 
 
-$("#continueToMoreActivities").click(function() {
+$("#continueToRestaurants").click(function() {
   event.preventDefault();
+
+  
+  
+  $('#zip-code-container').fadeOut()
+  $('#select-restaurant-cuisine-container').fadeOut()
+  setTimeout(function(){
+    $('#loading-text-two').fadeIn() },500)
+  
 
   var zipCode = document.getElementById('zipCodeForm').value;
   console.log(zipCode)
@@ -301,7 +306,7 @@ $("#continueToMoreActivities").click(function() {
 
       $.ajax({
         headers:{'user-key': "3e7f5057d60d60ddeb1fa6eac9f2703b"},
-        url: `https://developers.zomato.com/api/v2.1/search?lat=${latitude}&lon=${longitude}&radius=2000&cuisines=${restaurantCuisineChoice}&sort=real_distance&order=asc`,
+        url: `https://developers.zomato.com/api/v2.1/search?lat=${latitude}&lon=${longitude}&radius=1500&cuisines=${restaurantCuisineChoice}&sort=rating&order=asc`,
         type: 'GET',
         success : function (data) {
           console.log(data)
@@ -313,9 +318,9 @@ $("#continueToMoreActivities").click(function() {
           $('#restaurantAddressTwo').html(data.restaurants[1].restaurant.location.address);
           $('#restaurantAddressThree').html(data.restaurants[2].restaurant.location.address);
 
-          $('#restaurantHoursOne').html('Hours: ' + data.restaurants[0].restaurant.timings);
-          $('#restaurantHoursTwo').html('Hours: ' + data.restaurants[1].restaurant.timings);
-          $('#restaurantHoursThree').html('Hours: ' + data.restaurants[2].restaurant.timings);
+          // $('#restaurantHoursOne').html('Hours: ' + data.restaurants[0].restaurant.timings);
+          // $('#restaurantHoursTwo').html('Hours: ' + data.restaurants[1].restaurant.timings);
+          // $('#restaurantHoursThree').html('Hours: ' + data.restaurants[2].restaurant.timings);
 
           $('#restaurantPhoneNumberOne').html(data.restaurants[0].restaurant.phone_numbers);
           $('#restaurantPhoneNumberTwo').html(data.restaurants[1].restaurant.phone_numbers);
@@ -365,23 +370,43 @@ $("#continueToMoreActivities").click(function() {
           $('#restaurantFeaturesTwo').html('<ul type="circle">' + restaurantTwoFeatures.join('') + '</ul>')
           $('#restaurantFeaturesThree').html('<ul type="circle">' + restaurantTwoFeatures.join('') + '</ul>')
           
-          // $('#restaurantMenuOne').click(function(){
-          //   window.location = data.restaurants[0].restaurant.menu_url.href + this.id)
-          //   return false;
-          // })
-          // $('#restaurantMenuTwo').href(data.restaurants[1].restaurant.menu_url)
-          // $('#restaurantMenuThree').href(data.restaurants[2].restaurant.menu_url)
+          $('#restaurantMenuOne').click(function(){
+            window.open(data.restaurants[0].restaurant.menu_url, target='_blank')
+          })
+          $('#restaurantMenuTwo').click(function(){
+            window.open(data.restaurants[1].restaurant.menu_url, target='_blank')
+          })
+          $('#restaurantMenuThree').click(function(){
+            window.open(data.restaurants[2].restaurant.menu_url, target='_blank')
+          })
 
           console.log(data.restaurants[0].restaurant.menu_url)
         }
      });
     })
+
+    
+      setTimeout(function(){
+    $('#loading-text-two').fadeOut() },2000);
+      setTimeout(function(){
+    $('#select-restaurant-cuisine-container').fadeIn()
+    $("#restaurant-select-container").fadeIn()
+    }, 2500);
+
+    $('#restaurant-select-container').fadeOut() 
+  setTimeout(function(){
+    $('#loading-text-two').fadeOut() },2000);
+  setTimeout(function(){
+    $('#whatKindRestaurantLabel').html('Try a different cuisine?')
+    $('#continueToRestaurants').html('Search again')
+    $("#restaurant-select-container").fadeIn()
+  }, 2500);
   
     
     $("#chooseRestaurantOne").click(function() {
       event.preventDefault();
       $('#restaurant-select-container').fadeOut()
-      $('#cook-cuisine-select-container').fadeOut()
+      $('#select-restaurant-cuisine-container').fadeOut()
       setTimeout(function(){
         $("#great-text").fadeIn()
       }, 500);  
@@ -396,7 +421,7 @@ $("#continueToMoreActivities").click(function() {
       $("#chooseRestaurantTwo").click(function() {
         event.preventDefault();
         $('#restaurant-select-container').fadeOut()
-        $('#cook-cuisine-select-container').fadeOut()
+        $('#select-restaurant-cuisine-container').fadeOut()
         setTimeout(function(){
           $("#great-text").fadeIn()
         }, 500);  
@@ -411,7 +436,7 @@ $("#continueToMoreActivities").click(function() {
       $("#chooseRestaurantThree").click(function() {
         event.preventDefault();
         $('#restaurant-select-container').fadeOut()
-        $('#cook-cuisine-select-container').fadeOut()
+        $('#select-restaurant-cuisine-container').fadeOut()
         setTimeout(function(){
           $("#great-text").fadeIn()
         }, 500);  
@@ -423,12 +448,7 @@ $("#continueToMoreActivities").click(function() {
         }, 3500);
         })
   
-  
-        
-  $('#zip-code-container').fadeOut() 
-  setTimeout(function(){
-    $("#restaurant-select-container").fadeIn()
-  }, 500);
+
   })
 
 
