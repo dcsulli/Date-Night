@@ -19,6 +19,8 @@
         <title>Make Your Date</title>
 
         <style>
+  
+
         .nav-link {
             font-size: large;
             font-family: 'Josefin Sans', sans-serif;
@@ -29,11 +31,44 @@
             border-right: 1px solid rgb(224, 223, 223);
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 2000px) {
             .border-md-right {
                 border-right: none;
             }
         }
+
+        .card-border {
+          border: 0px solid black;
+          box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16); 
+          box-shadow: 0 2px 10px 0 rgba(0,0,0,0.12);
+
+        }
+
+        .bg-neutral {
+          background-color: rgb(255, 255, 255);
+        }
+
+        .bg-greyish {
+          background-color: rgb(230, 230, 230);
+        }
+
+        .bg-grey {
+          background-color: rgb(209, 209, 209);
+        }
+
+        .bg-grey:hover {
+          background-color: rgb(134, 134, 134)
+        }
+
+        .bg-grey:active {
+          background-color: rgb(134, 134, 134)
+        }
+
+        .h-auto {
+          height: auto;
+        }
+
+        
 
         /* html {
             font-size: 2vw;
@@ -57,11 +92,12 @@
           }
         } */
         
-
+        
+        
 
         </style>
     </head>
-    <body>
+    <body style='background-color: #fff;'>
         <!-- NAVIGATION -->
         <div class="container-fluid pb-2  bg-dark">
             <img class="mx-auto d-block span img-fluid" src="images/logo.png" id="top-logo">
@@ -92,7 +128,7 @@
         </nav>
 
         <!-- CONTENT -->
-        <div class="container-fluid" id="make-my-date-container">
+        <div class="container" id="make-my-date-container">
           <div class="row mt-3">
             <div class="col-2"></div>
             <div class="col-8">
@@ -254,123 +290,111 @@
 
           <div class="container" id="recipe-select-container" style="display:none">
             <h2 class='text-center'>Choose Your Recipe</h2>
-            <div class="row text-center">
-              
-              <div class='col-4'>
-                <div class="card">
-                  <img id="recipeImgOne" src='' class='img-fluid p-4'>
-                  <h4 id='recipeLabelOne' class='card-text '></h4>
+            <div class="row text-center">   
+
+              <div class='col-sm-4 justify-content-center mb-4'>
+                <div class="card bg-neutral text-dark card-border p-2">
+                  <img id="recipeImgOne" src='' value="option1" class='img-fluid'>
+                  <h4 id='recipeLabelOne' class='card-title'></h4>
                   <div class='card-text text-center' id='minutesRecipeOne'></div>
                   <div class='row'>
                     <div class= 'col-12'>
                       <button type='submit' id='chooseRecipeOne' class='mx-auto btn btn-block btn-primary mb-4 mt-2'>Choose this recipe</button>
                     </div>
-                    </div>
                   </div>
                   
                   <div class="accordion mb-4" id="accordionRecipeOne">
 
-                    <div class="card">
+                    <div class="card bg-grey" color='white'>
                       <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></span>
                             Description
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionRecipeOne">
-                        <div class="card-body" id='recipeSummaryOne'></div>
+                        <div class="card-body bg-greyish" id='recipeSummaryOne'></div>
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                          <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                             Recipe
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionRecipeOne">
-                        <div class="card-body" id='recipeTextOne'></div>
+                        <div class="card-body bg-greyish" id='recipeTextOne'></div>
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                          <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                             Ingredients
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionRecipeOne">
-                        <div class="card-body" id='recipeIngredientsOne'></div>
+                        <div class="card-body bg-greyish" id='recipeIngredientsOne'></div>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
               
 
-              <div class='col-4'>
-                <div class="card w-80">
-                  <input type="image" name="recipeSelection" id="recipeImgTwo" value="option3" src='' class='img-fluid p-4' checked>
-                  <h4 id='recipeLabelTwo' class='card-text '></h4>
+              <div class='col-sm-4 justify-content-center mb-4'>
+                <div class="card bg-neutral text-dark card-border p-2">
+                  <img id="recipeImgTwo" value="option3" src='' class='img-fluid'>
+                  <h4 id='recipeLabelTwo' class='card-text'></h4>
                   <div class='card-text text-center' id='minutesRecipeTwo'></div>
                   <div class='row'>
                     <div class= 'col-12'>
                       <button type='submit' id='chooseRecipeTwo' class='mx-auto btn btn-block btn-primary mb-4 mt-2'>Choose this recipe</button>
                     </div>
-                    </div>
                   </div>
+                  
                   
                   <div class="accordion mb-4" id="accordionRecipeTwo">
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header" id="headingFour">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                          <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                             Description
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionRecipeTwo">
-                        <div class="card-body" id='recipeSummaryTwo'></div>
+                        <div class="card-body bg-greyish" id='recipeSummaryTwo'></div>
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header" id="headingFive">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseEight">
+                          <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseEight">
                             Recipe
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionRecipeTwo">
-                        <div class="card-body" id='recipeTextTwo'></div>
+                        <div class="card-body bg-greyish" id='recipeTextTwo'></div>
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header" id="headingSix">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                          <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
                             Ingredients
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionRecipeTwo">
-                        <div class="card-body" id='recipeIngredientsTwo'></div>
+                        <div class="card-body bg-greyish" id='recipeIngredientsTwo'></div>
                       </div>
                     </div>
                   </div>
                 </div>
-              
+              </div>
 
-              <div class='col-4'>
-                <div class="card w-80">
-                  <img id="recipeImgThree" value="option3" src='' class='img-fluid p-4'>
+              <div class='col-sm-4  justify-content-center mb-4'>
+                <div class="card bg-neutral text-dark card-border p-2">
+                  <img id="recipeImgThree" value="option3" src='' class='img-fluid'>
                   <h4 id='recipeLabelThree' class='card-text'></h4>
                   <div class='card-text text-center' id='minutesRecipeThree'></div>
                   <div class='row'>
@@ -378,52 +402,47 @@
                       <button type='submit' id='chooseRecipeThree' class='mx-auto btn btn-block btn-primary mb-4 mt-2'>Choose this recipe</button>
                     </div>
                   </div>
-                </div>
+                
                   
                   <div class="accordion mb-4" id="accordionRecipeThree">
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header" id="headingSeven">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                          <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
                             Description
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionRecipeThree">
-                        <div class="card-body" id='recipeSummaryThree'></div>
+                        <div class="card-body bg-greyish" id='recipeSummaryThree'></div>
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header" id="headingEight">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                          <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
                             Recipe
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionRecipeThree">
-                        <div class="card-body" id='recipeTextThree'></div>
+                        <div class="card-body bg-greyish" id='recipeTextThree'></div>
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header" id="headingNine">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                          <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
                             Ingredients
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionRecipeThree">
-                        <div class="card-body" id='recipeIngredientsThree'></div>
+                        <div class="card-body bg-greyish" id='recipeIngredientsThree'></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
           
           
           <!-- Restaurant Selector -->
@@ -432,11 +451,11 @@
 
           <div class="container" id="restaurant-select-container" style="display:none">
             <h2 class='text-center'>Select a Restaurant</h2>
-            <div class="row form-group text-center">
+            <div class="row text-center"></div>
               
-              <div class='col-4'>
-                <div class="card w-80">
-                  <input type="image" name="restaurantSelection" id="restaurantImgOne" value="option1" src='images/restaurant-1.jpg' class='img-fluid p-4' checked>
+              <div class='col-4 justify-content-center'>
+                <div class="card bg-neutral text-dark card-border p-2">
+                  <img id="restaurantImgOne" value="option1" src='images/restaurant-1.jpg' class='img-fluid'>
                   <h4 id='restaurantLabelOne' class='card-text'></h4>
                   <div class='row'>
                     <div class='col-12'>
@@ -454,26 +473,22 @@
 
                   <div class="accordion mb-4" id="accordionRestaurantOne">
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" id= 'restaurantMenuOne'>
+                          <button class="btn btn-block bg-grey" type="button" data-toggle="collapse" id='restaurantMenuOne'>
                             View the menu
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionRestaurantOne">
                         <div class="card-body"></div>
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                          <button class="btn btn-block bg-grey" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                             Restaurant features
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionRestaurantOne">
                         <div class="card-body" id='restaurantFeaturesOne'></div>
@@ -482,13 +497,11 @@
                   </div>
                 </div>
               </div>
-              
 
-                    
-
-              <div class='col-4'>
-                <div class="card w-80">
-                  <input type="image" name="restaurantSelection" id="restaurantImgTwo" value="option2" src='images/restaurant-2.jpg' class='img-fluid p-4' checked>
+            
+              <div class='col-4 justify-content-center'>
+                <div class="card bg-neutral text-dark card-border p-2">
+                  <img id="restaurantImgTwo" value="option2" src='images/restaurant-2.jpg' class='img-fluid'>
                   <h4 id='restaurantLabelTwo' class='card-text '></h3>
                   <div class='row'>
                     <div class='col-12'>
@@ -505,26 +518,22 @@
 
                   <div class="accordion mb-4" id="accordionRestaurantTwo">
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" id= 'restaurantMenuTwo'>
+                          <button class="btn btn-block bg-grey" type="button" data-toggle="collapse" id= 'restaurantMenuTwo'>
                             View the menu
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionRestaurantOne">
                         <div class="card-body"></div>
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card bg-grey">
                       <div class="card-header">
-                        <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                          <button class="btn btn-block bg-grey" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                             Restaurant features
                           </button>
-                        </h5>
                       </div>
                       <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionRestaurantTwo">
                         <div class="card-body" id='restaurantFeaturesTwo'></div>
@@ -534,11 +543,10 @@
                 </div>
               </div>
 
-                
-
-              <div class='col-4'>
-                <div class="card w-80">
-                  <input type="image" name="restaurantSelection" id="restaurantImgThree" value="option3" src='images/restaurant-3.jpg' class='img-fluid p-4' checked>
+        
+              <div class='col-4  justify-content-center'>
+                <div class="card">
+                  <img id="restaurantImgThree" value="option3" src='images/restaurant-3.jpg' class='img-fluid'>
                   <h4 id='restaurantLabelThree' class='card-text '></h4>
                   <div class='row'>
                     <div class='col-12'>
@@ -554,14 +562,12 @@
                     </div>
                   </div>
 
-                  
-
                   <div class="accordion mb-4" id="accordionRestaurantThree">
 
                     <div class="card">
                       <div class="card-header">
                         <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" id= 'restaurantMenuThree'>
+                          <button class="btn btn-block bg-grey" type="button" data-toggle="collapse" id= 'restaurantMenuThree'>
                             View the menu
                           </button>
                         </h5>
@@ -574,7 +580,7 @@
                     <div class="card">
                       <div class="card-header">
                         <h5 class="mb-0">
-                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                          <button class="btn btn-link bg-grey" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
                             Restaurant features
                           </button>
                         </h5>
@@ -586,14 +592,17 @@
                   </div>
                 </div>
               </div>
-            </div>
+            
+
             <div class='row'>
               <div class='col-3'></div>
               <div class='col-6 text-center'>
                 <p>Restaurant information courtesy of <img src='images/zomato-logo.png' width='150px'><p>
               </div>
+              <div class='col-3'></div>
             </div>
           </div>
+          
             
                        
                               

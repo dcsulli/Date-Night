@@ -76,9 +76,9 @@ $("#continueToRecipes").click(function() {
       $('#minutesRecipeThree').html('<b>Cooking time: </b>' + randomRecipeThree.readyInMinutes + ' min.  |' + randomRecipeTwo.servings + ' servings')
 
 
-      $('#recipeImgOne').attr("src",randomRecipeOne.image)
-      $('#recipeImgTwo').attr("src",randomRecipeTwo.image)
-      $('#recipeImgThree').attr("src",randomRecipeThree.image)
+      $('#recipeImgOne').attr({src: randomRecipeOne.image, class:'img-fluid'})
+      $('#recipeImgTwo').attr({src: randomRecipeTwo.image, class:'img-fluid'})
+      $('#recipeImgThree').attr({src: randomRecipeThree.image, class:'img-fluid'})
 
       $('#recipeLabelOne').html(randomRecipeOne.title)
       $('#recipeLabelTwo').html(randomRecipeTwo.title)
