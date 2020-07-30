@@ -106,9 +106,9 @@ btnLogout.addEventListener('click', e => {
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if(firebaseUser) {
     console.log(firebaseUser);
-    btnLogout.classList.remove('hide');
+    btnLogout.classList.remove('d-none');
   } else {
     console.log('not logged in');
-    btnLogout.classList.add('hide');
+    btnLogout.classList.add('d-none');
   }
 });
