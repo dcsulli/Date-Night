@@ -3,6 +3,9 @@
         <head>
             <meta charset="UTF-8">
             <title>Date Night</title>
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <!-- Bootstrap -->
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -11,6 +14,7 @@
             <!-- Firebase UI -->
             <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
             <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
         </head>
         <body>
     <!-- Firebase -->
@@ -56,16 +60,50 @@
             </div>
         </nav>
 
-        <div class="container">
+        <!-- <div class="container">
             <input id="txtEmail" type="email" placeholder="Email">
             <input id="txtPassword" type="password" placeholder="Password">
             <button id="btnLogin" class="btn btn-action">Log in</button>
             <button id="btnSignUp" class="btn btn-secondary">Sign Up</button>
             <button id="btnLogout" class="btn btn-action hide d-none">Log Out</button>
-            <div id="firebaseui-auth-container"></div>
-        </div>
+            
+        </div> -->
   
 
+        <div class="container">
+            <div class="row">
+            <div class="card">
+            <article class="card-body">
+                <button id="btnSignUp"  class="float-right btn btn-outline-primary">Sign up</button>
+                <h4 class="card-title mb-4 mt-1">Sign in</h4>
+                <p>
+                    <div id="firebaseui-auth-container"></div>
+                </p>
+                <hr>
+                
+                <div class="form-group">
+                    <input id="txtEmail"  class="form-control" placeholder="Email" type="email">
+                </div> 
+                <div class="form-group">
+                    <input id="txtPassword" class="form-control" placeholder="******" type="password">
+                </div>                                    
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button id="btnLogin" class="btn btn-primary"> Login  </button>
+                            <button id="btnLogout" class="btn btn-primary"> Logout  </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <a class="small" href="#">Forgot password?</a>
+                    </div>                                            
+                </div>                                                                
+            
+            </article>
+            </div> 
+            
+                </aside> 
+                <aside class="col-sm-4">
 
 
 
