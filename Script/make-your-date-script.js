@@ -1,3 +1,31 @@
+function hideStuff (){
+  $("#outdoor-activity-header").fadeOut();
+  $("#indoor-activity-header").fadeOut();
+  setTimeout (function (){
+  $("#awesome-text").fadeIn();
+  $('#outdoor-activity-select-container').fadeOut().removeClass('container col-md-4').addClass('col-md-6');
+  $('#indoor-activity-select-container').fadeOut().removeClass('container col-md-4').addClass('col-md-6');
+  $('#restaurant-select-container').fadeOut().removeClass('container col-md-4').addClass('col-md-6');
+  $('#recipe-select-container').fadeOut().removeClass('container col-md-4').addClass('col-md-6');
+  $('#choose-your-recipe-header').removeClass('d-block').addClass('d-none');
+  $('#select-a-restaurant-header').removeClass('d-block').addClass('d-none');
+  $('#spoonacular-credit').removeClass('d-block').addClass('d-none');
+  $('#zomato-credit').removeClass('d-block').addClass('d-none');
+  $('#chosenRestaurantTextOne').removeClass('d-none');
+  $('#chosenRestaurantTextTwo').removeClass('d-none');
+  $('#chosenRestaurantTextThree').removeClass('d-none');
+  $('#chosenRecipeTextOne').removeClass('d-none');
+  $('#chosenRecipeTextTwo').removeClass('d-none');
+  $('#chosenRecipeTextThree').removeClass('d-none');
+  $('#chosenIndoorActivityTextOne').removeClass('d-none');
+  $('#chosenIndoorActivityTextTwo').removeClass('d-none');
+  $('#chosenIndoorActivityTextThree').removeClass('d-none');
+  $('#chosenOutdoorActivityTextOne').removeClass('d-none');
+  $('#chosenOutdoorActivityTextTwo').removeClass('d-none');
+  $('#chosenOutdoorActivityTextThree').removeClass('d-none');
+}, 1000);
+};
+
 $(document).ready(function() {
   var apiKey = '3c828106cc5841ed9e78d3fb6ff06687'
   var appID = '2db851a1'
@@ -41,11 +69,19 @@ $("#continueToFoodTypes").click(function() {
 $("#continueToRecipes").click(function() {
   event.preventDefault();
 
+if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
+  $("#make-a-selection").fadeIn()
+  setTimeout(function(){
+  $('#make-a-selection').fadeOut() },1500);
+  } else {
+ 
+
   var selectedFoodTypeCook = document.getElementById('inputCookingCuisine').value
-  var selectedFoodTypeCook = selectedFoodTypeCook.toLowerCase()
+  // var selectedFoodTypeCook = selectedFoodTypeCook.toLowerCase()
   console.log(selectedFoodTypeCook)
 
-  $('#loading-text-one').fadeIn() 
+  setTimeout(function(){
+  $('#loading-text-one').fadeIn() },500)
   
   $.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&cuisine=${selectedFoodTypeCook}&number=6&sort=random&addRecipeInformation=true&dishTypes=dinner&veryPopular=true&fillIngredients=true`).done
     (function (data) {
@@ -187,83 +223,103 @@ $("#continueToRecipes").click(function() {
 
   
 
-  $('#recipe-select-container').fadeOut() 
+  $('#cook-cuisine-select-container').fadeOut() 
   setTimeout(function(){
     $('#loading-text-one').fadeOut() },2300);
   setTimeout(function(){
+    $('#cook-cuisine-select-container').fadeIn() 
     $('#continueToRecipes').html('Search again')
     $("#recipe-select-container").fadeIn()
-    $("#recipe-one-container").attr('style', 'display: flex')
-    $("#recipe-two-container").attr('style', 'display: flex')
-    $("#recipe-three-container").attr('style', 'display: flex')
+    $("#recipe-one-container").addClass('d-flex')
+    $("#recipe-two-container").addClass('d-flex')
+    $("#recipe-three-container").addClass('d-flex')
   }, 2500);
+}
 
 })
 
   $("#chooseRecipeOne").click(function() {
-  event.preventDefault();
-  $('#recipe-select-container').fadeOut()
-  $('#cook-cuisine-select-container').fadeOut()
-  setTimeout(function(){
-    $("#great-text").fadeIn()
-  }, 500);  
-  setTimeout(function(){
-    $("#great-text").fadeOut()
-  }, 3000);
-  setTimeout(function(){
-    $("#indoor-outdoor-container").fadeIn()
-  }, 3500);
-  })
+    event.preventDefault();
+    $('#cook-cuisine-select-container').fadeOut()
+    $('#choose-your-recipe-header').fadeOut()
+    setTimeout(function(){
+      $('#recipe-select-container').fadeOut()
+    }, 500);
+    setTimeout(function(){
+      $("#great-text").fadeIn()
+    }, 1000);
+    
+    $('#recipe-two-container').removeClass('d-flex').addClass('d-none')
+    $('#recipe-three-container').removeClass('d-flex').addClass('d-none')
+    $('#recipe-one-container').removeClass('col-md-4')
+
+    setTimeout(function(){
+      $("#great-text").fadeOut()
+      $("#chooseRecipeOne").fadeOut()
+    }, 3000);
+    setTimeout(function(){
+      $("#indoor-outdoor-container").fadeIn()
+    }, 3500);
+    })
+
 
   $("#chooseRecipeTwo").click(function() {
     event.preventDefault();
-    $('#recipe-select-container').fadeOut()
     $('#cook-cuisine-select-container').fadeOut()
+    $('#choose-your-recipe-header').fadeOut()
+    setTimeout(function(){
+      $('#recipe-select-container').fadeOut()
+    }, 500);
     setTimeout(function(){
       $("#great-text").fadeIn()
-    }, 500);  
+    }, 1000);
+    
+    $('#recipe-one-container').removeClass('d-flex').addClass('d-none')
+    $('#recipe-three-container').removeClass('d-flex').addClass('d-none')
+    $('#recipe-two-container').removeClass('col-md-4')
+
     setTimeout(function(){
       $("#great-text").fadeOut()
+      $("#chooseRecipeTwo").fadeOut()
     }, 3000);
     setTimeout(function(){
       $("#indoor-outdoor-container").fadeIn()
     }, 3500);
     })
+
 
   $("#chooseRecipeThree").click(function() {
     event.preventDefault();
-    $('#recipe-select-container').fadeOut()
     $('#cook-cuisine-select-container').fadeOut()
+    $('#choose-your-recipe-header').fadeOut()
+    setTimeout(function(){
+      $('#recipe-select-container').fadeOut()
+    }, 500);
     setTimeout(function(){
       $("#great-text").fadeIn()
-    }, 500);  
+    }, 1000);
+
+    $('#recipe-two-container').removeClass('d-flex').addClass('d-none')
+    $('#recipe-one-container').removeClass('d-flex').addClass('d-none')
+    $('#recipe-three-container').removeClass('col-md-4')
+
     setTimeout(function(){
       $("#great-text").fadeOut()
+      $("#chooseRecipeThree").fadeOut()
     }, 3000);
     setTimeout(function(){
       $("#indoor-outdoor-container").fadeIn()
     }, 3500);
     })
-
-
-
-  
-
 
 
 $("#continueToRestaurants").click(function() {
   event.preventDefault();
-
-  
-  
-  $('#zip-code-container').fadeOut()
-  $('#select-restaurant-cuisine-container').fadeOut()
-  setTimeout(function(){
-    $('#loading-text-two').fadeIn() },500)
   
 
   var zipCode = document.getElementById('zipCodeForm').value;
-  console.log(zipCode)
+  var selectedCuisineRestaurant = document.getElementById('inputRestaurantCuisine').value
+ 
 
   $.get(`https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=${zipCode}&facet=state&facet=timezone&facet=dst`).done
     (function (data) {
@@ -271,7 +327,8 @@ $("#continueToRestaurants").click(function() {
 
       var longitude = data.records[0].fields.longitude;
 
-      var selectedCuisineRestaurant = document.getElementById('inputRestaurantCuisine').value
+      console.log(document.getElementById('inputRestaurantCuisine').value)
+
 
       var cuisinesIDs = {
                152:'African',
@@ -316,6 +373,20 @@ $("#continueToRestaurants").click(function() {
 
       var restaurantCuisineChoice = searchObj(cuisinesIDs, selectedCuisineRestaurant)
 
+      if (zipCode == undefined || zipCode.length<5) {
+        $("#enter-your-zip").fadeIn()
+        setTimeout(function(){
+        $('#enter-your-zip').fadeOut() },1500);
+      } else if (selectedCuisineRestaurant == 'Choose...') {
+          $("#make-a-selection").fadeIn()
+          setTimeout(function(){
+          $('#make-a-selection').fadeOut() },1500);
+          } else {
+            $('#zip-code-container').fadeOut()
+            $('#select-restaurant-cuisine-container').fadeOut()
+            setTimeout(function(){
+            $('#loading-text-two').fadeIn() },500)
+
       $.ajax({
         headers:{'user-key': "3e7f5057d60d60ddeb1fa6eac9f2703b"},
         url: `https://developers.zomato.com/api/v2.1/search?lat=${latitude}&lon=${longitude}&radius=1500&cuisines=${restaurantCuisineChoice}&sort=rating&order=asc`,
@@ -329,10 +400,6 @@ $("#continueToRestaurants").click(function() {
           $('#restaurantAddressOne').html(data.restaurants[0].restaurant.location.address);
           $('#restaurantAddressTwo').html(data.restaurants[1].restaurant.location.address);
           $('#restaurantAddressThree').html(data.restaurants[2].restaurant.location.address);
-
-          // $('#restaurantHoursOne').html('Hours: ' + data.restaurants[0].restaurant.timings);
-          // $('#restaurantHoursTwo').html('Hours: ' + data.restaurants[1].restaurant.timings);
-          // $('#restaurantHoursThree').html('Hours: ' + data.restaurants[2].restaurant.timings);
 
           $('#restaurantPhoneNumberOne').html(data.restaurants[0].restaurant.phone_numbers);
           $('#restaurantPhoneNumberTwo').html(data.restaurants[1].restaurant.phone_numbers);
@@ -395,53 +462,69 @@ $("#continueToRestaurants").click(function() {
           console.log(data.restaurants[0].restaurant.menu_url)
         }
      });
-    })
-
     
-      setTimeout(function(){
-    $('#loading-text-two').fadeOut() },2000);
-      setTimeout(function(){
-    $('#select-restaurant-cuisine-container').fadeIn()
-    $("#restaurant-select-container").fadeIn()
-    }, 2500);
+     $('#restaurant-select-container').fadeOut() 
 
-    $('#restaurant-select-container').fadeOut() 
-  setTimeout(function(){
-    $('#loading-text-two').fadeOut() },2000);
-  setTimeout(function(){
-    $('#whatKindRestaurantLabel').html('Try a different cuisine?')
-    $('#continueToRestaurants').html('Search again')
-    $("#restaurant-select-container").fadeIn()
-    $("#restaurant-one-container").attr('style', 'display: flex')
-    $("#restaurant-two-container").attr('style', 'display: flex')
-    $("#restaurant-three-container").attr('style', 'display: flex')
-  }, 2500);
+    setTimeout(function(){
+      $('#loading-text-two').fadeOut() },2000);
+    setTimeout(function(){
+      $('#select-restaurant-cuisine-container').fadeIn()
+      $("#restaurant-select-container").fadeIn()
+      }, 2500);
+
+    setTimeout(function(){
+      $('#loading-text-two').fadeOut() },2000);
+    setTimeout(function(){
+      $('#whatKindRestaurantLabel').html('Try a different cuisine?')
+      $('#continueToRestaurants').html('Search again')
+      $("#restaurant-select-container").fadeIn()
+      $("#restaurant-one-container").addClass('d-flex')
+      $("#restaurant-two-container").addClass('d-flex')
+      $("#restaurant-three-container").addClass('d-flex')
+    }, 2500);
   
     
     $("#chooseRestaurantOne").click(function() {
       event.preventDefault();
-      $('#restaurant-select-container').fadeOut()
       $('#select-restaurant-cuisine-container').fadeOut()
       setTimeout(function(){
+        $('#restaurant-select-container').fadeOut()
+      }, 500);
+      setTimeout(function(){
         $("#great-text").fadeIn()
-      }, 500);  
+      }, 1000);
+
+      $('#restaurant-two-container').removeClass('d-flex').addClass('d-none')
+      $('#restaurant-three-container').removeClass('d-flex').addClass('d-none')
+      $("#restaurant-one-container").removeClass('col-md-4')
+
       setTimeout(function(){
         $("#great-text").fadeOut()
+        $("#chooseRestaurantOne").fadeOut()
       }, 3000);
       setTimeout(function(){
         $("#indoor-outdoor-container").fadeIn()
       }, 3500);
       })
+
     
       $("#chooseRestaurantTwo").click(function() {
         event.preventDefault();
-        $('#restaurant-select-container').fadeOut()
         $('#select-restaurant-cuisine-container').fadeOut()
         setTimeout(function(){
+          $('#restaurant-select-container').fadeOut()
+        }, 500);
+        setTimeout(function(){
           $("#great-text").fadeIn()
-        }, 500);  
+        }, 1000);
+        
+        $('#restaurant-one-container').removeClass('d-flex').addClass('d-none')
+        $('#restaurant-three-container').removeClass('d-flex').addClass('d-none')
+        $("#restaurant-two-container").removeClass('col-md-4') 
+        
         setTimeout(function(){
           $("#great-text").fadeOut()
+          $("#chooseRestaurantTwo").fadeOut()
         }, 3000);
         setTimeout(function(){
           $("#indoor-outdoor-container").fadeIn()
@@ -453,22 +536,28 @@ $("#continueToRestaurants").click(function() {
         $('#restaurant-select-container').fadeOut()
         $('#select-restaurant-cuisine-container').fadeOut()
         setTimeout(function(){
+          $('#restaurant-select-container').fadeOut()
+        }, 500);
+        setTimeout(function(){
           $("#great-text").fadeIn()
-        }, 500);  
+        }, 1000);
+        
+        $('#restaurant-two-container').removeClass('d-flex').addClass('d-none')
+        $('#restaurant-one-container').removeClass('d-flex').addClass('d-none')
+        $("#restaurant-three-container").removeClass('col-md-4')
+
         setTimeout(function(){
           $("#great-text").fadeOut()
+          $("#chooseRestaurantThree").fadeOut()
         }, 3000);
         setTimeout(function(){
           $("#indoor-outdoor-container").fadeIn()
         }, 3500);
         })
+      }
+    })
   })
-
-  // function getRandomInt(min, max) {
-  //   min = Math.ceil(min);
-  //   max = Math.floor(max);
-  //   return Math.floor(Math.random() * (max - min)) + min;
-  // }
+  
 
   function shuffle(array) {
     var i = array.length,
@@ -486,7 +575,7 @@ $("#continueToRestaurants").click(function() {
     return array;
 }
 
-  
+  // Activity Selector
 
   $("#continueToActivities").click(function() {
     event.preventDefault();
@@ -555,13 +644,16 @@ $("#continueToRestaurants").click(function() {
       $('#indoorActivityImgThree').attr({src: shuffledIndoorActivities[2].image, class:'img-fluid'});
       $("#indoorActivityInfoThree").click(function() {window.open(shuffledIndoorActivities[2].url, target='_blank')})
 
-      $('#indoor-outdoor-container').fadeOut() 
+      $('#indoor-outdoor-container').fadeOut()
+      $("#indoor-activity-one-container").addClass('d-flex')
+      $("#indoor-activity-two-container").addClass('d-flex')
+      $("#indoor-activity-three-container").addClass('d-flex') 
       setTimeout(function(){
         $("#indoor-activity-select-container").fadeIn()
-      }, 500);
+      }, 1000);
       setTimeout(function(){
         $("#indoor-activity-header").fadeIn()
-      }, 500);
+      }, 1000);
         
       $("#showMoreIndoorActivities").click(function() {
 
@@ -570,7 +662,7 @@ $("#continueToRestaurants").click(function() {
         setTimeout(function(){
           var shuffledIndoorActivities = shuffle (indoorActivities)
           console.log([shuffledIndoorActivities[0],shuffledIndoorActivities[1],shuffledIndoorActivities[2]])
-        }, 500);
+        }, 1000);
 
         $("#indoorActivityLabelOne").html(shuffledIndoorActivities[0].activity);
         $("#indoorActivityTextOne").html(shuffledIndoorActivities[0].text);
@@ -593,32 +685,122 @@ $("#continueToRestaurants").click(function() {
         }, 1000);
       })
 
+      // Result Page Activity
+
+
       $("#chooseIndoorActivityOne").click(function() {
         event.preventDefault();
         console.log('option 1 selected')
-        $('#indoor-activity-select-container').fadeOut() 
-          setTimeout(function(){
-            $("#final-results-container").fadeIn()
-          }, 500);
-        })
-      
+        
+        setTimeout(function(){
+          hideStuff ();
+          $('#chooseIndoorActivityOne').addClass('d-none')
+          $('#indoor-activity-two-container').removeClass('d-flex').addClass('d-none')
+          $('#indoor-activity-three-container').removeClass('d-flex').addClass('d-none')
+          $('#indoor-activity-one-container').removeClass('col-md-4')
+          $('#results-row').append($('#indoor-activity-select-container'))   
+          }, 1000);
+        setTimeout(function(){
+          $("#awesome-text").fadeOut()
+        }, 4000);
+  
+        
+        setTimeout(function(){
+          $("#here-are-your-plans").fadeIn()
+
+          var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
+
+          console.log(cookOrRestaurant[0].checked);
+
+          if(cookOrRestaurant[0].checked) {
+            $('#results-row').append($('#recipe-select-container'))
+            $("#recipe-select-container").removeClass('d-none').fadeIn()
+            } else {
+            $('#results-row').append($('#restaurant-select-container')) 
+            $("#restaurant-select-container").removeClass('d-none').fadeIn()
+          }
+          $("#indoor-activity-select-container").removeClass('d-none').fadeIn()
+          $("#results-container").removeClass('d-none').attr({style: 'display:block'}).fadeIn()
+
+        }, 5000)
+         
+      })
+
       $("#chooseIndoorActivityTwo").click(function() {
         event.preventDefault();
         console.log('option 2 selected')
-        $('#indoor-activity-select-container').fadeOut() 
-          setTimeout(function(){
-            $("#final-results-container").fadeIn()
-          }, 500);
-        })
+        
+        setTimeout(function(){
+          hideStuff ();
+          $('#chooseIndoorActivityTwo').addClass('d-none')
+          $('#indoor-activity-one-container').removeClass('d-flex').addClass('d-none')
+          $('#indoor-activity-three-container').removeClass('d-flex').addClass('d-none')
+          $('#indoor-activity-two-container').removeClass('col-md-4')
+          $('#results-row').append($('#indoor-activity-select-container'))   
+          }, 1000);
+        setTimeout(function(){
+          $("#awesome-text").fadeOut()
+        }, 4000);
+  
+        
+        setTimeout(function(){
+          $("#here-are-your-plans").fadeIn()
+
+          var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
+
+          console.log(cookOrRestaurant[0].checked);
+
+          if(cookOrRestaurant[0].checked) {
+            $('#results-row').append($('#recipe-select-container'))
+            $("#recipe-select-container").removeClass('d-none').fadeIn()
+            } else {
+            $('#results-row').append($('#restaurant-select-container')) 
+            $("#restaurant-select-container").removeClass('d-none').fadeIn()
+          }
+          $("#indoor-activity-select-container").removeClass('d-none').fadeIn()
+          $("#results-container").removeClass('d-none').attr({style: 'display:block'}).fadeIn()
+
+        }, 5000)
+         
+      })
 
       $("#chooseIndoorActivityThree").click(function() {
         event.preventDefault();
         console.log('option 3 selected')
-        $('#indoor-activity-select-container').fadeOut() 
-          setTimeout(function(){
-            $("#final-results-container").fadeIn()
-          }, 500);
-        })
+        
+        setTimeout(function(){
+          hideStuff ();
+          $('#chooseIndoorActivityThree').addClass('d-none')
+          $('#indoor-activity-one-container').removeClass('d-flex').addClass('d-none')
+          $('#indoor-activity-two-container').removeClass('d-flex').addClass('d-none')
+          $('#indoor-activity-three-container').removeClass('col-md-4')
+          $('#results-row').append($('#indoor-activity-select-container'))   
+          }, 1000);
+        setTimeout(function(){
+          $("#awesome-text").fadeOut()
+        }, 4000);
+  
+        
+        setTimeout(function(){
+          $("#here-are-your-plans").fadeIn()
+
+          var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
+
+          console.log(cookOrRestaurant[0].checked);
+
+          if(cookOrRestaurant[0].checked) {
+            $('#results-row').append($('#recipe-select-container'))
+            $("#recipe-select-container").removeClass('d-none').fadeIn()
+            } else {
+            $('#results-row').append($('#restaurant-select-container')) 
+            $("#restaurant-select-container").removeClass('d-none').fadeIn()
+          }
+          $("#indoor-activity-select-container").removeClass('d-none').fadeIn()
+          $("#results-container").removeClass('d-none').attr({style: 'display:block'}).fadeIn()
+
+        }, 5000)
+         
+      })
     } else { 
 
       console.log([shuffledOutdoorActivities[0],shuffledOutdoorActivities[1],shuffledOutdoorActivities[2]])
@@ -639,13 +821,16 @@ $("#continueToRestaurants").click(function() {
       $("#outdoorActivityInfoThree").click(function() {window.open(shuffledOutdoorActivities[2].url, target='_blank')})
 
       console.log("selected outdoor activity")
-      $('#indoor-outdoor-container').fadeOut() 
+      $('#indoor-outdoor-container').fadeOut()
+      $("#outdoor-activity-one-container").addClass('d-flex')
+      $("#outdoor-activity-two-container").addClass('d-flex')
+      $("#outdoor-activity-three-container").addClass('d-flex')
       setTimeout(function(){
         $("#outdoor-activity-select-container").fadeIn()
-      }, 500);
+      }, 1000);
       setTimeout(function(){
         $("#outdoor-activity-header").fadeIn()
-      }, 500);
+      }, 1000);
         
       $("#showMoreOutdoorActivities").click(function() { 
 
@@ -654,7 +839,7 @@ $("#continueToRestaurants").click(function() {
         setTimeout(function(){
           var shuffledOutdoorActivities = shuffle (outdoorActivities)
           console.log([shuffledOutdoorActivities[0],shuffledOutdoorActivities[1],shuffledOutdoorActivities[2]])
-        }, 500);
+        }, 1000);
 
           $("#outdoorActivityLabelOne").html(shuffledOutdoorActivities[0].activity);
           $("#outdoorActivityTextOne").html(shuffledOutdoorActivities[0].text);
@@ -679,34 +864,126 @@ $("#continueToRestaurants").click(function() {
       $("#chooseOutdoorActivityOne").click(function() {
         event.preventDefault();
         console.log('option 1 selected')
-        $('#outdoor-activity-select-container').fadeOut() 
-          setTimeout(function(){
-            $("#final-results-container").fadeIn()
-          }, 500);
-        })
-      
+        
+        setTimeout(function(){
+          hideStuff ();
+          $('#chooseOutdoorActivityOne').addClass('d-none')
+          $('#outdoor-activity-two-container').removeClass('d-flex').addClass('d-none')
+          $('#outdoor-activity-three-container').removeClass('d-flex').addClass('d-none')
+          $('#outdoor-activity-one-container').removeClass('col-md-4')
+          $('#results-row').append($('#outdoor-activity-select-container'))   
+          }, 1000);
+        setTimeout(function(){
+          $("#awesome-text").fadeOut()
+        }, 4000);
+  
+        
+        setTimeout(function(){
+          $("#here-are-your-plans").fadeIn()
+
+          var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
+
+          console.log(cookOrRestaurant[0].checked);
+
+          if(cookOrRestaurant[0].checked) {
+            $('#results-row').append($('#recipe-select-container'))
+            $("#recipe-select-container").removeClass('d-none').fadeIn()
+            } else {
+            $('#results-row').append($('#restaurant-select-container')) 
+            $("#restaurant-select-container").removeClass('d-none').fadeIn()
+          }
+          $("#outdoor-activity-select-container").removeClass('d-none').fadeIn()
+          $("#results-container").removeClass('d-none').attr({style: 'display:block'}).fadeIn()
+
+        }, 5000)
+         
+      })
+
       $("#chooseOutdoorActivityTwo").click(function() {
         event.preventDefault();
         console.log('option 2 selected')
-        $('#outdoor-activity-select-container').fadeOut() 
-          setTimeout(function(){
-            $("#final-results-container").fadeIn()
-          }, 500);
-        })
+        
+        setTimeout(function(){
+          hideStuff ();
+          $('#chooseOutdoorActivityTwo').addClass('d-none')
+          $('#outdoor-activity-one-container').removeClass('d-flex').addClass('d-none')
+          $('#outdoor-activity-three-container').removeClass('d-flex').addClass('d-none')
+          $('#outdoor-activity-two-container').removeClass('col-md-4')
+          $('#results-row').append($('#outdoor-activity-select-container'))   
+          }, 1000);
+        setTimeout(function(){
+          $("#awesome-text").fadeOut()
+        }, 4000);
+  
+        
+        setTimeout(function(){
+          $("#here-are-your-plans").fadeIn()
+
+          var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
+
+          console.log(cookOrRestaurant[0].checked);
+
+          if(cookOrRestaurant[0].checked) {
+            $('#results-row').append($('#recipe-select-container'))
+            $("#recipe-select-container").removeClass('d-none').fadeIn()
+            } else {
+            $('#results-row').append($('#restaurant-select-container')) 
+            $("#restaurant-select-container").removeClass('d-none').fadeIn()
+          }
+          $("#outdoor-activity-select-container").removeClass('d-none').fadeIn()
+          $("#results-container").removeClass('d-none').attr({style: 'display:block'}).fadeIn()
+
+        }, 5000)
+         
+      })
 
       $("#chooseOutdoorActivityThree").click(function() {
         event.preventDefault();
         console.log('option 3 selected')
-        $('#outdoor-activity-select-container').fadeOut() 
-          setTimeout(function(){
-            $("#final-results-container").fadeIn()
-          }, 500);
-        })
+        
+        setTimeout(function(){
+          hideStuff ();
+          $('#chooseOutdoorActivityThree').addClass('d-none')
+          $('#outdoor-activity-one-container').removeClass('d-flex').addClass('d-none')
+          $('#outdoor-activity-two-container').removeClass('d-flex').addClass('d-none')
+          $('#outdoor-activity-three-container').removeClass('col-md-4')
+          $('#results-row').append($('#outdoor-activity-select-container'))   
+          }, 1000);
+        setTimeout(function(){
+          $("#awesome-text").fadeOut()
+        }, 4000);
+  
+        
+        setTimeout(function(){
+          $("#here-are-your-plans").fadeIn()
+
+          var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
+
+          console.log(cookOrRestaurant[0].checked);
+
+          if(cookOrRestaurant[0].checked) {
+            $('#results-row').prepend($('#recipe-select-container'))
+            $("#recipe-select-container").removeClass('d-none').fadeIn()
+            } else {
+            $('#results-row').append($('#restaurant-select-container')) 
+          }
+        }, 5000)
+
+        setTimeout(function(){
+          $("#restaurant-select-container").removeClass('d-none').fadeIn()
+          $("#outdoor-activity-select-container").removeClass('d-none').fadeIn()
+          $("#results-container").removeClass('d-none').attr({style: 'display:block'}).fadeIn()
+        }, 6000)
+         
+      })
+
+      
 
       }
-    
+    })
   })
-})
+
+
 
 
   
