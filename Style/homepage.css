@@ -21,7 +21,7 @@
 body {
     background-color:whitesmoke;
 }
-.btn {
+.btn-get-started {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -29,13 +29,23 @@ body {
     -ms-transform: translate(-50%, -50%);
     background-color:cadetblue;
     color: white;
-    font-size: 16px;
-    padding: 12px 24px;
+    padding: .5rem 1rem;
+    font-size: 2rem;
     border: none;
     cursor: pointer;
-
     text-align: center;
 }
+.header h3{
+    font-family: 'Coiny', cursive;
+    color: #EC7063;
+    background-color: whitesmoke;
+    font-size: 1.75rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
 
 footer {
     color:whitesmoke
