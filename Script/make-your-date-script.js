@@ -582,20 +582,35 @@ $("#continueToRestaurants").click(function() {
     console.log('button clicked')
 
     var indoorActivities = [
-      {activity: 'See a movie!',
-       image: 'images/activities/movies.jpg',
-       text: "The dinner and a movie combo is timeless for a reason. Whether you're seeing a romantic comedy or a superhero flick, you can't go wrong with a movie date.",
-       url: 'https://www.fandango.com/'
+      {activity: 'Movie night!',
+       image: 'images/activities/movie-night.jpg',
+       text: "Take Netflix and Chill to a new level and class up the affair. Pop the special popcorn, get really cozy, and put on your favorite flick. Scary movies can always be a fun choice!😱",
+       url: 'https://www.digitaltrends.com/movies/best-movies-on-netflix/'
       },
-      {activity: 'Hit the Barcade!',
-       image: 'images/activities/arcade.jpeg',
-       text: "Arcades have returned in the form of the Barcade! Have a few drinks and take the opportunity to show off your Hadoken.  Your date will love it.",
-       url: 'https://www.google.com/search?q=find+a+barcade&oq=find+a+barcade&sourceid=chrome&ie=UTF-8'
+      {activity: 'Play video games!',
+       image: 'images/activities/video-game.jpeg',
+       text: "There are tons of great co-op and multiplayer games for your couple's night in. You could have a virtual date in Animal Crossing. You could pwn n00bs together in Call of Duty. Get creative!",
+       url: 'https://mashable.com/article/the-11-best-video-games-to-play-with-your-significant-other/'
       },
-      {activity: 'Go on a hike!',
-       image: 'images/activities/hiking.jpg',
-       text: "Nothing promotes couple's bonding like the call of nature. Take a drive to your closest nature trail and spend some time in the great outdoors with that special someone.",
-       url: 'https://www.google.com/search?q=nature+trails+near+me&oq=nature+trails+near+me&aqs=chrome..69i57.4164j0j9&sourceid=chrome&ie=UTF-8'
+      {activity: 'Ask each other questions!',
+       image: 'images/activities/questions.jpg',
+       text: 'Get to know your partner better by asking them questions. There are tons of "questions for couples" lists out there, and they can be tons of fun!',
+       url: 'https://dating.lovetoknow.com/Fun_Relationship_Questions'
+      },
+      {activity: 'Learn a dance!',
+       image: 'images/activities/couple-dance.jpg',
+       text: "Take to Youtube and learn a dance together. You'll have lots of fun and be able to cut a rug at the next wedding you attend together. Go for a classic tango or finally learn to floss.",
+       url: 'https://www.youtube.com/results?search_query=couple+dance+tutorial'
+      },
+      {activity: 'Do a puzzle!',
+       image: 'images/activities/puzzle.jpg',
+       text: 'Test your relationsship by working on a puzzle togther. Put on some chill tunes in the background to set the mood for your puzzle adventures.',
+       url: 'https://www.amazon.com/Best-Sellers-Toys-Games-Puzzles/zgbs/toys-and-games/166359011'
+      },
+      {activity: 'Make cocktails!',
+       image: 'images/activities/cocktail.jpg',
+       text: "Show off your bartending skills and make some drinks together. Be sure to gather some ingredients before so you can really class up the joint. We're talking martinis. ",
+       url: 'https://www.acouplecooks.com/best-cocktail-recipes-to-make-at-home/'
       },
     ]
   
@@ -608,12 +623,27 @@ $("#continueToRestaurants").click(function() {
       {activity: 'Hit the Barcade!',
        image: 'images/activities/arcade.jpeg',
        text: "Arcades have returned in the form of the Barcade! Have a few drinks and take the opportunity to show off your Hadoken.  Your date will love it.",
-       url: 'https://www.google.com/search?q=find+a+barcade&oq=find+a+barcade&sourceid=chrome&ie=UTF-8'
+       url: 'https://www.google.com/search?q=find+a+barcade&oq=find+a+barcade'
       },
       {activity: 'Go on a hike!',
        image: 'images/activities/hiking.jpg',
        text: "Nothing promotes couple's bonding like the call of nature. Take a drive to your closest nature trail and spend some time in the great outdoors with that special someone.",
-       url: 'https://www.google.com/search?q=nature+trails+near+me&oq=nature+trails+near+me&aqs=chrome..69i57.4164j0j9&sourceid=chrome&ie=UTF-8'
+       url: 'https://www.google.com/search?q=nature+trails+near+me'
+      },
+      {activity: 'Go horseback riding!',
+       image: 'images/activities/horse-back.jpg',
+       text: "Take a cue from the Bachelor and saddle up for a romantic date upon a wonderous steed. Bonus point if you're riding on the beach at sunset. If you don't want to ride a horse, carraige rides are a great alternative.",
+       url: 'https://www.google.com/search?q=horse+riding+date&oq=horse+riding+date'
+      },
+      {activity: 'Hit the mall!',
+       image: 'images/activities/questions.jpg',
+       text: 'Find your closest non-abandoned mall and do it like they did in the 80s. Try on some funky clothes, get a soft pretzel, and delight in the unbridled consumerism. Bonus point if you can have a fitting room montage.',
+       url: 'https://www.google.com/search?q=malls+near+me&oq=malls+near+me'
+      },
+      {activity: 'Go to a museum!',
+       image: 'images/activities/museum.jpg',
+       text: "There's no better way to convince your partner that you're a true intellectual than visitng your local museum. Look up the exhibits before hand so you can have some fascinating tid-bits in your back pocket.",
+       url: 'https://www.google.com/search?q=museum+near+me&oq=museum+near+me'
       },
     ]
   
