@@ -114,15 +114,20 @@ firebase.auth().createUserWithEmailAndPassword(email, pass).then(user => console
 });
 });
 
+// sign in redirect
+bannerSignIn.addEventListener('click', e=> {
+ window.location = "https://youthful-austin-e8326e.netlify.app/sign-in.html"
+});
+
 // Log Out event
 btnLogout.addEventListener('click', e => {
   firebase.auth().signOut();
-  window.location = "https://youthful-austin-e8326e.netlify.app/homepage.html";
+  window.location = "https://youthful-austin-e8326e.netlify.app/index.html";
 });
 
 bannerLogout.addEventListener('click', e => {
   firebase.auth().signOut();
-  window.location = "https://youthful-austin-e8326e.netlify.app/homepage.html";
+  window.location = "https://youthful-austin-e8326e.netlify.app/index.html";
 });
 
 //realtime authentication listener
@@ -142,3 +147,4 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     btnLogin.classList.remove('d-none');
   }
 });
+console.log(firebaseuser);
