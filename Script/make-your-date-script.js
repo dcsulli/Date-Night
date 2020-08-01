@@ -26,12 +26,6 @@ function hideStuff (){
 }, 1000);
 };
 
-$( function() {
-  $( "#datepicker" ).datepicker({
-      showAnim: 'slideDown',
-      numberOfMonths:3
-  });
-} );
 
 $(document).ready(function() {
   var apiKey = '3c828106cc5841ed9e78d3fb6ff06687'
