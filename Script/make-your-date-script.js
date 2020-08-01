@@ -26,6 +26,13 @@ function hideStuff (){
 }, 1000);
 };
 
+$( function() {
+  $( "#datepicker" ).datepicker({
+      showAnim: 'slideDown',
+      numberOfMonths:3
+  });
+} );
+
 $(document).ready(function() {
   var apiKey = '3c828106cc5841ed9e78d3fb6ff06687'
   var appID = '2db851a1'
@@ -992,10 +999,11 @@ $("#continueToRestaurants").click(function() {
           console.log(cookOrRestaurant[0].checked);
 
           if(cookOrRestaurant[0].checked) {
-            $('#results-row').prepend($('#recipe-select-container'))
+            $('#results-row').append($('#recipe-select-container'))
             $("#recipe-select-container").removeClass('d-none').fadeIn()
             } else {
             $('#results-row').append($('#restaurant-select-container')) 
+            $("#restaurant-select-container").removeClass('d-none').fadeIn()
           }
         }, 5000)
 

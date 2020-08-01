@@ -74,11 +74,6 @@ body{
    color:  #EC7063
   }
 
-  
-  .p-footer {
-    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  }
-
   .body-footer {
     font-size: 1em;
     font-weight: 400;
@@ -90,7 +85,6 @@ body{
   color: whitesmoke;
   display: block;
   background-color: #fafafa;
-  padding: 3rem 1.5rem 6rem;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -105,6 +99,16 @@ body{
   font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   box-sizing: inherit;
   }
+
+  .header{
+    font-family: 'Coiny', cursive;
+    color: #EC7063;
+    background-color: whitesmoke;
+    font-size: 1.75rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
 
 
   
