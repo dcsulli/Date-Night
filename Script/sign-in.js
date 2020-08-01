@@ -84,7 +84,8 @@ const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
 const btnLogout = document.getElementById('btnLogout');
 const bannerSignIn = document.getElementById('bannerSignIn');
-const bannerLogout = document.getElementById('bannerLogout')
+const bannerLogout = document.getElementById('bannerLogout');
+const loginContinue = document.getElementById('loginContinue');
 
 //login event for sign-in.html
 btnLogin.addEventListener('click', e => {
@@ -138,13 +139,14 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     bannerLogout.classList.remove('d-none');
     bannerSignIn.classList.add('d-none');
     btnLogin.classList.add('d-none');
-
+    loginContinue.classList.remove('d-none');
   } else {
     console.log('not logged in');
     btnLogout.classList.add('d-none');
     bannerLogout.classList.add('d-none');
     bannerSignIn.classList.remove('d-none');
     btnLogin.classList.remove('d-none');
+    loginContinue.classList.add('d-none');
   }
 });
 console.log(firebaseuser);
