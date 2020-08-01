@@ -588,7 +588,7 @@ $("#continueToRestaurants").click(function() {
        url: 'https://www.digitaltrends.com/movies/best-movies-on-netflix/'
       },
       {activity: 'Play video games!',
-       image: 'images/activities/video-game.jpeg',
+       image: 'images/activities/video-game.jpg',
        text: "There are tons of great co-op and multiplayer games for your couple's night in. You could have a virtual date in Animal Crossing. You could pwn n00bs together in Call of Duty. Get creative!",
        url: 'https://mashable.com/article/the-11-best-video-games-to-play-with-your-significant-other/'
       },
