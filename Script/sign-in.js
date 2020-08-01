@@ -18,11 +18,12 @@ firebase.analytics();
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // Authentication via Email and Google
 ui.start('#firebaseui-auth-container', {
+  signInSuccessUrl: 'https://youthful-austin-e8326e.netlify.app/make-your-date.html',
   signInOptions: [
-    {
-      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        requireDisplayName: false
-      },
+    // {
+    //   provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    //     requireDisplayName: false
+    //   },
     {
       provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       scopes: ['https://www.googleapis.com/auth/contacts.readonly'],
@@ -47,7 +48,7 @@ callbacks: {
     // User successfully signed in.
     // Return type determines whether we continue the redirect automatically
     // or whether we leave that to developer to handle.
-    return true;
+    return false;
   },
   uiShown: function() {
     // The widget is rendered.
@@ -57,24 +58,33 @@ callbacks: {
 },
 // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
 signInFlow: 'redirect',
-  // we will determine sign in success url in the future
-signInSuccessUrl: '/make-your-date.html',
+signInSuccessUrl: '/https://youthful-austin-e8326e.netlify.app/make-your-date.html',
 signInOptions: [
   // Leave the lines as is for the providers you want to offer your users.
   firebase.auth.GoogleAuthProvider.PROVIDER_ID,
   firebase.auth.EmailAuthProvider.PROVIDER_ID
 ],
-// Terms of service url.
-tosUrl: '<your-tos-url>',
-// Privacy policy url.
-privacyPolicyUrl: '<your-privacy-policy-url>'
 };
+
+
+
+
+
+
+
+
+
+
+
+// This part of the code is for the login form
 // get sign-in.html elements
 const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
 const btnLogout = document.getElementById('btnLogout');
+const bannerSignIn = document.getElementById('bannerSignIn');
+const bannerLogout = document.getElementById('bannerLogout')
 
 //login event for sign-in.html
 btnLogin.addEventListener('click', e => {
@@ -82,9 +92,17 @@ btnLogin.addEventListener('click', e => {
   const email = txtEmail.value;
   const pass = txtPassword.value;
   
-firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error){
+firebase.auth().signInWithEmailAndPassword(email, pass)
+
+.then(function(){
+  console.log("redirect")
+  window.location.href = "https://youthful-austin-e8326e.netlify.app/make-your-date.html";
+
+})
+.catch(function(error){
   console.log(error);
 });
+
 });
 // signup event
 btnSignUp.addEventListener('click', e=> {
@@ -99,16 +117,28 @@ firebase.auth().createUserWithEmailAndPassword(email, pass).then(user => console
 // Log Out event
 btnLogout.addEventListener('click', e => {
   firebase.auth().signOut();
+  window.location = "https://youthful-austin-e8326e.netlify.app/homepage.html";
 });
 
+bannerLogout.addEventListener('click', e => {
+  firebase.auth().signOut();
+  window.location = "https://youthful-austin-e8326e.netlify.app/homepage.html";
+});
 
 //realtime authentication listener
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if(firebaseUser) {
     console.log(firebaseUser);
-    btnLogout.classList.remove('hide');
+    btnLogout.classList.remove('d-none');
+    bannerLogout.classList.remove('d-none');
+    bannerSignIn.classList.add('d-none');
+    btnLogin.classList.add('d-none');
+
   } else {
     console.log('not logged in');
-    btnLogout.classList.add('hide');
+    btnLogout.classList.add('d-none');
+    bannerLogout.classList.add('d-none');
+    bannerSignIn.classList.remove('d-none');
+    btnLogin.classList.remove('d-none');
   }
 });
