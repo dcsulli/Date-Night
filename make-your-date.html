@@ -6,9 +6,11 @@
       <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
 
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-      
+
+      <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
       <script src="Script/make-your-date-script.js"></script>
 
@@ -84,6 +86,79 @@
       .maker-jumbo {
         min-height: 330px;
       }
+
+
+      footer {
+        color:whitesmoke
+      }
+      footer .footer-h3 {
+        font-size: 30px;
+      }
+      footer .footer-h3 .footer-span {
+       color:  #EC7063
+      }
+
+      
+      .p-footer {
+        font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+
+      .body-footer {
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+
+    .footer {
+      padding: 3rem 1.5rem 6rem;
+      color: whitesmoke;
+      display: block;
+      background-color: #fafafa;
+      padding: 3rem 1.5rem 6rem;
+      font-size: 16px;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      min-width: 300px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      text-rendering: optimizeLegibility;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      box-sizing: inherit;
+      }
+
+    article, aside, figure, footer, header, hgroup, section {
+    display: block;
+    }
+/* *, ::after, ::before {
+    box-sizing: inherit;
+}
+body {
+    color: #4a4a4a;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+}
+body, button, input, select, textarea {
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+html {
+    background-color: #fff;
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    min-width: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+} */
 
       
 
@@ -907,13 +982,74 @@
     </div>
 
     <div class='container d-none' id='results-container'>
-      <h1>Here is your date!</h1>
+      <h1 class='text-center pb-4'>Here is your date!</h1>
       <div class='row' id='results-row'></div>
       <div class='row' id='calendar-container'></div>
     </div>
 
   </div>
 </div>
+
+<!-----------------footer----------->
+<footer class="footer bg-dark body-footer">
+  <div class="container bg-dark">
+    <div class="row">
+
+        <!----left column-->
+
+        <div class="col-4">
+          <h3 class='footer-h3'>Date<span class='footer-span'>Night</span></h3>
+
+          <p class="footer-links">
+              <a href="#" class="link-1">Home</a>
+              
+              <a href="#">Plan a date</a>
+          
+              <a href="#">Find an event</a>
+          
+              <a href="#">Find some food</a>
+              
+              <a href="#">Make some food</a>
+              
+              <a href="#">Contact</a>
+              <p class="footer-company-name">Date Night © 2020</p>
+          </p>
+
+        </div> 
+
+        <!----left column-->
+
+        <div class="col-4">
+          
+          <div>
+              <i class="fa fa-map-marker"></i>
+              <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+          </div>
+
+          <div>
+              <i class="fa fa-phone"></i>
+              <p>+1.555.555.5555</p>
+          </div>
+
+          <div>
+              <i class="fa fa-envelope"></i>
+              <p><a href="#">email@example.com</a></p>
+          </div>
+        </div>
+
+        <!----left column-->
+
+        <div class="col-4">
+          <p class="footer-company-about">
+              <span><b>About the Company:</b></span>
+              <br>
+              Founded to help struggling couples plan their date by taking away the decision making and letting our customer just worry about making memories.
+          </p>
+        </div>
+     
+    </div>
+  </div>
+</footer> 
 
         
           
