@@ -13,6 +13,9 @@
     <!--bulma link-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 
+    <!--font awesome link-->   
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
     <!--bootsrap link-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -33,7 +36,7 @@
                     <a href="homepage.html">
                     <img  class="mx-auto d-block  span img-fluid" src="images/logo.png" id="top-logo">
                     </a>
-                    <a href="sign-up.html" class="btn btn-primary go-back-btn">Sign Up</a>
+                    <a href="sign-in.html" class="btn btn-primary go-back-btn">Sign Up</a>
                 </div>
                 <div id="carouselExampleInterval bg-dark" class="carousel slide carousel-fase" data-ride="carousel">
                     <div class="carousel-inner">
@@ -73,41 +76,40 @@
             <div class="card bg-light text-black container is-fluid ">         
                 <div class="notification ">
                     <div class="content has-text-centered">
-                        <p style="font-family:Courier; font-size: 40px;"><strong><bold>GET STARTED IN 4 EASY STEPS</bold></strong></p>
+                        <p style="font-family:Courier; font-size: 40px;" class='p-4'><strong><bold>GET STARTED IN 4 EASY STEPS</bold></strong></p>
                     </div>
                     <div class="columns has-text-centered">      
                         <div class="column">
                             <h1>#1</h1>
                             <hr>
-                            <h2>Sign up</h2>
-                            <p>Create a new account with us to et started!</p>
+                            <h2 class='text-danger'>Sign up</h2>
+                            <h4>Create a new account with us to get started!</h4>
                                         
                         </div>
                                 
                         <div class="column">
                             <h1>#2</h1>
                             <hr>
-                            <h2>Selecting</h2>
                             <ul>
-                                <li>Pick a Date</li>
-                                <li>Generate a Restuarant</li>
-                                <li>Generate an Event</li>
-                                <li>..or Choose a Recipe to Make</li>
+                                <li><h3 class='text-danger'>Plan a date</h3></li>
+                                <li><h4>... or an at-home activity</h4></li>
+                                <li><h3 class='text-danger'>Choose a restuarant</h3></li>
+                                <li><h4>...or select a Recipe</h4></li>
                             </ul>
                         </div>
                                 
                         <div class="column">
                             <h1>#3</h1>
                             <hr>
-                            <h4>Review</h4>
-                            <p>Time to Review the Date that was Generated</p>
+                            <h2 class='text-danger'>Review</h2>
+                            <h4>Make sure you are happy with your choices</h4>
                         </div>
                                 
                         <div class="column">
                             <h1>#4</h1>
                             <hr>
-                            <h4>Enjoy!</h4>
-                            <p>Time to create Memories!</p>
+                            <h2 class='text-danger'>Enjoy!</h2>
+                            <h4>Time to make some memories!</h4>
                         </div>   
                     </div>
                 </div> 
@@ -157,25 +159,25 @@
                         <div class="card" style="width: 18rem;">
                             <img src="images/outdoor-concert-couple.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h2 class="card-text text-center">See a concert!</h2>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img src="images/couple-hiking.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h2 class="card-text text-center">Go hiking!</h2>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img src="images/top-golf.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h2 class="card-text text-center">Hit the golf course!</h2>
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
                             <img src="images/movie-date-night.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h2 class="card-text text-center">Catch a flick!</h2>
                             </div>
                         </div>
                         
@@ -230,13 +232,14 @@
                                         <div class="getStarted">
                                             <div class="card text-center">
                                                 <div class="card-header">
-                                                <h2>Need Tips for your Date</h2>
+                                                <h2>Need Tips for your Date?</h2>
                                                 </div>
                                                 <div class="card-body">
-                                                <h5 class="card-title">Watch the Video on the right for helpful tips</h5>
-                                                <p class="card-text"></p>
+                                                <h5 class="card-title">Check out this video for helpful tips! <i class="fa fa-arrow-right"></i></h5>
                                                 
-                                                <a href="sign-up.html" class="btn btn-primary">Get Started</a>
+                                                <br>
+                                                <h4 class="card-title text-danger">And when you're ready to make your date...</h4>
+                                                <a href="sign-in.html" class="btn btn-danger"><h3>Get Started</h3></a>
                                                 </div>   
                                             </div>
                                         </div>
