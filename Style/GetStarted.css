@@ -1,0 +1,51 @@
+body {
+    background-color: black;
+}
+#EAT-box {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.jumbotron {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.header h3{
+    font-family: 'Coiny', cursive;
+    color: #EC7063;
+    background-color: whitesmoke;
+}
+ .notification {
+    background-color: whitesmoke;
+}
+.getStarted-container {
+
+    background-color: black;
+}
+.getStarted-container h3{
+
+    color: yellow;
+    
+}
+.go-back-btn {
+    background-color:cadetblue;
+}
+.go-back-btn:hover {
+    background-color:lightskyblue;
+}
+.LetsEat {
+    background-color: #EC7063;
+
+/*footer styling */
+
+}
+footer {
+    color:whitesmoke
+}
+footer h3 {
+    font-size: 30px;
+}
+footer h3 span {
+     color:  #EC7063
+}
