@@ -4,23 +4,33 @@
     padding: 3px  
 }
 
-.border-md-right {
+/* .border-md-right {
     border-right: 1px solid rgb(224, 223, 223);
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .border-md-right {
         border-right: none;
     }
-}
+} */
 
 
 .btn:hover {
      background-color:lightskyblue;
  }
+
+
+
 body {
     background-color:whitesmoke;
 }
+html, body {
+    
+}
+
+  
+
+
 .btn-get-started {
     position: absolute;
     top: 50%;
@@ -34,13 +44,21 @@ body {
     border: none;
     cursor: pointer;
     text-align: center;
+    max-width: 250px;
+    min-width: 100px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 1300px) {
     .btn-get-started  {
-        font-size: 4.5vw;
+        font-size: 2vw;
     }
   }
+  @media screen and (max-width: 1300px) {
+    .btn-get-started  {
+        font-size: 30px;
+    }
+  }
+  
 .header h3{
     font-family: 'Coiny', cursive;
     color: #EC7063;
@@ -54,45 +72,104 @@ body {
 
 
 footer {
-    color:whitesmoke
+    color:whitesmoke;
+    height: 18vh;
+    width: 100%;
+    min-height: 200px;
+    position: sticky;
+    bottom: 0;
+    
 }
-footer h3 {
+h3 {
     font-size: 30px;
+
 }
 footer h3 span {
     color:  #EC7063
 }
 
-.footer-mobile {
-    max-height: 2vh;
+.footer-mobile span {
+    color:  #EC7063
 }
 
-@media screen and (min-width: 600px) {
+.footer-mobile {
+    color:whitesmoke;
+    height: 15vh;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    font-size: 18px;
+    min-height: 100px;
+}
+
+
+
+.desktop-image{
+    overflow: hidden;
+    width: 100%;
+    height:100%;
+    object-fit: cover; 
+    
+}
+
+.mobile-image{
+    overflow: hidden;
+    width: 100%;
+    height:100%;
+    object-fit: cover; 
+    max-width: 1500px; 
+}
+
+
+
+.pic-container{
+    overflow: hidden;
+    width: 100%;
+    height: 69vh;
+    max-width: 2000px;
+}
+
+.pic-container-mobile{
+    overflow: hidden;
+    width: 100%;
+    height: 79vh;
+    max-width: 2000px;
+}
+
+
+ @media screen and (min-width: 981px) {
     .footer-mobile{
       display: none;
     }
   }
   
 
-
   
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 981px) {
     .footer-desktop{
       display: none;
     }
   }
 
-  @media screen and (min-width: 600px) {
-    .mobile-image{
+  @media screen and (min-width: 981px) {
+    .mobile-image, .pic-container-mobile{
+      display: none;
+    }
+  } 
+  
+  
+  @media screen and (max-width: 981px) {
+    .desktop-image, .pic-container{
       display: none;
     }
   }
-  
+
+  .header {
+    height:13vh;
+    width: 100%;
+    min-height: 160px; 
+  }
 
   
-  @media screen and (max-width: 600px) {
-    .desktop-image{
-      display: none;
-    }
-  }
+  
        
