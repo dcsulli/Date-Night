@@ -30,11 +30,17 @@ body {
     background-color:cadetblue;
     color: white;
     padding: .5rem 1rem;
-    font-size: 2rem;
+    font-size: 3vw;
     border: none;
     cursor: pointer;
     text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+    .btn-get-started  {
+        font-size: 4.5vw;
+    }
+  }
 .header h3{
     font-family: 'Coiny', cursive;
     color: #EC7063;
@@ -57,5 +63,36 @@ footer h3 span {
     color:  #EC7063
 }
 
+.footer-mobile {
+    max-height: 2vh;
+}
 
+@media screen and (min-width: 600px) {
+    .footer-mobile{
+      display: none;
+    }
+  }
+  
+
+
+  
+  @media screen and (max-width: 600px) {
+    .footer-desktop{
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .mobile-image{
+      display: none;
+    }
+  }
+  
+
+  
+  @media screen and (max-width: 600px) {
+    .desktop-image{
+      display: none;
+    }
+  }
        
