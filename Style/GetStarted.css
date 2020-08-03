@@ -1,10 +1,15 @@
+
+
+
 body {
     background-color: whitesmoke;
+    width: 100%;
     
 }
 #EAT-box {
     display: flex;
-    justify-content: space-evenly;
+    
+    /* justify-content: space-evenly; */
 
 }
 .jumbotron {
@@ -23,6 +28,8 @@ body {
 .getStarted-container {
 
     background-color:  whitesmoke;
+    margin-left: auto;
+    margin-right: auto;
 }
 .getStarted-container h3{
 
@@ -36,22 +43,54 @@ body {
     background-color:lightskyblue;
 }
 .LetsEat {
-    background-color: #EC7063;
+    background-color: rgb(236, 112, 99);
+}
 
 /*footer styling */
 
-}
 footer {
-    color:whitesmoke
+    color:whitesmoke;
+    width: 100%;
+    min-height: 200px;
+    
 }
-footer h3 {
+h3 {
     font-size: 30px;
+
 }
 footer h3 span {
-     color:  #EC7063
+    color:  #EC7063
 }
 
-@media screen and (min-width: 1024px)
-.container {
-    max-width: 3000px;
+.footer-mobile span {
+    color:  #EC7063
+}
+
+.footer-mobile {
+    color:whitesmoke;
+    height: 15vh;
+    width: 100%;
+   
+    font-size: 18px;
+    min-height: 100px;
+}
+@media screen and (min-width: 981px) {
+    .footer-mobile{
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 981px) {
+    .footer-desktop{
+      display: none;
+    }
+  }
+
+@media screen and (min-width: 850px)
+body {
+    
+}
+
+.border-pink {
+    border:5px solid rgb(236, 112, 99);
 }
