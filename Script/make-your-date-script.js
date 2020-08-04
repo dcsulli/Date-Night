@@ -645,6 +645,11 @@ $("#continueToRestaurants").click(function() {
        text: "You don't need to go to the spa to get a couples massage! Just get some lotion, maybe some essential oils, and find a cozy place to trade massages. Bonus points for new-age music and candles.",
        url: 'https://www.goodnet.org/articles/5-relaxing-massage-techniques-anyone-do-at-home#:~:text=Place%20the%20thumbs%20just%20above,the%20person%20receiving%20the%20massage.'
       },
+      {activity: 'Camp in the living room!',
+       image: 'images/activities/camping.jpg',
+       text: "Ah the great indoors. Remember building forts out of blankets in your youth? Well now you're an adult and can do it way better. Roast some marshmellows on the stove and tell some romantic ghost stories.",
+       url: 'https://www.fatherly.com/play/an-architects-tips-for-turning-the-living-room-into-an-epic-pillow-fort/'
+      },
     ]
   
     var outdoorActivities = [
