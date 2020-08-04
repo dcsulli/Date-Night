@@ -1,23 +1,19 @@
 body{
     min-width: 400px;
-    background-color: #fff
+    background-color: rgb(233, 236, 239);
+    
   }
+
+  html, body {
+    height: 70vh;
+  }
+
   .nav-link {
       font-size: large;
       font-family: 'Josefin Sans', sans-serif;
       padding: 3px  
   }
 
-  .border-md-right {
-      border-right: 1px solid rgb(224, 223, 223);
-  }
-
-  @media (max-width: 990px) {
-      .border-md-right {
-          border-right: none;
-      }
-      
-  }
 
   .card-border {
     border: 0px solid black;
@@ -50,57 +46,45 @@ body{
     background-color: rgb(134, 134, 134)
   }
 
-  .h-auto {
-    height: auto;
+  .bg-pink {
+    background-color:  #EC7063;
   }
 
-  .auto-vert {
-    margin-top: auto;
-    margin-bottom: auto;
+  .bg-pink:hover {
+    background-color: rgb(185, 49, 49);
   }
 
-  .maker-jumbo {
-    min-height: 330px;
-  }
-
+  
 
   footer {
-    color:whitesmoke
-  }
-  footer .footer-h3 {
-    font-size: 30px;
-  }
-  footer .footer-h3 .footer-span {
-   color:  #EC7063
-  }
+    color:whitesmoke;
+    height: 230px;
+    width: 100%;
+    min-height: 200px;
+    position: fixed;
+    bottom: 0;
+    
+}
 
-  .body-footer {
-    font-size: 1em;
-    font-weight: 400;
-    line-height: 1.5;
+  footer h3 span {
+    color:  #EC7063
   }
-
-.footer {
-  padding: 3rem 1.5rem 6rem;
-  color: whitesmoke;
-  display: block;
-  background-color: #fafafa;
-  font-size: 16px;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  min-width: 300px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  box-sizing: inherit;
+  
+  .footer-mobile span {
+    color:  #EC7063
   }
-
-  .header{
+  
+  .footer-mobile {
+    color:whitesmoke;
+    height: 200px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    font-size: 18px;
+    min-height: 100px;
+  }
+  
+  .header h3{
     font-family: 'Coiny', cursive;
     color: #EC7063;
     background-color: whitesmoke;
@@ -108,7 +92,109 @@ body{
     margin-bottom: .5rem;
     font-weight: 500;
     line-height: 1.2;
-}
+  }
+  
+  .header {
+    height:180px;
+    width: 100%;
+    top: 0;
+  }
+
+  @media screen and (min-width: 981px) {
+    .footer-mobile{
+      display: none;
+    }
+  }
+  
+  
+  @media screen and (max-width: 981px) {
+    .footer-desktop{
+      display: none;
+    }
+  }
+
+  .container{
+    width: 1025px;
+  }
+
+  .vertical-center {
+    height: 100%;
+    width: 100%;
+
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* remove the gap between inline(-block) elements */
+  }
+
+  .vertical-center:before {    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+  }
+
+  .vertical-center > .container {
+    max-width: 100%;
+   
+
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;        /* <-- reset the font property */
+  }
+
+  @media (max-width: 768px) {
+    .vertical-center:before {
+      /* height: auto; */
+      display: none;
+    }
+  }
+
+  /* #intro-jumbo {
+    height: 100vh
+  } */
+
+  #maker-jumbo {
+    
+  }
+
+  #recipe-select-container, #restaurant-select-container{
+    margin-bottom: 30vh;
+  }
+
+
+  .btn-lg, .btn-xl, .choose-button {
+    background-color:  #EC7063;
+  }
+
+  .btn-lg:hover {
+    background-color: rgb(185, 49, 49);
+  }
+
+  .btn-xl:hover {
+    background-color: rgb(185, 49, 49);
+  }
+
+  .choose-button:hover {
+    background-color: rgb(185, 49, 49);
+  }
+
+  .btn-xl {
+    font-size: 40px;
+    border: 2px solid black
+  }
+
+ 
+
+  @media screen and (max-width: 770px) {
+    #intro-text, #maker-jumbo{
+      margin-top: 10vh;
+    }
+  }  
+
+   @media screen and (min-height: 770px) {
+    #recipe-select-container, #restaurant-select-container, #outdoor-activity-select-container, #indoor-activity-select-container{
+      margin-bottom: 30vh;
+    }
+  }
 
 
   

@@ -61,919 +61,905 @@
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
     <!-- NAVIGATION -->
-      <section  class="fixed-top">
-          <div class="header">
-              <div class="container-fluid pb-2  bg-dark">
-                  <a href="index.html">
-                  <img class="mx-auto d-block  span img-fluid" src="images/logo.png" id="top-logo">
-                  </a>
-                  <button id="bannerSignIn" class="btn btn-secondary" type="button">
-                    Sign In
-                  </button>
-                  <button id="bannerLogout" type="button" class="btn btn-secondary">Logout</button>
-              </div>
-              <div id="carouselExampleInterval bg-dark" class="carousel slide carousel-fase" data-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active text-center" data-interval="30000">
-                      <h3>Plan a Date</h3>
-                    </div>
-                    <div class="carousel-item text-center" data-interval="30000">
-                      <h3>Plan an Activity</h3>
-                    </div>
-                    <div class="carousel-item text-center" data-interval="30000">
-                      <h3>Plan What to Eat</h3>
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
-          </div>
-      </section>       
       
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+    <div class='header bg-dark'>
+      <div class="flex-row pb-2 d-flex justify-content-between align-items-center">
+        <div class='d-flex ml-4'><a href="sign-in.html" class="btn btn-secondary sign-up-btn">Sign Up</a></div>
+        <div class='d-flex'><a href="index.html"><img src="images/logo.png" id="top-logo"></a>  </div>
+        <div class='d-flex mr-4' style='width:75px'></div>
+      </div>
+      <div class="carousel slide carousel-fase" data-ride="carousel">
+        <div class="carousel-inner text-center">
+          <div class="carousel-item active" data-interval="7000">
+            <h3>Plan a Date</h3>
+          </div>
+          <div class="carousel-item" data-interval="7000">
+            <h3>Plan an Activity</h3>
+          </div>
+          <div class="carousel-item" data-interval="7000">
+            <h3>Plan What to Eat</h3>
+          </div> 
+        </div>                  
+      </div>
+    </div>       
+      
 
     <!-- CONTENT -->
-    <div class="jumbotron jumbotron-fluid" style="background-image: url('images/hearts.jpeg')">
-      <div class="container">
-        <h1 class="display-4 text-center text-white"><strong>DATE-MAKER <br>🤖3000🤖</strong></h1>
-        <p class="lead text-center text-white">Because decision are hard when it comes to matters of the heart.</p>
-      </div>
-    </div>
-
-    <div class="jumbotron jumbotron-fluid maker-jumbo">
-   
-    <h1 class='d-none text-center' id='here-are-your-plans'>Here are your date plans!</h1>
-
-    <div class="container-fluid" id="make-my-date-container">
-      <div class="row mt-3">
-        <div class="col-2"></div>
-        <div class="col-8">
-          <h2 class="text-center">Having trouble deciding on date night plans?</h2>
-          <h3 class="text-center">Let's make it simple.</h3>
-          <br>
+    <!-- <div class='main-content-container container-fluid'> -->
+      <div class="jumbotron w-100 jumbotron-fluid vertical-center" id='intro-jumbo' style="background-image: url('images/hearts.jpeg');background-size: cover;">
+        <div class="container" id='intro-text'>
+          <h1 class="display-4 text-center text-white"><strong>DATE-MAKER <br>🤖3000🤖</strong></h1>
+          <p class="lead text-center text-white"><b>Because decisions are hard when it comes to matters of the heart.</b></p>
+          <div class="text-center">
+            <button id="makeMyDateButton" type="submit" class="mx-auto btn-xl btn btn-primary">Make My Date!</button>
+          </div>
         </div>
       </div>
-      <div class="text-center">
-        <button  id="makeMyDateButton" type="submit" class="mx-auto btn-lg btn btn-primary">Make My Date!</button>
-      </div>
-    </div>
+
+      <div class="jumbotron jumbotron-fluid maker-jumbo vertical-center" style="display:none" id='maker-jumbo'>
+        <div class='container'>
     
-      
+      <h1 class='d-none text-center' id='here-are-your-plans'>Here are your date plans!</h1>
 
-    <div class="container-fluid" id="cook-or-restaurant-container" style="display:none">
-      <div class="row mt-3">
-        <div class="col-2"></div>
-        <div class="col-8 text-center">
-          <div class="form-group">
-            <h4>Do you want to cook together or go out to eat?</h4>
-            <div class="form-check" id="cookOrRestaurant">
-              <input class="form-check-input" type="radio" name="cookOrRestaurant" id="cookTogether" value="option1" checked>
-              <label class="form-check-label" for="exampleRadios1">
-              <h5 class='text-danger'>Cook Together!</h5>
-              </label>
-              <br>
-              <input class="form-check-input" type="radio" name="cookOrRestaurant" id="goToRestaurant" value="option2">
-              <label class="form-check-label" for="exampleRadios2">
-              <h5 class='text-danger'>Go to a Restaurant!</h5>
-              </label>
-            </div>
-          </div>
-            <button  id="continueToFoodTypes" type="submit" class="mx-auto btn-lg btn btn-primary">Continue</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid" id="cook-cuisine-select-container" style="display:none">
-        <div class='row pb-3'>
-          <div class='col-4'></div>
-          <div class="form-group text-center col-sm-4">
-            <label><h4>What kind of food are you in the mood for?</h4></label>
-            <select id="inputCookingCuisine" class="form-control form-control-lg">
-              <option selected>Choose...</option>
-              <option >African</option>
-              <option>American</option>
-              <option>British</option>
-              <option>Cajun</option>
-              <option>Caribbean</option>
-              <option>Chinese</option>
-              <option>Eastern European</option>
-              <option>French</option>
-              <option>Indian</option>
-              <option>Irish</option>
-              <option>Italian</option>
-              <option>Japanese</option>
-              <option>Korean</option>
-              <option>Latin American</option>
-              <option>Mexican</option>
-              <option>Middle Eastern</option>
-              <option>Southern</option>
-              <option>Spanish</option>
-              <option>Thai</option>
-              <option>Vietnamese</option>
-            </select>
-          </div>
-        </div>
-        <div class="row text-center">
-          <button  id="continueToRecipes" type="submit" class="mx-auto btn-lg btn btn-primary">Continue</button>
-        </div>
-      </div>
-
-      
-      <h1 style='display:none' id='loading-text-one' class='text-center'> Loading recipes...<br>🤖</h1> 
-
-
-      <div class="container-fluid" id="zip-code-container" style="display:none">
+      <div class="container-fluid" id="make-my-date-container" style="display:none" >
         <div class="row mt-3">
-          <div class="col-4"></div>
-          <div class="col-sm-4 text-center">
+          <div class="col-2"></div>
+          <div class="col-8">
+            <h2 class="text-center">Having trouble deciding on date night plans?</h2>
+            <h3 class="text-center">Let's make it simple.</h3>
+            <br>
+          </div>
+        </div>
+        <!-- <div class="text-center">
+          <button  id="makeMyDateButton" type="submit" class="mx-auto btn-lg btn btn-primary">Make My Date!</button>
+        </div> -->
+      </div>
+      
+        
+
+      <div class="container-fluid" id="cook-or-restaurant-container" style="display:none">
+        <div class="row mt-3">
+          <div class="col-2"></div>
+          <div class="col-8 text-center">
             <div class="form-group">
-              <h4 class='pb-2'>What is your zip code?</h4>
-                  <input class="form-control form-control-lg text-center" type="text" placeholder="" id='zipCodeForm'>
+              <h4>Do you want to cook together or go out to eat?</h4>
+              <div class="form-check" id="cookOrRestaurant">
+                <input class="form-check-input" type="radio" name="cookOrRestaurant" id="cookTogether" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                <h5 class='text-danger'>Cook Together!</h5>
+                </label>
+                <br>
+                <input class="form-check-input" type="radio" name="cookOrRestaurant" id="goToRestaurant" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                <h5 class='text-danger'>Go to a Restaurant!</h5>
+                </label>
+              </div>
+            </div>
+              <button  id="continueToFoodTypes" type="submit" class="mx-auto btn-lg btn btn-primary">Continue</button>
             </div>
           </div>
         </div>
-      </div>
-        
 
-      <div class="container-fluid" id="select-restaurant-cuisine-container" style='display:none'>
-        <div class="row pb-3">
-          <div class="col-4"></div>
-            <div class="form-group text-center col-sm-4">
-              <label><h4 id='whatKindRestaurantLabel'>What kind of food are you in the mood for?</h4></label>
-                <select id="inputRestaurantCuisine" class="form-control form-control-lg">
-                  <option selected>Choose...</option>
-                  <option>African</option>
-                  <option>American</option>
-                  <option>British</option>
-                  <option>Cajun</option>
-                  <option>Caribbean</option>
-                  <option>Chinese</option>
-                  <option>Eastern European</option>
-                  <option>French</option>
-                  <option>Indian</option>
-                  <option>Irish</option>
-                  <option>Italian</option>
-                  <option>Japanese</option>
-                  <option>Korean</option>
-                  <option>Latin American</option>
-                  <option>Mexican</option>
-                  <option>Middle Eastern</option>
-                  <option>Southern</option>
-                  <option>Spanish</option>
-                  <option>Thai</option>
-                  <option>Vietnamese</option>
-                </select>
-              </div>
+        <div class="container" id="cook-cuisine-select-container" style="display:none">
+          <div class='row pb-3'>
+            <div class='col-lg-4'></div>
+            <div class="form-group text-center col-xs-12 col-lg-4">
+              <label><h4>What kind of food are you in the mood for?</h4></label>
+              <select id="inputCookingCuisine" class="form-control form-control-lg">
+                <option selected>Choose...</option>
+                <option >African</option>
+                <option>American</option>
+                <option>British</option>
+                <option>Cajun</option>
+                <option>Caribbean</option>
+                <option>Chinese</option>
+                <option>Eastern European</option>
+                <option>French</option>
+                <option>Indian</option>
+                <option>Irish</option>
+                <option>Italian</option>
+                <option>Japanese</option>
+                <option>Korean</option>
+                <option>Latin American</option>
+                <option>Mexican</option>
+                <option>Middle Eastern</option>
+                <option>Southern</option>
+                <option>Spanish</option>
+                <option>Thai</option>
+                <option>Vietnamese</option>
+              </select>
             </div>
+            <div class='col-lg-4'></div>
+          </div>
           <div class="row text-center">
-            <button  id="continueToRestaurants" type="submit" class="mx-auto btn-lg btn btn-primary mb-4">Continue</button>
-          </div>
-      </div>
-      
-
-      <div class='container' id='make-a-selection' style='display:none'>
-        <h4 class='text-center'>Please make a selection.</h4>
-      </div>
-  
-      <div class='container' id='enter-your-zip' style='display:none'>
-        <h4 class='text-center'>Please enter a valid zip code.</h4>
-      </div>
-
-    
-      <div id='great-text' class='text-center' style="display:none">
-        <h2>Great choice!</h2>
-        <h4>Now let's choose an activity for your date.</h4>
-      </div>
-
-      <div id='awesome-text' class='text-center' style="display:none">
-        <h2>Awesome choice!</h2>
-        <h4>Now you can plan your date.</h4>
-        <h4>May you find eternal love.</h4>
-      </div>
-      
-
-    
-
-      <div class="container-fluid" id="indoor-outdoor-container" style="display:none">
-        <div class='row mt-3'>
-        <div class='col-2'></div>
-        <div class="text-center col-8">
-          <div class="form-group">
-            <h4>Do you want to stay in or go out?</h4>
-            <div class="form-check" id="indoorOrOutdoor">
-              <h4 class='text-danger'>
-              <input class="form-check-input" type="radio" name="indoorOrOutdoor" id="activityRadioOne"        value="option1" checked>
-                <label class="form-check-label" for="activityRadioOne">Stay in!</h4></label>
-              </input>
-              <br>
-              <h4 class='text-danger'>
-              <input class="form-check-input" type="radio" name="indoorOrOutdoor" id="activityRadioTwo" value="option2">
-                <label class="form-check-label" for="activityRadioTwo">Go out!</h4></label>
-              </input>
-            </div>
+            <button  id="continueToRecipes" type="submit" class="mx-auto btn-lg btn btn-primary">Continue</button>
           </div>
         </div>
-      </div>
-      <div class='row text-center'>
-        <button  id="continueToActivities" type="submit" class="mx-auto btn-lg btn btn-primary">Continue</button>  
-      </div>
-    </div>
-    
-
-    <!-- Recipe Selector -->
-
-    <div class="container" id="recipe-select-container" style="display:none">
-      <h2 class='text-center mt-4' id='choose-your-recipe-header'>Choose Your Recipe</h2>
-      <div class="row justify-content-center text-center">   
-
-        <div class='col-md-4 justify-content-center mb-4' id=recipe-one-container>
-          
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 class='d-none' id='chosenRecipeTextOne'>Your Recipe</h3>
-            <img id="recipeImgOne" src='' value="option1" style='img-fluid'>
-            <h4 id='recipeLabelOne' class='card-title'></h4>
-            <div class='card-text text-center' id='minutesRecipeOne'></div>
-            <div class='row'>
-              <div class= 'col-12'>
-                <button type='submit' id='chooseRecipeOne' class='mx-auto btn btn-block btn-lg btn-primary mb-4 mt-2'>Choose this recipe</button>
-              </div>
-            </div>
-            <hr>
-            <div class="accordion mb-4" id="accordionRecipeOne">
-
-              <div class="card bg-grey" color='white'>
-                <div class="card-header" id="headingOne">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></span>
-                      Description
-                    </button>
-                </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionRecipeOne">
-                  <div class="card-body bg-greyish" id='recipeSummaryOne'></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingTwo">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                      Recipe
-                    </button>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionRecipeOne">
-                  <div class="card-body bg-greyish" id='recipeTextOne'></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingThree">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                      Ingredients
-                    </button>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionRecipeOne">
-                  <div class="card-body bg-greyish" id='recipeIngredientsOne'></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingFour">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseTen" id='recipeURLOne' aria-expanded="true" aria-controls="collapseTen">
-                      Full Recipe Info
-                    </button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        
-
-        <div class='col-md-4 justify-content-center mb-4' id='recipe-two-container'>
-          
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 class='d-none' id='chosenRecipeTextTwo'>Your Recipe:</h3>
-            <img id="recipeImgTwo" value="option3" src='' style='img-fluid'>
-            <h4 id='recipeLabelTwo' class='card-text'></h4>
-            <div class='card-text text-center' id='minutesRecipeTwo'></div>
-            <div class='row'>
-              <div class= 'col-12'>
-                <button type='submit' id='chooseRecipeTwo' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this recipe</button>
-              </div>
-            </div>
-            <hr>                 
-            <div class="accordion mb-4" id="accordionRecipeTwo">
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingFour">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                      Description
-                    </button>
-                </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionRecipeTwo">
-                  <div class="card-body bg-greyish" id='recipeSummaryTwo'></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingFive">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseEight">
-                      Recipe
-                    </button>
-                </div>
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionRecipeTwo">
-                  <div class="card-body bg-greyish" id='recipeTextTwo'></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingSix">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                      Ingredients
-                    </button>
-                </div>
-                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionRecipeTwo">
-                  <div class="card-body bg-greyish" id='recipeIngredientsTwo'></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingFour">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseEleven" id='recipeURLTwo' aria-expanded="true" aria-controls="collapseEleven">
-                      Full Recipe Info
-                    </button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class='col-md-4 justify-content-center mb-4' id='recipe-three-container'>
-          
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 class='d-none' id='chosenRecipeTextThree'>Your Recipe:</h3>
-            <img id="recipeImgThree" value="option3" src='' style='img-fluid'>
-            <h4 id='recipeLabelThree' class='card-text'></h4>
-            <div class='card-text text-center' id='minutesRecipeThree'></div>
-            <div class='row'>
-              <div class= 'col-12'>
-                <button type='submit' id='chooseRecipeThree' class='mx-auto btn btn-lg btn-block btn-primary mb-2 mt-2'>Choose this recipe</button>
-              </div>
-            </div>
-            <hr> 
-            <div class="accordion mb-4" id="accordionRecipeThree">
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingSeven">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
-                      Description
-                    </button>
-                </div>
-                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionRecipeThree">
-                  <div class="card-body bg-greyish" id='recipeSummaryThree'></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingEight">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
-                      Recipe
-                    </button>
-                </div>
-                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionRecipeThree">
-                  <div class="card-body bg-greyish" id='recipeTextThree'></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingNine">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
-                      Ingredients
-                    </button>
-                </div>
-                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionRecipeThree">
-                  <div class="card-body bg-greyish" id='recipeIngredientsThree'></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header" id="headingFour">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseTwelve" id='recipeURLThree' aria-expanded="true" aria-controls="collapseTwelve">
-                      Full Recipe Info
-                    </button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-        
-      <div class='row pt-3' id='spoonacular-credit'>
-        <div class='col-3'></div>
-        <div class='col-6 text-center'>
-          <h6>Restaurant information courtesy of</h6>
-          <a href='https://spoonacular.com/' target='_blank'><img class='pl-2' src='images/spoonacular-logo.png' width='100px'></a>
-        </div>
-        <div class='col-3'></div>
-
-      </div>
-    </div>
-    
-    
-    <!-- Restaurant Selector -->
-
-    <h1 style='display:none' id='loading-text-two' class='text-center'>Loading restaurants...<br>🤖</h1> 
-
-    <div class="container" id="restaurant-select-container" style="display:none">
-      <h2 class='text-center'id='select-a-restaurant-header'>Select a Restaurant</h2>
-      <div class="row justify-content-center text-center">
-        <div class='col-md-4 justify-content-center mb-4' id='restaurant-one-container'>
-          
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 id='chosenRestaurantTextOne' class='d-none'>Your Restuarant</h3>
-            <img id="restaurantImgOne" value="option1" src='images/restaurant-1.jpg' class='img-fluid'>
-            <h4 id='restaurantLabelOne' class='card-text'></h4>
-            <div class='row'>
-              <div class='col-12'>
-                <button type='submit' id='chooseRestaurantOne' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this restaurant</button>
-              </div>
-            </div>
-            <div class='row'>
-              
-              <div class='col-12' style='line-height: 1em'>
-                <p class='text-center'><strong id='restaurantAddressOne'></strong></p>
-                <p class='text-center' id='restaurantHoursOne'></p>
-                <p class='text-center' id='restaurantPhoneNumberOne'></p>
-              </div>
-            </div>
-
-            <div class="accordion mb-4" id="accordionRestaurantOne">
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" id='restaurantMenuOne'>
-                      View the menu
-                    </button>
-                </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionRestaurantOne">
-                  <div class="card-body bg-greyish"></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                      Restaurant features
-                    </button>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionRestaurantOne">
-                  <div class="card-body bg-greyish" id='restaurantFeaturesOne'></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      
-        <div class='col-md-4 justify-content-center mb-4' id='restaurant-two-container'>
-          
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 id='chosenRestaurantTextTwo' class='d-none'>Your Restuarant:</h3>
-            <img id="restaurantImgTwo" value="option2" src='images/restaurant-2.jpg' class='img-fluid'>
-            <h4 id='restaurantLabelTwo' class='card-text '></h3>
-            <div class='row'>
-              <div class='col-12'>
-                <button type='submit' id='chooseRestaurantTwo' class='mx-auto btn btn-block btn-lg btn-primary mb-4 mt-2'>Choose this restaurant</button>  
-              </div>
-            </div>
-            <div class='row'>
-              <div class='col-12' style='line-height: 1em'>
-                <p class='text-center'><strong id='restaurantAddressTwo'></strong></p>
-                <p class='text-center' id='restaurantHoursTwo'></p>
-                <p class='text-center' id='restaurantPhoneNumberTwo'></p>
-              </div>
-            </div>
-
-            <div class="accordion mb-4" id="accordionRestaurantTwo">
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" id= 'restaurantMenuTwo'>
-                      View the menu
-                    </button>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionRestaurantOne">
-                  <div class="card-body bg-greyish"></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                      Restaurant features
-                    </button>
-                </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionRestaurantTwo">
-                  <div class="card-body bg-greyish" id='restaurantFeaturesTwo'></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-  
-        <div class='col-md-4 justify-content-center mb-4' id='restaurant-three-container'>
-          
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 id='chosenRestaurantTextThree' class='d-none'>Your Restuarant:</h3>
-            <img id="restaurantImgThree" value="option3" src='images/restaurant-3.jpg' class='img-fluid'>
-            <h4 id='restaurantLabelThree' class='card-text'></h4>
-            <div class='row'>
-              <div class='col-12'>
-                <button type='submit' id='chooseRestaurantThree' class='mx-auto btn btn-block btn-lg btn-primary mb-4 mt-2'>Choose this restaurant</button>
-              </div>
-            </div>
-            <div class='row'>
-              
-              <div class='col-12' style='line-height: 1em'>
-                <p class='text-center'><strong id='restaurantAddressThree'></strong></p>
-                <p class='text-center' id='restaurantHoursThree'></p>
-                <p class='text-center' id='restaurantPhoneNumberThree'></p>
-              </div>
-            </div>
-
-            <div class="accordion mb-4" id="accordionRestaurantThree">
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                  <h5 class="mb-0">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" id= 'restaurantMenuThree'>
-                      View the menu
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionRestaurantOne">
-                  <div class="card-body bg-greyish"></div>
-                </div>
-              </div>
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                  <h5 class="mb-0">
-                    <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                      Restaurant features
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionRestaurantThree">
-                  <div class="card-body bg-greyish" id='restaurantFeaturesThree'></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-
-      <div class='row' id='zomato-credit'>
-        <div class='col-3'></div>
-        <div class='col-6 text-center'>
-          <h6>Restaurant information courtesy of</h6>
-          <a href='https://www.zomato.com/' target='_blank'><img class='pl-2' src='images/zomato-logo.png' width='50px'></a>
-        </div>
-        <div class='col-3'></div>
-      </div>
-    </div>
-  
-
-  <!-- Indoor Activity Selector -->
-
-  <div class='container' id='indoor-activity-header' style='display: none;'>
-    <h1 class='text-center'>Select an Activity</h1>
-    <div class="row text-center">
-      <button  id="showMoreIndoorActivities" type="submit" class="mx-auto mt-4 btn-lg btn btn-primary mb-4">Show more options</button>
-    </div>
-  </div>
-
-  <div class='container' id='indoor-activity-select-container' style='display:none'>
-    
-
-      <div class="row justify-content-center text-center">
-        <div class='col-md-4 justify-content-center mb-4' id='indoor-activity-one-container'>
-          
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 id='chosenIndoorActivityTextOne' class='d-none'>Your Activity</h3>
-            <img id="indoorActivityImgOne" value="option1" src='' class='img-fluid'>
-            <h4 id='indoorActivityLabelOne' class='card-text pt-3'></h4>
-            <div class='row'>
-              <div class='col-12'>
-                <p id='indoorActivityTextOne' class='card-text p-2'></p>
-                <button type='submit' id='chooseIndoorActivityOne' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
-              </div>
-            </div>
-
-            <div class="accordion mb-4" id="accordionIndoorActivityOne">
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                    <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='indoorActivityInfoOne'>
-                      Find near me
-                    </button>
-                </div>
-                <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionActivityOne">
-                  <div class="card-body bg-greyish"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class='col-md-4 justify-content-center mb-4' id='indoor-activity-two-container'>
-          
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 id='chosenIndoorActivityTextTwo' class='d-none'>Your Activity:</h3>
-            <img id="indoorActivityImgTwo" value="option1" src='' class='img-fluid'>
-            <h4 id='indoorActivityLabelTwo' class='card-text pt-3'></h4>
-            <div class='row'>
-              <div class='col-12'>
-                <p id='indoorActivityTextTwo' class='card-text p-2'></p>
-                <button type='submit' id='chooseIndoorActivityTwo' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
-              </div>
-            </div>
-                              
-
-            <div class="accordion mb-4" id="accordionIndoorActivityTwo">
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                  <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='indoorActivityInfoTwo'>
-                    Find near me
-                  </button>
-                </div>
-                <div class="collapse" aria-labelledby="headingTwo" data-parent="#accordionActivityTwo">
-                  <div class="card-body bg-greyish"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class='col-md-4 justify-content-center mb-4' id='indoor-activity-three-container'>
-          
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 id='chosenIndoorActivityTextThree' class='d-none'>Your Activity:</h3>
-            <img id="indoorActivityImgThree" value="option1" src='' class='img-fluid'>
-            <h4 id='indoorActivityLabelThree' class='card-text pt-3'></h4>
-            <div class='row'>
-              <div class='col-12'>
-                <p id='indoorActivityTextThree' class='card-text p-2'></p>
-                <button type='submit' id='chooseIndoorActivityThree' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
-              </div>
-            </div>
-
-            <div class="accordion mb-4" id="accordionIndoorActivityThree">
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                  <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='indoorActivityInfoThree'>
-                    Find near me
-                  </button>
-                </div>
-                <div class="collapse" aria-labelledby="headingThree" data-parent="#accordionActivityThree">
-                  <div class="card-body bg-greyish"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Outdoor Activity Selector -->
-  <div class='container' id='outdoor-activity-header' style='display: none;'>
-    <h2 class='text-center'>Select an Activity</h2>
-    <div class="row text-center">
-      <button  id="showMoreOutdoorActivities" type="submit" class="mx-auto btn-lg btn btn-primary mb-4">Show more options</button>
-    </div>
-  </div>
-
-  <div class='container' id='outdoor-activity-select-container' style='display:none'>
-
-
-      <div class="row justify-content-center text-center">
-        <div class='col-md-4 justify-content-center mb-4' id='outdoor-activity-one-container'>
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 id='chosenOutdoorActivityTextOne' class='d-none'>Your Activity:</h3>
-            <img id="outdoorActivityImgOne" value="option1" src='' class='img-fluid'>
-            <h4 id='outdoorActivityLabelOne' class='card-text pt-3'></h4>
-            <div class='row'>
-              <div class='col-12'>
-                <p id='outdoorActivityTextOne' class='card-text p-2'></p>
-                <button type='submit' id='chooseOutdoorActivityOne' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
-              </div>
-            </div>
-
-            <div class="accordion mb-4" id="accordionOutdoorActivityOne">
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                    <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='outdoorActivityInfoOne'>
-                      Find near me
-                    </button>
-                </div>
-                <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionActivityOne">
-                  <div class="card-body bg-greyish"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class='col-md-4 justify-content-center mb-4' id='outdoor-activity-two-container'>
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 id='chosenOutdoorActivityTextTwo' class='d-none'>Your Activity:</h3>
-            <img id="outdoorActivityImgTwo" value="option2" src='' class='img-fluid'>
-            <h4 id='outdoorActivityLabelTwo' class='card-text pt-3'></h4>
-            <div class='row'>
-              <div class='col-12'>
-                <p id='outdoorActivityTextTwo' class='card-text p-2'></p>
-                <button type='submit' id='chooseOutdoorActivityTwo' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
-              </div>
-            </div>
-                              
-
-            <div class="accordion mb-4" id="accordionOutdoorActivityTwo">
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                  <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='outdoorActivityInfoTwo'>
-                    Find near me
-                  </button>
-                </div>
-                <div class="collapse" aria-labelledby="headingTwo" data-parent="#accordionActivityTwo">
-                  <div class="card-body bg-greyish"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class='col-md-4 justify-content-center mb-4' id='outdoor-activity-three-container'>
-          <div class="card bg-neutral text-dark card-border p-2">
-            <h3 id='chosenOutdoorActivityTextThree' class='d-none'>Your Activity:</h3>
-            <img id="outdoorActivityImgThree" value="option3" src='' class='img-fluid'>
-            <h4 id='outdoorActivityLabelThree' class='card-text pt-3'></h4>
-            <div class='row'>
-              <div class='col-12'>
-                <p id='outdoorActivityTextThree' class='card-text p-2'></p>
-                <button type='submit' id='chooseOutdoorActivityThree' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
-              </div>
-            </div>
-
-            <div class="accordion mb-4" id="accordionOutdoorActivityThree">
-
-              <div class="card bg-grey">
-                <div class="card-header">
-                  <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='outdoorActivityInfoThree'>
-                    Find near me
-                  </button>
-                </div>
-                <div class="collapse" aria-labelledby="headingThree" data-parent="#accordionActivityThree">
-                  <div class="card-body bg-greyish"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class='container d-none' id='results-container'>
-      <h1 class='text-center pb-4'>Here is your date plan!</h1>
-      <div class='row' id='calendar-container'>
-        <div class="calender mx-auto">
-          <p><b>Set your date: </b><input type="text" id="datepicker"></p>
-        </div>
-      </div>
-      <div class='row' id='results-row'></div>
-      <a class='btn btn-lg btn-primary' href="mailto:no-one@snai1mai1.com?subject=Date Plans with my boo.&body=">Email your date!</a>
-    
-
-  </div>
-</div>
-
-<!-----------------footer----------->
-<footer class="footer bg-dark body-footer">
-  <div class="container bg-dark">
-    <div class="row">
-
-        <!----left column-->
-
-        <div class="col-4">
-          <h3 class='footer-h3'>Date<span class='footer-span'>Night</span></h3>
-
-          <p class="footer-links">
-              <a href="#" class="link-1">Home</a>
-              
-              <a href="#">Plan a date</a>
-          
-              <a href="#">Find an event</a>
-          
-              <a href="#">Find some food</a>
-              
-              <a href="#">Make some food</a>
-              
-              <a href="#">Contact</a>
-              <p class="footer-company-name">Date Night © 2020</p>
-          </p>
-
-        </div> 
-
-        <!----left column-->
-
-        <div class="col-4">
-          
-          <div>
-              <i class="fa fa-map-marker"></i>
-              <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
-          </div>
-
-          <div>
-              <i class="fa fa-phone"></i>
-              <p>+1.555.555.5555</p>
-          </div>
-
-          <div>
-              <i class="fa fa-envelope"></i>
-              <p><a href="#">email@example.com</a></p>
-          </div>
-        </div>
-
-        <!----left column-->
-
-        <div class="col-4">
-          <p class="footer-company-about">
-              <span><b>About the Company:</b></span>
-              <br>
-              Founded to help struggling couples plan their date by taking away the decision making and letting our customer just worry about making memories.
-          </p>
-        </div>
-     
-    </div>
-  </div>
-</footer> 
 
         
-<div class="container d-none">
-  <div class="row">
-  <div class="card">
-  <article class="card-body">
-      <button id="btnSignUp"  class="float-right btn btn-outline-primary">Sign up</button>
-      <h4 class="card-title mb-4 mt-1">Sign in</h4>
-      <p>
-          <div id="firebaseui-auth-container"></div>
-      </p>
-      <hr>
-      
-      <div class="form-group">
-          <input id="txtEmail"  class="form-control" placeholder="Email" type="email">
-      </div> 
-      <div class="form-group">
-          <input id="txtPassword" class="form-control" placeholder="******" type="password">
-      </div>                                    
-      <div class="row">
-          <div class="col-md-6">
+        <h1 style='display:none' id='loading-text-one' class='text-center'> Loading recipes...<br>🤖</h1> 
+
+
+        <div class="container-fluid" id="zip-code-container" style="display:none">
+          <div class="row mt-3">
+            <div class="col-4"></div>
+            <div class="col-sm-4 text-center">
               <div class="form-group">
-                  <button id="btnLogin" class="btn btn-primary"> Login  </button>
-                  <button id="btnLogout" class="btn btn-primary"> Logout  </button>
+                <h4 class='pb-2'>What is your zip code?</h4>
+                    <input class="form-control form-control-lg text-center" type="text" placeholder="" id='zipCodeForm'>
               </div>
+            </div>
           </div>
-          <div class="col-md-6 text-right">
-              <a class="small" href="#">Forgot password?</a>
-          </div>                                            
-      </div>                                                                
+        </div>
+          
+
+        <div class="container-fluid" id="select-restaurant-cuisine-container" style='display:none'>
+          <div class="row pb-3">
+            <div class="col-4"></div>
+              <div class="form-group text-center col-sm-4">
+                <label><h4 id='whatKindRestaurantLabel'>What kind of food are you in the mood for?</h4></label>
+                  <select id="inputRestaurantCuisine" class="form-control form-control-lg">
+                    <option selected>Choose...</option>
+                    <option>African</option>
+                    <option>American</option>
+                    <option>British</option>
+                    <option>Cajun</option>
+                    <option>Caribbean</option>
+                    <option>Chinese</option>
+                    <option>Eastern European</option>
+                    <option>French</option>
+                    <option>Indian</option>
+                    <option>Irish</option>
+                    <option>Italian</option>
+                    <option>Japanese</option>
+                    <option>Korean</option>
+                    <option>Latin American</option>
+                    <option>Mexican</option>
+                    <option>Middle Eastern</option>
+                    <option>Southern</option>
+                    <option>Spanish</option>
+                    <option>Thai</option>
+                    <option>Vietnamese</option>
+                  </select>
+                </div>
+              </div>
+            <div class="row text-center">
+              <button  id="continueToRestaurants" type="submit" class="mx-auto btn-lg btn btn-primary mb-4">Continue</button>
+            </div>
+        </div>
+        
+
+        <div class='container' id='make-a-selection' style='display:none'>
+          <h4 class='text-center'>Please make a selection.</h4>
+        </div>
+    
+        <div class='container' id='enter-your-zip' style='display:none'>
+          <h4 class='text-center'>Please enter a valid zip code.</h4>
+        </div>
+
+      
+        <div id='great-text' class='text-center' style="display:none">
+          <h2>Great choice!</h2>
+          <h4>Now let's choose an activity for your date.</h4>
+        </div>
+
+        <div id='awesome-text' class='text-center' style="display:none">
+          <h2>Awesome choice!</h2>
+          <h4>Now you can plan your date.</h4>
+          <h4>May you find eternal love.</h4>
+        </div>
+        
+
+      
+
+        <div class="container-fluid" id="indoor-outdoor-container" style="display:none">
+          <div class='row mt-3'>
+          <div class='col-2'></div>
+          <div class="text-center col-8">
+            <div class="form-group">
+              <h4>Do you want to stay in or go out?</h4>
+              <div class="form-check" id="indoorOrOutdoor">
+                <h4 class='text-danger'>
+                <input class="form-check-input" type="radio" name="indoorOrOutdoor" id="activityRadioOne"        value="option1" checked>
+                  <label class="form-check-label" for="activityRadioOne">Stay in!</h4></label>
+                </input>
+                <br>
+                <h4 class='text-danger'>
+                <input class="form-check-input" type="radio" name="indoorOrOutdoor" id="activityRadioTwo" value="option2">
+                  <label class="form-check-label" for="activityRadioTwo">Go out!</h4></label>
+                </input>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='row text-center'>
+          <button  id="continueToActivities" type="submit" class="mx-auto btn-lg btn btn-primary">Continue</button>  
+        </div>
+      </div>
+      
+
+      <!-- Recipe Selector -->
+
+      <div class="container" id="recipe-select-container" style="display:none">
+        <h2 class='text-center mt-4' id='choose-your-recipe-header'>Choose Your Recipe</h2>
+        <div class="row text-center">   
+
+          <div class='col-md-4 mb-4' id=recipe-one-container>
+            
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 class='d-none' id='chosenRecipeTextOne'>Your Recipe</h3>
+              <img id="recipeImgOne" src='' value="option1" style='img-fluid'>
+              <h4 id='recipeLabelOne' class='card-title'></h4>
+              <div class='card-text text-center' id='minutesRecipeOne'></div>
+              <div class='row'>
+                <div class= 'col-12'>
+                  <button type='submit' id='chooseRecipeOne' class='mx-auto btn btn-block btn-lg btn-primary mb-4 mt-2 choose-button'>Choose this recipe</button>
+                </div>
+              </div>
+              <hr>
+              <div class="accordion mb-4" id="accordionRecipeOne">
+
+                <div class="card bg-grey" color='white'>
+                  <div class="card-header" id="headingOne">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></span>
+                        Description
+                      </button>
+                  </div>
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionRecipeOne">
+                    <div class="card-body bg-greyish" id='recipeSummaryOne'></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingTwo">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Recipe
+                      </button>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionRecipeOne">
+                    <div class="card-body bg-greyish" id='recipeTextOne'></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingThree">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        Ingredients
+                      </button>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionRecipeOne">
+                    <div class="card-body bg-greyish" id='recipeIngredientsOne'></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingFour">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseTen" id='recipeURLOne' aria-expanded="true" aria-controls="collapseTen">
+                        Full Recipe Info
+                      </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+
+          <div class='col-md-4 justify-content-center mb-4' id='recipe-two-container'>
+            
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 class='d-none' id='chosenRecipeTextTwo'>Your Recipe:</h3>
+              <img id="recipeImgTwo" value="option3" src='' style='img-fluid'>
+              <h4 id='recipeLabelTwo' class='card-text'></h4>
+              <div class='card-text text-center' id='minutesRecipeTwo'></div>
+              <div class='row'>
+                <div class= 'col-12'>
+                  <button type='submit' id='chooseRecipeTwo' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this recipe</button>
+                </div>
+              </div>
+              <hr>                 
+              <div class="accordion mb-4" id="accordionRecipeTwo">
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingFour">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        Description
+                      </button>
+                  </div>
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionRecipeTwo">
+                    <div class="card-body bg-greyish" id='recipeSummaryTwo'></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingFive">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseEight">
+                        Recipe
+                      </button>
+                  </div>
+                  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionRecipeTwo">
+                    <div class="card-body bg-greyish" id='recipeTextTwo'></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingSix">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                        Ingredients
+                      </button>
+                  </div>
+                  <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionRecipeTwo">
+                    <div class="card-body bg-greyish" id='recipeIngredientsTwo'></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingFour">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseEleven" id='recipeURLTwo' aria-expanded="true" aria-controls="collapseEleven">
+                        Full Recipe Info
+                      </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class='col-md-4 justify-content-center mb-4' id='recipe-three-container'>
+            
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 class='d-none' id='chosenRecipeTextThree'>Your Recipe:</h3>
+              <img id="recipeImgThree" value="option3" src='' style='img-fluid'>
+              <h4 id='recipeLabelThree' class='card-text'></h4>
+              <div class='card-text text-center' id='minutesRecipeThree'></div>
+              <div class='row'>
+                <div class= 'col-12'>
+                  <button type='submit' id='chooseRecipeThree' class='mx-auto btn btn-lg btn-block btn-primary mb-2 mt-2'>Choose this recipe</button>
+                </div>
+              </div>
+              <hr> 
+              <div class="accordion mb-4" id="accordionRecipeThree">
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingSeven">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                        Description
+                      </button>
+                  </div>
+                  <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionRecipeThree">
+                    <div class="card-body bg-greyish" id='recipeSummaryThree'></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingEight">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                        Recipe
+                      </button>
+                  </div>
+                  <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionRecipeThree">
+                    <div class="card-body bg-greyish" id='recipeTextThree'></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingNine">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                        Ingredients
+                      </button>
+                  </div>
+                  <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionRecipeThree">
+                    <div class="card-body bg-greyish" id='recipeIngredientsThree'></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header" id="headingFour">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseTwelve" id='recipeURLThree' aria-expanded="true" aria-controls="collapseTwelve">
+                        Full Recipe Info
+                      </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        <div class='row pt-3' id='spoonacular-credit'>
+          <div class='col-3'></div>
+          <div class='col-6 text-center'>
+            <h6>Restaurant information courtesy of</h6>
+            <a href='https://spoonacular.com/' target='_blank'><img class='pl-2' src='images/spoonacular-logo.png' width='100px'></a>
+          </div>
+          <div class='col-3'></div>
+        </div>
+      </div>
+      
+      
+      <!-- Restaurant Selector -->
+
+      <h1 style='display:none' id='loading-text-two' class='text-center'>Loading restaurants...<br>🤖</h1> 
+
+      <div class="container" id="restaurant-select-container" style="display:none">
+        <h2 class='text-center'id='select-a-restaurant-header'>Select a Restaurant</h2>
+        <div class="row justify-content-center text-center">
+          <div class='col-md-4 justify-content-center mb-4' id='restaurant-one-container'>
+            
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 id='chosenRestaurantTextOne' class='d-none'>Your Restuarant</h3>
+              <img id="restaurantImgOne" value="option1" src='images/restaurant-1.jpg' class='img-fluid'>
+              <h4 id='restaurantLabelOne' class='card-text'></h4>
+              <div class='row'>
+                <div class='col-12'>
+                  <button type='submit' id='chooseRestaurantOne' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this restaurant</button>
+                </div>
+              </div>
+              <div class='row'>
+                
+                <div class='col-12' style='line-height: 1em'>
+                  <p class='text-center'><strong id='restaurantAddressOne'></strong></p>
+                  <p class='text-center' id='restaurantHoursOne'></p>
+                  <p class='text-center' id='restaurantPhoneNumberOne'></p>
+                </div>
+              </div>
+
+              <div class="accordion mb-4" id="accordionRestaurantOne">
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" id='restaurantMenuOne'>
+                        View the menu
+                      </button>
+                  </div>
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionRestaurantOne">
+                    <div class="card-body bg-greyish"></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Restaurant features
+                      </button>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionRestaurantOne">
+                    <div class="card-body bg-greyish" id='restaurantFeaturesOne'></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+          <div class='col-md-4 justify-content-center mb-4' id='restaurant-two-container'>
+            
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 id='chosenRestaurantTextTwo' class='d-none'>Your Restuarant:</h3>
+              <img id="restaurantImgTwo" value="option2" src='images/restaurant-2.jpg' class='img-fluid'>
+              <h4 id='restaurantLabelTwo' class='card-text '></h3>
+              <div class='row'>
+                <div class='col-12'>
+                  <button type='submit' id='chooseRestaurantTwo' class='mx-auto btn btn-block btn-lg btn-primary mb-4 mt-2'>Choose this restaurant</button>  
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-12' style='line-height: 1em'>
+                  <p class='text-center'><strong id='restaurantAddressTwo'></strong></p>
+                  <p class='text-center' id='restaurantHoursTwo'></p>
+                  <p class='text-center' id='restaurantPhoneNumberTwo'></p>
+                </div>
+              </div>
+
+              <div class="accordion mb-4" id="accordionRestaurantTwo">
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" id= 'restaurantMenuTwo'>
+                        View the menu
+                      </button>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionRestaurantOne">
+                    <div class="card-body bg-greyish"></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        Restaurant features
+                      </button>
+                  </div>
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionRestaurantTwo">
+                    <div class="card-body bg-greyish" id='restaurantFeaturesTwo'></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    
+          <div class='col-md-4 justify-content-center mb-4' id='restaurant-three-container'>
+            
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 id='chosenRestaurantTextThree' class='d-none'>Your Restuarant:</h3>
+              <img id="restaurantImgThree" value="option3" src='images/restaurant-3.jpg' class='img-fluid'>
+              <h4 id='restaurantLabelThree' class='card-text'></h4>
+              <div class='row'>
+                <div class='col-12'>
+                  <button type='submit' id='chooseRestaurantThree' class='mx-auto btn btn-block btn-lg btn-primary mb-4 mt-2'>Choose this restaurant</button>
+                </div>
+              </div>
+              <div class='row'>
+                
+                <div class='col-12' style='line-height: 1em'>
+                  <p class='text-center'><strong id='restaurantAddressThree'></strong></p>
+                  <p class='text-center' id='restaurantHoursThree'></p>
+                  <p class='text-center' id='restaurantPhoneNumberThree'></p>
+                </div>
+              </div>
+
+              <div class="accordion mb-4" id="accordionRestaurantThree">
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" id= 'restaurantMenuThree'>
+                        View the menu
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionRestaurantOne">
+                    <div class="card-body bg-greyish"></div>
+                  </div>
+                </div>
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <button class="btn btn-block font-weight-bold text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                        Restaurant features
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionRestaurantThree">
+                    <div class="card-body bg-greyish" id='restaurantFeaturesThree'></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class='row' id='zomato-credit'>
+          <div class='col-3'></div>
+          <div class='col-6 text-center'>
+            <h6>Restaurant information courtesy of</h6>
+            <a href='https://www.zomato.com/' target='_blank'><img class='pl-2' src='images/zomato-logo.png' width='50px'></a>
+          </div>
+          <div class='col-3'></div>
+        </div>
+      </div>
+    
+
+    <!-- Indoor Activity Selector -->
+
+    <div class='container' id='indoor-activity-header' style='display: none;'>
+      <h1 class='text-center'>Select an Activity</h1>
+      <div class="row text-center">
+        <button  id="showMoreIndoorActivities" type="submit" class="mx-auto mt-4 btn-lg btn btn-primary mb-4">Show more options</button>
+      </div>
+    </div>
+
+    <div class='container' id='indoor-activity-select-container' style='display:none'>
+      
+
+        <div class="row justify-content-center text-center">
+          <div class='col-md-4 justify-content-center mb-4' id='indoor-activity-one-container'>
+            
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 id='chosenIndoorActivityTextOne' class='d-none'>Your Activity</h3>
+              <img id="indoorActivityImgOne" value="option1" src='' class='img-fluid'>
+              <h4 id='indoorActivityLabelOne' class='card-text pt-3'></h4>
+              <div class='row'>
+                <div class='col-12'>
+                  <p id='indoorActivityTextOne' class='card-text p-2'></p>
+                  <button type='submit' id='chooseIndoorActivityOne' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
+                </div>
+              </div>
+
+              <div class="accordion mb-4" id="accordionIndoorActivityOne">
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                      <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='indoorActivityInfoOne'>
+                        Find near me
+                      </button>
+                  </div>
+                  <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionActivityOne">
+                    <div class="card-body bg-greyish"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class='col-md-4 justify-content-center mb-4' id='indoor-activity-two-container'>
+            
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 id='chosenIndoorActivityTextTwo' class='d-none'>Your Activity:</h3>
+              <img id="indoorActivityImgTwo" value="option1" src='' class='img-fluid'>
+              <h4 id='indoorActivityLabelTwo' class='card-text pt-3'></h4>
+              <div class='row'>
+                <div class='col-12'>
+                  <p id='indoorActivityTextTwo' class='card-text p-2'></p>
+                  <button type='submit' id='chooseIndoorActivityTwo' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
+                </div>
+              </div>
+                                
+
+              <div class="accordion mb-4" id="accordionIndoorActivityTwo">
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                    <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='indoorActivityInfoTwo'>
+                      Find near me
+                    </button>
+                  </div>
+                  <div class="collapse" aria-labelledby="headingTwo" data-parent="#accordionActivityTwo">
+                    <div class="card-body bg-greyish"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class='col-md-4 justify-content-center mb-4' id='indoor-activity-three-container'>
+            
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 id='chosenIndoorActivityTextThree' class='d-none'>Your Activity:</h3>
+              <img id="indoorActivityImgThree" value="option1" src='' class='img-fluid'>
+              <h4 id='indoorActivityLabelThree' class='card-text pt-3'></h4>
+              <div class='row'>
+                <div class='col-12'>
+                  <p id='indoorActivityTextThree' class='card-text p-2'></p>
+                  <button type='submit' id='chooseIndoorActivityThree' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
+                </div>
+              </div>
+
+              <div class="accordion mb-4" id="accordionIndoorActivityThree">
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                    <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='indoorActivityInfoThree'>
+                      Find near me
+                    </button>
+                  </div>
+                  <div class="collapse" aria-labelledby="headingThree" data-parent="#accordionActivityThree">
+                    <div class="card-body bg-greyish"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Outdoor Activity Selector -->
+    <div class='container' id='outdoor-activity-header' style='display: none;'>
+      <h2 class='text-center'>Select an Activity</h2>
+      <div class="row text-center">
+        <button  id="showMoreOutdoorActivities" type="submit" class="mx-auto btn-lg btn btn-primary mb-4">Show more options</button>
+      </div>
+    </div>
+
+    <div class='container' id='outdoor-activity-select-container' style='display:none'>
+
+
+        <div class="row justify-content-center text-center">
+          <div class='col-md-4 justify-content-center mb-4' id='outdoor-activity-one-container'>
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 id='chosenOutdoorActivityTextOne' class='d-none'>Your Activity:</h3>
+              <img id="outdoorActivityImgOne" value="option1" src='' class='img-fluid'>
+              <h4 id='outdoorActivityLabelOne' class='card-text pt-3'></h4>
+              <div class='row'>
+                <div class='col-12'>
+                  <p id='outdoorActivityTextOne' class='card-text p-2'></p>
+                  <button type='submit' id='chooseOutdoorActivityOne' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
+                </div>
+              </div>
+
+              <div class="accordion mb-4" id="accordionOutdoorActivityOne">
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                      <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='outdoorActivityInfoOne'>
+                        Find near me
+                      </button>
+                  </div>
+                  <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionActivityOne">
+                    <div class="card-body bg-greyish"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class='col-md-4 justify-content-center mb-4' id='outdoor-activity-two-container'>
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 id='chosenOutdoorActivityTextTwo' class='d-none'>Your Activity:</h3>
+              <img id="outdoorActivityImgTwo" value="option2" src='' class='img-fluid'>
+              <h4 id='outdoorActivityLabelTwo' class='card-text pt-3'></h4>
+              <div class='row'>
+                <div class='col-12'>
+                  <p id='outdoorActivityTextTwo' class='card-text p-2'></p>
+                  <button type='submit' id='chooseOutdoorActivityTwo' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
+                </div>
+              </div>
+                                
+
+              <div class="accordion mb-4" id="accordionOutdoorActivityTwo">
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                    <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='outdoorActivityInfoTwo'>
+                      Find near me
+                    </button>
+                  </div>
+                  <div class="collapse" aria-labelledby="headingTwo" data-parent="#accordionActivityTwo">
+                    <div class="card-body bg-greyish"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class='col-md-4 justify-content-center mb-4' id='outdoor-activity-three-container'>
+            <div class="card bg-neutral text-dark card-border p-2">
+              <h3 id='chosenOutdoorActivityTextThree' class='d-none'>Your Activity:</h3>
+              <img id="outdoorActivityImgThree" value="option3" src='' class='img-fluid'>
+              <h4 id='outdoorActivityLabelThree' class='card-text pt-3'></h4>
+              <div class='row'>
+                <div class='col-12'>
+                  <p id='outdoorActivityTextThree' class='card-text p-2'></p>
+                  <button type='submit' id='chooseOutdoorActivityThree' class='mx-auto btn btn-block btn-lg btn-primary mb-2 mt-2'>Choose this activity</button>
+                </div>
+              </div>
+
+              <div class="accordion mb-4" id="accordionOutdoorActivityThree">
+
+                <div class="card bg-grey">
+                  <div class="card-header">
+                    <button class="btn btn-block font-weight-bold text-center" type="button" data-toggle="collapse" id='outdoorActivityInfoThree'>
+                      Find near me
+                    </button>
+                  </div>
+                  <div class="collapse" aria-labelledby="headingThree" data-parent="#accordionActivityThree">
+                    <div class="card-body bg-greyish"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='container d-none' id='results-container'>
+        <h1 class='text-center pb-4'>Here is your date plan!</h1>
+        <div class='row p-4' id='calendar-container'>
+          <div class="calender mx-auto">
+            <p><b>Set your date: </b><input type="text" id="datepicker"></p>
+          </div> 
+        </div>
+        <div>
+          <a class='btn btn-lg btn-primary mb-3' id='email-button' href="mailto:myhotdate@datenight.com?subject=Date Plans with my boo.&body=Hey! I found this awesome site to help us figure out our date night plans because we're so indecisive. (Add your date info here)">Email your date!</a>
+        </div>
+        <div class='row' id='results-row'></div>
+      </div>
+    </div>
+  </div>
   
-  </article>
-  </div> 
+
+
+
+  <!--------------------footer------------------>
+  <footer class="bg-dark footer-desktop p-4" >
+    <div class='container'>
+        <div class="row ml-4 mr-4" style='max-width:1800px'>
+            <div class="col-lg-4 pl-4 text-left mx-auto d-block">
+              <h3>Date<span>Night</span></h3>
+
+              <p class="footer-links">
+                  
+                  <a href="#">Contact</a>
+                  <p class="footer-company-name">Date Night © 2020</p>
+              </p>
+
+            </div>
+            <div class="col-lg-4 text-left">
+              
+              <div>
+                  <i class="fa fa-map-marker"></i>
+                  <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+              </div>
+
+              <div>
+                  <i class="fa fa-phone"></i>
+                  <p>+1.555.555.5555</p>
+              </div>
+
+              <div>
+                  <i class="fa fa-envelope"></i>
+                  <p><a href="#">email@example.com</a></p>
+              </div>
+            </div>
+            <div class="col-lg-4 pr-4 text-left">
+              <p class="footer-company-about">
+                  <span><b>About Us</b></span>
+                  <br>
+                  Founded to help struggling couples plan a date by taking away the decison-making and leting our customer just worry about making memories.
+              </p>
+            </div>
+        
+        </div>
+              
+    </footer>
+
+    
+    <div class="bg-dark footer-mobile pt-1">
+      <div class="container">
+        <div class="row">
+            <div class="col-6">
+              <h3>Date<span>Night</span></h3>
+              <p class="footer-links">  
+                  <a href="#">Contact Us</a>
+                  <p class="footer-company-name">Date Night © 2020</p>
+              </p>
+
+            </div>           
+          </div>
+          </div>
+    </div>
+
+          
+  <div class="container d-none">
+    <div class="row">
+    <div class="card">
+    <article class="card-body">
+        <button id="btnSignUp"  class="float-right btn btn-outline-primary">Sign up</button>
+        <h4 class="card-title mb-4 mt-1">Sign in</h4>
+        <p>
+            <div id="firebaseui-auth-container"></div>
+        </p>
+        <hr>
+        
+        <div class="form-group">
+            <input id="txtEmail"  class="form-control" placeholder="Email" type="email">
+        </div> 
+        <div class="form-group">
+            <input id="txtPassword" class="form-control" placeholder="******" type="password">
+        </div>                                    
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <button id="btnLogin" class="btn btn-primary"> Login  </button>
+                    <button id="btnLogout" class="btn btn-primary"> Logout  </button>
+                </div>
+            </div>
+            <div class="col-md-6 text-right">
+                <a class="small" href="#">Forgot password?</a>
+            </div>                                            
+        </div>                                                                
+ 
+    </article>
+    </div>
   
-      </aside> 
-      <aside class="col-sm-4">
+  
 
                       
 <script src="script/sign-in.js"></script>                         
