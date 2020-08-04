@@ -640,6 +640,11 @@ $("#continueToRestaurants").click(function() {
        text: "Show off your bartending skills and make some drinks together. Be sure to gather some ingredients before so you can really class up the joint. We're talking martinis. ",
        url: 'https://www.acouplecooks.com/best-cocktail-recipes-to-make-at-home/'
       },
+      {activity: 'Give each other massages!',
+       image: 'images/activities/massage.jpg',
+       text: "You don't need to go to the spa to get a couples massage! Just get some lotion, maybe some essential oils, and find a cozy place to trade massages. Bonus points for new-age music and candles.",
+       url: 'https://www.goodnet.org/articles/5-relaxing-massage-techniques-anyone-do-at-home#:~:text=Place%20the%20thumbs%20just%20above,the%20person%20receiving%20the%20massage.'
+      },
     ]
   
     var outdoorActivities = [
@@ -672,6 +677,16 @@ $("#continueToRestaurants").click(function() {
        image: 'images/activities/museum.jpg',
        text: "There's no better way to convince your partner that you're a true intellectual than visitng your local museum. Look up the exhibits before hand so you can have some fascinating tid-bits in your back pocket.",
        url: 'https://www.google.com/search?q=museum+near+me&oq=museum+near+me'
+      },
+      {activity: 'Shoot some hoops!',
+       image: 'images/activities/basketball.jpg',
+       text: "Show your partner that you've got a real basketball jones by taking them downtown and straight into the paint. That's right: we're talking hoops. Display your dunks.",
+       url: 'https://www.youtube.com/watch?v=DlhWPVJNAOo'
+      },
+      {activity: 'Drive some go karts!',
+       image: 'images/activities/go-kart.jpg',
+       text: "Head down to your local grand prix and drift into love. Hit the go-kart track with some banana peels and mushrooms, and you're sure to find couple's bliss.",
+       url: 'https://www.google.com/search?q=go-karts+near+me&oq=go-karts+near+me'
       },
     ]
   
