@@ -15,8 +15,9 @@ footer {
   color:whitesmoke;
   height: 15vh;
   width: 100%;
+  font-size: 2vh;
   min-height: 175px;
-  position: sticky;
+  position: relative;
   bottom: 0;
   
 }
@@ -36,10 +37,11 @@ footer h3 span {
   color:whitesmoke;
   height: 15vh;
   width: 100%;
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  font-size: 18px;
-  min-height: 100px;
+  font-size: smaller;
+  min-height: 80px;
+  
 }
 
 .header h3{
@@ -53,17 +55,24 @@ footer h3 span {
 }
 
 .header {
-  height:15vh;
+  height: 25vh;
   width: 100%;
-  min-height: 160px; 
-  position: sticky;
+  
+  /* position: sticky; */
   top: 0;
   
 }
 
+#top-logo {
+  height: 20vh;
+}
+
 .sign-up-container {
-  height: 70vh;
+  height: 100%;
   width: 100%;
+  margin-top: 20vh; 
+  margin-bottom: 20px; 
+  overflow: scroll;
   
   
 }

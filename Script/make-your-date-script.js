@@ -262,8 +262,9 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
     event.preventDefault();
     $('#cook-cuisine-select-container').fadeOut()
     $('#choose-your-recipe-header').fadeOut()
-    $('#recipe-select-container').fadeOut()
+    
     setTimeout(function(){
+      $('#recipe-select-container').fadeOut()
       $('#maker-jumbo').addClass('vertical-center');
     }, 1000);
     setTimeout(function(){
@@ -286,10 +287,10 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
 
   $("#chooseRecipeTwo").click(function() {
     event.preventDefault();
-    $('#recipe-select-container').fadeOut()
     $('#cook-cuisine-select-container').fadeOut()
     $('#choose-your-recipe-header').fadeOut()
     setTimeout(function(){
+      $('#recipe-select-container').fadeOut()
       $('#maker-jumbo').addClass('vertical-center');
     }, 1000);
     setTimeout(function(){
@@ -314,9 +315,9 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
     event.preventDefault();
     $('#cook-cuisine-select-container').fadeOut()
     $('#choose-your-recipe-header').fadeOut()
-    $('#maker-jumbo').addClass('vertical-center');
     setTimeout(function(){
       $('#recipe-select-container').fadeOut()
+      $('#maker-jumbo').addClass('vertical-center');
     }, 1000);
     setTimeout(function(){
       $("#great-text").fadeIn()
