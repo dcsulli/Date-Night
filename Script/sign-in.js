@@ -67,15 +67,6 @@ signInOptions: [
 };
 
 
-
-
-
-
-
-
-
-
-
 // This part of the code is for the login form
 // get sign-in.html elements
 const txtEmail = document.getElementById('txtEmail');
