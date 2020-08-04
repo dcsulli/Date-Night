@@ -55,7 +55,7 @@ footer h3 span {
 }
 
 .header {
-  height: 25vh;
+  height: 20vh;
   width: 100%;
   
   /* position: sticky; */
@@ -64,7 +64,7 @@ footer h3 span {
 }
 
 #top-logo {
-  height: 20vh;
+  height: 15vh;
 }
 
 .sign-up-container {
