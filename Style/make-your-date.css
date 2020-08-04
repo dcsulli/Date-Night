@@ -54,14 +54,13 @@ body{
     background-color: rgb(185, 49, 49);
   }
 
-  
 
   footer {
     color:whitesmoke;
-    height: 230px;
+    
     width: 100%;
-    min-height: 200px;
-    position: fixed;
+   
+    position: relative;
     bottom: 0;
     
 }
@@ -76,7 +75,7 @@ body{
   
   .footer-mobile {
     color:whitesmoke;
-    height: 150px;
+    height: 130px;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -141,24 +140,6 @@ body{
     font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;        /* <-- reset the font property */
   }
 
-  @media (max-width: 768px) {
-    .vertical-center:before {
-      /* height: auto; */
-      display: none;
-    }
-  }
-
-  /* #intro-jumbo {
-    height: 100vh
-  } */
-
-  #maker-jumbo {
-    
-  }
-
-  #recipe-select-container, #restaurant-select-container{
-    margin-bottom: 30vh;
-  }
 
 
   .btn-lg, .btn-xl, .choose-button {
@@ -184,17 +165,14 @@ body{
 
  
 
-  @media screen and (max-width: 770px) {
-    #intro-text, #maker-jumbo{
-      margin-top: 10vh;
-    }
-  }  
 
    @media screen and (min-height: 770px) {
     #recipe-select-container, #restaurant-select-container, #outdoor-activity-select-container, #indoor-activity-select-container{
-      margin-bottom: 30vh;
+      margin-bottom: 10vh;
     }
   }
+
+  
 
 
   

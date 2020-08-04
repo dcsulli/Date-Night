@@ -115,38 +115,38 @@ firebase.auth().createUserWithEmailAndPassword(email, pass).then(user => console
 });
 });
 
-// sign in redirect
-bannerSignIn.addEventListener('click', e=> {
- window.location = "https://youthful-austin-e8326e.netlify.app/sign-in.html"
-});
+// // sign in redirect
+// bannerSignIn.addEventListener('click', e => {
+//  window.location = "https://youthful-austin-e8326e.netlify.app/sign-in.html"
+// });
 
-// Log Out event
-btnLogout.addEventListener('click', e => {
-  firebase.auth().signOut();
-  window.location = "https://youthful-austin-e8326e.netlify.app/index.html";
-});
+// // Log Out event
+// btnLogout.addEventListener('click', e => {
+//   firebase.auth().signOut();
+//   window.location = "https://youthful-austin-e8326e.netlify.app/index.html";
+// });
 
-bannerLogout.addEventListener('click', e => {
-  firebase.auth().signOut();
-  window.location = "https://youthful-austin-e8326e.netlify.app/index.html";
-});
+// bannerLogout.addEventListener('click', e => {
+//   firebase.auth().signOut();
+//   window.location = "https://youthful-austin-e8326e.netlify.app/index.html";
+// });
 
-//realtime authentication listener
-firebase.auth().onAuthStateChanged(firebaseUser => {
-  if(firebaseUser) {
-    console.log(firebaseUser);
-    btnLogout.classList.remove('d-none');
-    bannerLogout.classList.remove('d-none');
-    bannerSignIn.classList.add('d-none');
-    btnLogin.classList.add('d-none');
-    loginContinue.classList.remove('d-none');
-  } else {
-    console.log('not logged in');
-    btnLogout.classList.add('d-none');
-    bannerLogout.classList.add('d-none');
-    bannerSignIn.classList.remove('d-none');
-    btnLogin.classList.remove('d-none');
-    loginContinue.classList.add('d-none');
-  }
-});
-console.log(firebaseuser);
+// //realtime authentication listener
+// firebase.auth().onAuthStateChanged(firebaseUser => {
+//   if(firebaseUser) {
+//     console.log(firebaseUser);
+//     btnLogout.classList.remove('d-none');
+//     bannerLogout.classList.remove('d-none');
+//     bannerSignIn.classList.add('d-none');
+//     btnLogin.classList.add('d-none');
+//     loginContinue.classList.remove('d-none');
+//   } else {
+//     console.log('not logged in');
+//     btnLogout.classList.add('d-none');
+//     bannerLogout.classList.add('d-none');
+//     bannerSignIn.classList.remove('d-none');
+//     btnLogin.classList.remove('d-none');
+//     loginContinue.classList.add('d-none');
+//   }
+// });
+// console.log(firebaseuser);

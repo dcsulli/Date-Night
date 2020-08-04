@@ -97,14 +97,14 @@
       </div>
 
       <div class="jumbotron jumbotron-fluid maker-jumbo vertical-center" style="display:none" id='maker-jumbo'>
-        <div class='container'>
+        <div class='container mw-100'>
     
       <h1 class='d-none text-center' id='here-are-your-plans'>Here are your date plans!</h1>
 
       <div class="container-fluid" id="make-my-date-container" style="display:none" >
         <div class="row mt-3">
-          <div class="col-2"></div>
-          <div class="col-8">
+          <div class="col-xs-2 col-md-1"></div>
+          <div class="col-xs-8 col-md-10">
             <h2 class="text-center">Having trouble deciding on date night plans?</h2>
             <h3 class="text-center">Let's make it simple.</h3>
             <br>
@@ -119,19 +119,20 @@
 
       <div class="container-fluid" id="cook-or-restaurant-container" style="display:none">
         <div class="row mt-3">
-          <div class="col-2"></div>
-          <div class="col-8 text-center">
-            <div class="form-group">
-              <h4>Do you want to cook together or go out to eat?</h4>
+          <div class="col-xs-2 col-md-1"></div>
+          <div class="col-xs-8 col-md-10 text-center">
+            <div class="form-group bg-neutral p-3 card-border">
+              <h2>Do you want to cook together or go out to eat?</h2>
+              <hr>
               <div class="form-check" id="cookOrRestaurant">
-                <input class="form-check-input" type="radio" name="cookOrRestaurant" id="cookTogether" value="option1" checked>
-                <label class="form-check-label" for="exampleRadios1">
-                <h5 class='text-danger'>Cook Together!</h5>
+                <input class="form-check-input mt-2" type="radio" name="cookOrRestaurant" id="cookTogether" value="option1" checked>
+                <label class="form-check-label">
+                <h4 class='text-danger'>Cook Together!</h4>
                 </label>
                 <br>
-                <input class="form-check-input" type="radio" name="cookOrRestaurant" id="goToRestaurant" value="option2">
-                <label class="form-check-label" for="exampleRadios2">
-                <h5 class='text-danger'>Go to a Restaurant!</h5>
+                <input class="form-check-input mt-2" type="radio" name="cookOrRestaurant" id="goToRestaurant" value="option2">
+                <label class="form-check-label">
+                <h4 class='text-danger'>Go to a Restaurant!</h4>
                 </label>
               </div>
             </div>
@@ -140,10 +141,11 @@
           </div>
         </div>
 
-        <div class="container" id="cook-cuisine-select-container" style="display:none">
+        <div class="container-fluid" id="cook-cuisine-select-container" style="display:none">
           <div class='row pb-3'>
-            <div class='col-4'></div>
-            <div class="form-group text-center col-4">
+            <div class='col-xs-4 col-md-4'></div>
+            <div class='col-xs-4 col-md-4'>
+            <div class="form-group text-center">
               <label><h4>What kind of food are you in the mood for?</h4></label>
               <select id="inputCookingCuisine" class="form-control form-control-lg">
                 <option selected>Choose...</option>
@@ -169,10 +171,13 @@
                 <option>Vietnamese</option>
               </select>
             </div>
-            <div class='col-4'></div>
           </div>
-          <div class="row text-center">
+            <div class='col-xs-4 col-md-4'></div>
+          </div>
+          <div class="row text-center mx-auto">
+            <div class='col-12'>
             <button  id="continueToRecipes" type="submit" class="mx-auto btn-lg btn btn-primary">Continue</button>
+          </div>
           </div>
         </div>
 
@@ -182,7 +187,7 @@
 
         <div class="container-fluid" id="zip-code-container" style="display:none">
           <div class="row mt-3">
-            <div class="col-4"></div>
+            <div class="col-sm-4"></div>
             <div class="col-sm-4 text-center">
               <div class="form-group">
                 <h4 class='pb-2'>What is your zip code?</h4>
@@ -195,8 +200,9 @@
 
         <div class="container-fluid" id="select-restaurant-cuisine-container" style='display:none'>
           <div class="row pb-3">
-            <div class="col-4"></div>
-              <div class="form-group text-center col-sm-4">
+            <div class='col-xs-4 col-md-4'></div>
+            <div class='col-xs-4 col-md-4'>
+              <div class="form-group text-center">
                 <label><h4 id='whatKindRestaurantLabel'>What kind of food are you in the mood for?</h4></label>
                   <select id="inputRestaurantCuisine" class="form-control form-control-lg">
                     <option selected>Choose...</option>
@@ -223,18 +229,20 @@
                   </select>
                 </div>
               </div>
+              <div class='col-xs-4 col-md-4'></div>
+              </div>
             <div class="row text-center">
               <button  id="continueToRestaurants" type="submit" class="mx-auto btn-lg btn btn-primary mb-4">Continue</button>
             </div>
         </div>
         
 
-        <div class='container' id='make-a-selection' style='display:none'>
-          <h4 class='text-center'>Please make a selection.</h4>
+        <div class='container w-100' id='make-a-selection' style='display:none'>
+          <h4 class='text-center mx-auto'>Please make a selection.</h4>
         </div>
     
-        <div class='container' id='enter-your-zip' style='display:none'>
-          <h4 class='text-center'>Please enter a valid zip code.</h4>
+        <div class='container w-100' id='enter-your-zip' style='display:none'>
+          <h4 class='text-center mx-auto'>Please enter a valid zip code.</h4>
         </div>
 
       
@@ -254,9 +262,9 @@
 
         <div class="container-fluid" id="indoor-outdoor-container" style="display:none">
           <div class='row mt-3'>
-          <div class='col-2'></div>
-          <div class="text-center col-8">
-            <div class="form-group">
+            <div class="col-xs-2 col-md-1"></div>
+            <div class="col-xs-8 col-md-10 text-center">
+              <div class="form-group bg-neutral p-3 card-border">
               <h4>Do you want to stay in or go out?</h4>
               <div class="form-check" id="indoorOrOutdoor">
                 <h4 class='text-danger'>
@@ -280,13 +288,17 @@
 
       <!-- Recipe Selector -->
 
-      <div class="container" id="recipe-select-container" style="display:none">
-        <h2 class='text-center mt-4' id='choose-your-recipe-header'>Choose Your Recipe</h2>
+      <div class="container-fluid" id="recipe-select-container" style="display:none">
+        <div class='row'>
+         <h2 class='text-center mx-auto mt-4' id='choose-your-recipe-header'>Choose Your Recipe</h2> 
+        </div>
+        
         <div class="row text-center">   
+          
 
-          <div class='col-md-4 mb-4' id=recipe-one-container>
+          <div class='col-md-4 col-xs-4 mb-4' id=recipe-one-container>
             
-            <div class="card bg-neutral text-dark card-border p-2">
+            <div class="card bg-neutral mx-auto mx-xs-0 text-dark card-border p-2">
               <h3 class='d-none' id='chosenRecipeTextOne'>Your Recipe</h3>
               <img id="recipeImgOne" src='' value="option1" style='img-fluid'>
               <h4 id='recipeLabelOne' class='card-title'></h4>
@@ -345,9 +357,9 @@
           </div>
           
 
-          <div class='col-md-4 justify-content-center mb-4' id='recipe-two-container'>
+          <div class='col-md-4 col-xs-4 mb-4' id='recipe-two-container'>
             
-            <div class="card bg-neutral text-dark card-border p-2">
+            <div class="card mx-auto bg-neutral text-dark card-border p-2">
               <h3 class='d-none' id='chosenRecipeTextTwo'>Your Recipe:</h3>
               <img id="recipeImgTwo" value="option3" src='' style='img-fluid'>
               <h4 id='recipeLabelTwo' class='card-text'></h4>
@@ -405,9 +417,9 @@
             </div>
           </div>
 
-          <div class='col-md-4 justify-content-center mb-4' id='recipe-three-container'>
+          <div class='col-md-4 col-xs-4 mb-4' id='recipe-three-container'>
             
-            <div class="card bg-neutral text-dark card-border p-2">
+            <div class="card mx-auto bg-neutral text-dark card-border p-2">
               <h3 class='d-none' id='chosenRecipeTextThree'>Your Recipe:</h3>
               <img id="recipeImgThree" value="option3" src='' style='img-fluid'>
               <h4 id='recipeLabelThree' class='card-text'></h4>
@@ -481,12 +493,13 @@
 
       <h1 style='display:none' id='loading-text-two' class='text-center'>Loading restaurants...<br>🤖</h1> 
 
-      <div class="container" id="restaurant-select-container" style="display:none">
-        <h2 class='text-center'id='select-a-restaurant-header'>Select a Restaurant</h2>
-        <div class="row justify-content-center text-center">
-          <div class='col-md-4 justify-content-center mb-4' id='restaurant-one-container'>
+      <div class="container-fluid" id="restaurant-select-container" style="display:none">
+       <h2 class='text-center mx-auto'id='select-a-restaurant-header'>Select a Restaurant</h2> 
+        <div class="row text-center">
+          
+          <div class='col-md-4 col-xs-4 mb-4' id='restaurant-one-container'>
             
-            <div class="card bg-neutral text-dark card-border p-2">
+            <div class="card mx-auto bg-neutral text-dark card-border p-2">
               <h3 id='chosenRestaurantTextOne' class='d-none'>Your Restuarant</h3>
               <img id="restaurantImgOne" value="option1" src='images/restaurant-1.jpg' class='img-fluid'>
               <h4 id='restaurantLabelOne' class='card-text'></h4>
@@ -532,9 +545,9 @@
           </div>
 
         
-          <div class='col-md-4 justify-content-center mb-4' id='restaurant-two-container'>
+          <div class='col-md-4 col-xs-4 mb-4' id='restaurant-two-container'>
             
-            <div class="card bg-neutral text-dark card-border p-2">
+            <div class="card mx-auto bg-neutral text-dark card-border p-2">
               <h3 id='chosenRestaurantTextTwo' class='d-none'>Your Restuarant:</h3>
               <img id="restaurantImgTwo" value="option2" src='images/restaurant-2.jpg' class='img-fluid'>
               <h4 id='restaurantLabelTwo' class='card-text '></h3>
@@ -579,9 +592,9 @@
           </div>
 
     
-          <div class='col-md-4 justify-content-center mb-4' id='restaurant-three-container'>
+          <div class='col-md-4 col-xs-4 mb-4' id='restaurant-three-container'>
             
-            <div class="card bg-neutral text-dark card-border p-2">
+            <div class="card  mx-auto bg-neutral text-dark card-border p-2">
               <h3 id='chosenRestaurantTextThree' class='d-none'>Your Restuarant:</h3>
               <img id="restaurantImgThree" value="option3" src='images/restaurant-3.jpg' class='img-fluid'>
               <h4 id='restaurantLabelThree' class='card-text'></h4>
@@ -645,14 +658,14 @@
 
     <!-- Indoor Activity Selector -->
 
-    <div class='container' id='indoor-activity-header' style='display: none;'>
+    <div class='container mw-100' id='indoor-activity-header' style='display: none;'>
       <h1 class='text-center'>Select an Activity</h1>
       <div class="row text-center">
         <button  id="showMoreIndoorActivities" type="submit" class="mx-auto mt-4 btn-lg btn btn-primary mb-4">Show more options</button>
       </div>
     </div>
 
-    <div class='container' id='indoor-activity-select-container' style='display:none'>
+    <div class='container mw-100' id='indoor-activity-select-container' style='display:none'>
       
 
         <div class="row justify-content-center text-center">
@@ -749,18 +762,19 @@
       </div>
 
     <!-- Outdoor Activity Selector -->
-    <div class='container' id='outdoor-activity-header' style='display: none;'>
-      <h2 class='text-center'>Select an Activity</h2>
+    <div class='container mw-100' id='outdoor-activity-header' style='display: none;'>
+      <h1 class='text-center'>Select an Activity</h1>
       <div class="row text-center">
         <button  id="showMoreOutdoorActivities" type="submit" class="mx-auto btn-lg btn btn-primary mb-4">Show more options</button>
       </div>
     </div>
 
-    <div class='container' id='outdoor-activity-select-container' style='display:none'>
+    <div class='container mw-100' id='outdoor-activity-select-container' style='display:none'>
 
 
         <div class="row justify-content-center text-center">
           <div class='col-md-4 justify-content-center mb-4' id='outdoor-activity-one-container'>
+            
             <div class="card bg-neutral text-dark card-border p-2">
               <h3 id='chosenOutdoorActivityTextOne' class='d-none'>Your Activity:</h3>
               <img id="outdoorActivityImgOne" value="option1" src='' class='img-fluid'>
@@ -849,15 +863,15 @@
         </div>
       </div>
 
-      <div class='container d-none' id='results-container'>
+      <div class='container mw-100 d-none' id='results-container'>
         <h1 class='text-center pb-4'>Here is your date plan!</h1>
         <div class='row p-4' id='calendar-container'>
           <div class="calender mx-auto">
             <p><b>Set your date: </b><input type="text" id="datepicker"></p>
           </div> 
         </div>
-        <div>
-          <a class='btn btn-lg btn-primary mb-3' id='email-button' href="mailto:myhotdate@datenight.com?subject=Date Plans with my boo.&body=Hey! I found this awesome site to help us figure out our date night plans because we're so indecisive. (Add your date info here)">Email your date!</a>
+        <div class='row'>
+          <a class='btn btn-lg btn-primary mb-3 mx-auto' id='email-button' href="mailto:myhotdate@datenight.com?subject=Date Plans with my boo.&body=Hey! I found this awesome site to help us figure out our date night plans because we're so indecisive. (Add your date info here)">Email your date!</a>
         </div>
         <div class='row' id='results-row'></div>
       </div>

@@ -1,3 +1,9 @@
+$( function() {
+  $( "#datepicker" ).datepicker({
+    numberOfMonths: 1,
+  });
+} );
+
 function hideStuff (){
   $("#outdoor-activity-header").fadeOut();
   $("#indoor-activity-header").fadeOut();
@@ -78,6 +84,8 @@ $("#continueToFoodTypes").click(function() {
 
 $("#continueToRecipes").click(function() {
   event.preventDefault();
+
+  
 
 if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
   $("#make-a-selection").fadeIn()
@@ -238,6 +246,7 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
   setTimeout(function(){
     $('#loading-text-one').fadeOut() },2300);
   setTimeout(function(){
+    $('#maker-jumbo').removeClass('vertical-center');
     $("#recipe-one-container").addClass('mx-auto')
     $("#recipe-two-container").addClass('mx-auto')
     $("#recipe-three-container").addClass('mx-auto')
@@ -253,8 +262,9 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
     event.preventDefault();
     $('#cook-cuisine-select-container').fadeOut()
     $('#choose-your-recipe-header').fadeOut()
+    $('#recipe-select-container').fadeOut()
     setTimeout(function(){
-      $('#recipe-select-container').fadeOut()
+      $('#maker-jumbo').addClass('vertical-center');
     }, 1000);
     setTimeout(function(){
       $("#great-text").fadeIn()
@@ -276,10 +286,11 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
 
   $("#chooseRecipeTwo").click(function() {
     event.preventDefault();
+    $('#recipe-select-container').fadeOut()
     $('#cook-cuisine-select-container').fadeOut()
     $('#choose-your-recipe-header').fadeOut()
     setTimeout(function(){
-      $('#recipe-select-container').fadeOut()
+      $('#maker-jumbo').addClass('vertical-center');
     }, 1000);
     setTimeout(function(){
       $("#great-text").fadeIn()
@@ -303,6 +314,7 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
     event.preventDefault();
     $('#cook-cuisine-select-container').fadeOut()
     $('#choose-your-recipe-header').fadeOut()
+    $('#maker-jumbo').addClass('vertical-center');
     setTimeout(function(){
       $('#recipe-select-container').fadeOut()
     }, 1000);
@@ -479,6 +491,7 @@ $("#continueToRestaurants").click(function() {
     setTimeout(function(){
       $('#loading-text-two').fadeOut() },2000);
     setTimeout(function(){
+      $('#maker-jumbo').removeClass('vertical-center');
       $('#select-restaurant-cuisine-container').fadeIn()
       $("#restaurant-select-container").fadeIn()
       }, 2500);
@@ -500,6 +513,7 @@ $("#continueToRestaurants").click(function() {
       $('#select-restaurant-cuisine-container').fadeOut()
       setTimeout(function(){
         $('#restaurant-select-container').fadeOut()
+        $('#maker-jumbo').addClass('vertical-center');
       }, 1000);
       setTimeout(function(){
         $("#great-text").fadeIn()
@@ -524,6 +538,7 @@ $("#continueToRestaurants").click(function() {
         $('#select-restaurant-cuisine-container').fadeOut()
         setTimeout(function(){
           $('#restaurant-select-container').fadeOut()
+          $('#maker-jumbo').addClass('vertical-center');
         }, 1000);
         setTimeout(function(){
           $("#great-text").fadeIn()
@@ -548,6 +563,7 @@ $("#continueToRestaurants").click(function() {
         $('#select-restaurant-cuisine-container').fadeOut()
         setTimeout(function(){
           $('#restaurant-select-container').fadeOut()
+          $('#maker-jumbo').addClass('vertical-center');
         }, 1000);
         setTimeout(function(){
           $("#great-text").fadeIn()
@@ -647,7 +663,7 @@ $("#continueToRestaurants").click(function() {
        url: 'https://www.google.com/search?q=horse+riding+date&oq=horse+riding+date'
       },
       {activity: 'Hit the mall!',
-       image: 'images/activities/questions.jpg',
+       image: 'images/activities/mall.jpg',
        text: 'Find your closest non-abandoned mall and do it like they did in the 80s. Try on some funky clothes, get a soft pretzel, and delight in the unbridled consumerism. Bonus point if you can have a fitting room montage.',
        url: 'https://www.google.com/search?q=malls+near+me&oq=malls+near+me'
       },
@@ -689,12 +705,14 @@ $("#continueToRestaurants").click(function() {
       $("#indoor-activity-one-container").addClass('d-flex')
       $("#indoor-activity-two-container").addClass('d-flex')
       $("#indoor-activity-three-container").addClass('d-flex') 
+
+      
       setTimeout(function(){
         $("#indoor-activity-select-container").fadeIn()
-      }, 1000);
-      setTimeout(function(){
+        $('#maker-jumbo').removeClass('vertical-center');
         $("#indoor-activity-header").fadeIn()
       }, 1000);
+    
         
       $("#showMoreIndoorActivities").click(function() {
 
@@ -739,7 +757,8 @@ $("#continueToRestaurants").click(function() {
           $('#indoor-activity-two-container').removeClass('d-flex').addClass('d-none')
           $('#indoor-activity-three-container').removeClass('d-flex').addClass('d-none')
           $('#indoor-activity-one-container').removeClass('col-md-4')
-          $('#results-row').append($('#indoor-activity-select-container'))   
+          $('#results-row').append($('#indoor-activity-select-container'))
+          $('#maker-jumbo').addClass('vertical-center');     
           }, 1000);
         setTimeout(function(){
           $("#awesome-text").fadeOut()
@@ -747,6 +766,7 @@ $("#continueToRestaurants").click(function() {
   
         
         setTimeout(function(){
+          $('#maker-jumbo').removeClass('vertical-center');  
           $("#here-are-your-plans").fadeIn()
 
           var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
@@ -777,7 +797,8 @@ $("#continueToRestaurants").click(function() {
           $('#indoor-activity-one-container').removeClass('d-flex').addClass('d-none')
           $('#indoor-activity-three-container').removeClass('d-flex').addClass('d-none')
           $('#indoor-activity-two-container').removeClass('col-md-4')
-          $('#results-row').append($('#indoor-activity-select-container'))   
+          $('#results-row').append($('#indoor-activity-select-container'))
+          $('#maker-jumbo').addClass('vertical-center');     
           }, 1000);
         setTimeout(function(){
           $("#awesome-text").fadeOut()
@@ -785,6 +806,7 @@ $("#continueToRestaurants").click(function() {
   
         
         setTimeout(function(){
+          $('#maker-jumbo').removeClass('vertical-center');  
           $("#here-are-your-plans").fadeIn()
 
           var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
@@ -815,7 +837,8 @@ $("#continueToRestaurants").click(function() {
           $('#indoor-activity-one-container').removeClass('d-flex').addClass('d-none')
           $('#indoor-activity-two-container').removeClass('d-flex').addClass('d-none')
           $('#indoor-activity-three-container').removeClass('col-md-4')
-          $('#results-row').append($('#indoor-activity-select-container'))   
+          $('#results-row').append($('#indoor-activity-select-container'))
+          $('#maker-jumbo').addClass('vertical-center');     
           }, 1000);
         setTimeout(function(){
           $("#awesome-text").fadeOut()
@@ -823,6 +846,7 @@ $("#continueToRestaurants").click(function() {
   
         
         setTimeout(function(){
+          $('#maker-jumbo').removeClass('vertical-center');  
           $("#here-are-your-plans").fadeIn()
 
           var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
@@ -865,11 +889,13 @@ $("#continueToRestaurants").click(function() {
       $('#indoor-outdoor-container').fadeOut()
       $("#outdoor-activity-one-container").addClass('d-flex')
       $("#outdoor-activity-two-container").addClass('d-flex')
-      $("#outdoor-activity-three-container").addClass('d-flex')
+      $("#outdoor-activity-three-container").addClass('d-flex') 
+
+      
+
       setTimeout(function(){
+        $('#maker-jumbo').removeClass('vertical-center');
         $("#outdoor-activity-select-container").fadeIn()
-      }, 1000);
-      setTimeout(function(){
         $("#outdoor-activity-header").fadeIn()
       }, 1000);
         
@@ -912,7 +938,8 @@ $("#continueToRestaurants").click(function() {
           $('#outdoor-activity-two-container').removeClass('d-flex').addClass('d-none')
           $('#outdoor-activity-three-container').removeClass('d-flex').addClass('d-none')
           $('#outdoor-activity-one-container').removeClass('col-md-4')
-          $('#results-row').append($('#outdoor-activity-select-container'))   
+          $('#results-row').append($('#outdoor-activity-select-container')) 
+          $('#maker-jumbo').addClass('vertical-center');  
           }, 1000);
         setTimeout(function(){
           $("#awesome-text").fadeOut()
@@ -920,6 +947,7 @@ $("#continueToRestaurants").click(function() {
   
         
         setTimeout(function(){
+          $('#maker-jumbo').removeClass('vertical-center');  
           $("#here-are-your-plans").fadeIn()
 
           var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
@@ -950,7 +978,8 @@ $("#continueToRestaurants").click(function() {
           $('#outdoor-activity-one-container').removeClass('d-flex').addClass('d-none')
           $('#outdoor-activity-three-container').removeClass('d-flex').addClass('d-none')
           $('#outdoor-activity-two-container').removeClass('col-md-4')
-          $('#results-row').append($('#outdoor-activity-select-container'))   
+          $('#results-row').append($('#outdoor-activity-select-container'))  
+          $('#maker-jumbo').addClass('vertical-center');   
           }, 1000);
         setTimeout(function(){
           $("#awesome-text").fadeOut()
@@ -958,6 +987,7 @@ $("#continueToRestaurants").click(function() {
   
         
         setTimeout(function(){
+          $('#maker-jumbo').removeClass('vertical-center');  
           $("#here-are-your-plans").fadeIn()
 
           var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
@@ -988,14 +1018,16 @@ $("#continueToRestaurants").click(function() {
           $('#outdoor-activity-one-container').removeClass('d-flex').addClass('d-none')
           $('#outdoor-activity-two-container').removeClass('d-flex').addClass('d-none')
           $('#outdoor-activity-three-container').removeClass('col-md-4')
-          $('#results-row').append($('#outdoor-activity-select-container'))   
-          }, 100);
+          $('#results-row').append($('#outdoor-activity-select-container')) 
+          $('#maker-jumbo').addClass('vertical-center');    
+          }, 1000);
         setTimeout(function(){
           $("#awesome-text").fadeOut()
         }, 4000);
   
         
         setTimeout(function(){
+          $('#maker-jumbo').removeClass('vertical-center');  
           $("#here-are-your-plans").fadeIn()
 
           var cookOrRestaurant = document.getElementsByName("cookOrRestaurant")
@@ -1005,6 +1037,7 @@ $("#continueToRestaurants").click(function() {
           if(cookOrRestaurant[0].checked) {
             $('#results-row').append($('#recipe-select-container'))
             $("#recipe-select-container").removeClass('d-none').fadeIn()
+            
             } else {
             $('#results-row').append($('#restaurant-select-container')) 
             $("#restaurant-select-container").removeClass('d-none').fadeIn()
