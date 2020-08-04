@@ -34,10 +34,19 @@ $(document).ready(function() {
 
 $("#makeMyDateButton").click(function() {
   event.preventDefault();
-  $('#make-my-date-container').fadeOut() 
+  $('#intro-jumbo').fadeOut()
+  console.log('BEGIN DATE SEQUENCE')
+  setTimeout(function(){
+    $('#make-my-date-container').fadeIn()
+    $('#maker-jumbo').fadeIn()
+
+  }, 250);
+  setTimeout(function(){
+    $('#make-my-date-container').fadeOut()
+  }, 2000);
   setTimeout(function(){
     $("#cook-or-restaurant-container").fadeIn()
-  }, 500);
+  }, 2500);
   })
   
 
@@ -81,6 +90,7 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
   // var selectedFoodTypeCook = selectedFoodTypeCook.toLowerCase()
   console.log(selectedFoodTypeCook)
 
+  $('#recipe-select-container').fadeOut()
   setTimeout(function(){
   $('#loading-text-one').fadeIn() },500)
   
@@ -228,12 +238,12 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
   setTimeout(function(){
     $('#loading-text-one').fadeOut() },2300);
   setTimeout(function(){
+    $("#recipe-one-container").addClass('mx-auto')
+    $("#recipe-two-container").addClass('mx-auto')
+    $("#recipe-three-container").addClass('mx-auto')
     $('#cook-cuisine-select-container').fadeIn() 
     $('#continueToRecipes').html('Search again')
     $("#recipe-select-container").fadeIn()
-    $("#recipe-one-container").addClass('d-flex')
-    $("#recipe-two-container").addClass('d-flex')
-    $("#recipe-three-container").addClass('d-flex')
   }, 2500);
 }
 
@@ -245,10 +255,10 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
     $('#choose-your-recipe-header').fadeOut()
     setTimeout(function(){
       $('#recipe-select-container').fadeOut()
-    }, 500);
+    }, 1000);
     setTimeout(function(){
       $("#great-text").fadeIn()
-    }, 1000);
+    }, 1500);
     
     $('#recipe-two-container').removeClass('d-flex').addClass('d-none')
     $('#recipe-three-container').removeClass('d-flex').addClass('d-none')
@@ -257,10 +267,10 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
     setTimeout(function(){
       $("#great-text").fadeOut()
       $("#chooseRecipeOne").fadeOut()
-    }, 3000);
+    }, 3500);
     setTimeout(function(){
       $("#indoor-outdoor-container").fadeIn()
-    }, 3500);
+    }, 4000);
     })
 
 
@@ -270,10 +280,10 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
     $('#choose-your-recipe-header').fadeOut()
     setTimeout(function(){
       $('#recipe-select-container').fadeOut()
-    }, 500);
+    }, 1000);
     setTimeout(function(){
       $("#great-text").fadeIn()
-    }, 1000);
+    }, 1500);
     
     $('#recipe-one-container').removeClass('d-flex').addClass('d-none')
     $('#recipe-three-container').removeClass('d-flex').addClass('d-none')
@@ -282,10 +292,10 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
     setTimeout(function(){
       $("#great-text").fadeOut()
       $("#chooseRecipeTwo").fadeOut()
-    }, 3000);
+    }, 3500);
     setTimeout(function(){
       $("#indoor-outdoor-container").fadeIn()
-    }, 3500);
+    }, 4000);
     })
 
 
@@ -295,10 +305,10 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
     $('#choose-your-recipe-header').fadeOut()
     setTimeout(function(){
       $('#recipe-select-container').fadeOut()
-    }, 500);
+    }, 1000);
     setTimeout(function(){
       $("#great-text").fadeIn()
-    }, 1000);
+    }, 1500);
 
     $('#recipe-two-container').removeClass('d-flex').addClass('d-none')
     $('#recipe-one-container').removeClass('d-flex').addClass('d-none')
@@ -307,10 +317,10 @@ if (document.getElementById('inputCookingCuisine').value == 'Choose...') {
     setTimeout(function(){
       $("#great-text").fadeOut()
       $("#chooseRecipeThree").fadeOut()
-    }, 3000);
+    }, 3500);
     setTimeout(function(){
       $("#indoor-outdoor-container").fadeIn()
-    }, 3500);
+    }, 4000);
     })
 
 
@@ -479,9 +489,9 @@ $("#continueToRestaurants").click(function() {
       $('#whatKindRestaurantLabel').html('Try a different cuisine?')
       $('#continueToRestaurants').html('Search again')
       $("#restaurant-select-container").fadeIn()
-      $("#restaurant-one-container").addClass('d-flex')
-      $("#restaurant-two-container").addClass('d-flex')
-      $("#restaurant-three-container").addClass('d-flex')
+      $("#restaurant-one-container").addClass('mx-auto')
+      $("#restaurant-two-container").addClass('mx-auto')
+      $("#restaurant-three-container").addClass('mx-auto')
     }, 2500);
   
     
@@ -490,10 +500,10 @@ $("#continueToRestaurants").click(function() {
       $('#select-restaurant-cuisine-container').fadeOut()
       setTimeout(function(){
         $('#restaurant-select-container').fadeOut()
-      }, 500);
+      }, 1000);
       setTimeout(function(){
         $("#great-text").fadeIn()
-      }, 1000);
+      }, 1500);
 
       $('#restaurant-two-container').removeClass('d-flex').addClass('d-none')
       $('#restaurant-three-container').removeClass('d-flex').addClass('d-none')
@@ -502,10 +512,10 @@ $("#continueToRestaurants").click(function() {
       setTimeout(function(){
         $("#great-text").fadeOut()
         $("#chooseRestaurantOne").fadeOut()
-      }, 3000);
+      }, 3500);
       setTimeout(function(){
         $("#indoor-outdoor-container").fadeIn()
-      }, 3500);
+      }, 4000);
       })
 
     
@@ -514,10 +524,10 @@ $("#continueToRestaurants").click(function() {
         $('#select-restaurant-cuisine-container').fadeOut()
         setTimeout(function(){
           $('#restaurant-select-container').fadeOut()
-        }, 500);
+        }, 1000);
         setTimeout(function(){
           $("#great-text").fadeIn()
-        }, 1000);
+        }, 1500);
         
         $('#restaurant-one-container').removeClass('d-flex').addClass('d-none')
         $('#restaurant-three-container').removeClass('d-flex').addClass('d-none')
@@ -526,10 +536,10 @@ $("#continueToRestaurants").click(function() {
         setTimeout(function(){
           $("#great-text").fadeOut()
           $("#chooseRestaurantTwo").fadeOut()
-        }, 3000);
+        }, 3500);
         setTimeout(function(){
           $("#indoor-outdoor-container").fadeIn()
-        }, 3500);
+        }, 4000);
         })
     
       $("#chooseRestaurantThree").click(function() {
@@ -538,10 +548,10 @@ $("#continueToRestaurants").click(function() {
         $('#select-restaurant-cuisine-container').fadeOut()
         setTimeout(function(){
           $('#restaurant-select-container').fadeOut()
-        }, 500);
+        }, 1000);
         setTimeout(function(){
           $("#great-text").fadeIn()
-        }, 1000);
+        }, 1500);
         
         $('#restaurant-two-container').removeClass('d-flex').addClass('d-none')
         $('#restaurant-one-container').removeClass('d-flex').addClass('d-none')
@@ -550,10 +560,10 @@ $("#continueToRestaurants").click(function() {
         setTimeout(function(){
           $("#great-text").fadeOut()
           $("#chooseRestaurantThree").fadeOut()
-        }, 3000);
+        }, 3500);
         setTimeout(function(){
           $("#indoor-outdoor-container").fadeIn()
-        }, 3500);
+        }, 4000);
         })
       }
     })
@@ -693,7 +703,7 @@ $("#continueToRestaurants").click(function() {
         setTimeout(function(){
           var shuffledIndoorActivities = shuffle (indoorActivities)
           console.log([shuffledIndoorActivities[0],shuffledIndoorActivities[1],shuffledIndoorActivities[2]])
-        }, 1000);
+        
 
         $("#indoorActivityLabelOne").html(shuffledIndoorActivities[0].activity);
         $("#indoorActivityTextOne").html(shuffledIndoorActivities[0].text);
@@ -709,11 +719,11 @@ $("#continueToRestaurants").click(function() {
         $("#indoorActivityTextThree").html(shuffledIndoorActivities[2].text);
         $('#indoorActivityImgThree').attr({src: shuffledIndoorActivities[2].image, class:'img-fluid'});
         $("#indoorActivityInfoThree").click(function() {window.open(shuffledIndoorActivities[2].url, target='_blank')})
-
+      }, 1800);
         
         setTimeout(function(){
           $("#indoor-activity-select-container").fadeIn()
-        }, 1000);
+        }, 2000);
       })
 
       // Result Page Activity
@@ -870,7 +880,7 @@ $("#continueToRestaurants").click(function() {
         setTimeout(function(){
           var shuffledOutdoorActivities = shuffle (outdoorActivities)
           console.log([shuffledOutdoorActivities[0],shuffledOutdoorActivities[1],shuffledOutdoorActivities[2]])
-        }, 1000);
+        
 
           $("#outdoorActivityLabelOne").html(shuffledOutdoorActivities[0].activity);
           $("#outdoorActivityTextOne").html(shuffledOutdoorActivities[0].text);
@@ -886,10 +896,10 @@ $("#continueToRestaurants").click(function() {
           $("#outdoorActivityTextThree").html(shuffledOutdoorActivities[2].text);
           $('#outdoorActivityImgThree').attr({src: shuffledOutdoorActivities[2].image, class:'img-fluid'});
           $("#outdoorActivityInfoThree").click(function() {window.open(shuffledOutdoorActivities[2].url, target='_blank')})
-
+        }, 1800);
           setTimeout(function(){
           $("#outdoor-activity-select-container").fadeIn()
-        }, 1000);
+        }, 2000);
       })
 
       $("#chooseOutdoorActivityOne").click(function() {
@@ -979,7 +989,7 @@ $("#continueToRestaurants").click(function() {
           $('#outdoor-activity-two-container').removeClass('d-flex').addClass('d-none')
           $('#outdoor-activity-three-container').removeClass('col-md-4')
           $('#results-row').append($('#outdoor-activity-select-container'))   
-          }, 1000);
+          }, 100);
         setTimeout(function(){
           $("#awesome-text").fadeOut()
         }, 4000);
@@ -1002,7 +1012,6 @@ $("#continueToRestaurants").click(function() {
         }, 5000)
 
         setTimeout(function(){
-          $("#restaurant-select-container").removeClass('d-none').fadeIn()
           $("#outdoor-activity-select-container").removeClass('d-none').fadeIn()
           $("#results-container").removeClass('d-none').attr({style: 'display:block'}).fadeIn()
         }, 6000)
