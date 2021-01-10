@@ -1,6 +1,6 @@
 # Date Night
 ## Concept
-In the first phase of our 26 week full stack flex course at DigitalCrafts we were tasked with creating a website front end technologies and API's. We wanted to create a tool that would help indecisive couples decide what to do for their next date.
+First major project at DigitalCrafts. Created during phase 1 of the 26 week course. We wanted to create a tool that would help indecisive couples decide what to do for their next date.
 ## Project Requirements
 
 - Use at least one JavaScript library that is not jQuery. 
