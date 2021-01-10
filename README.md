@@ -12,26 +12,24 @@ In the first phase of our 26 week full stack flex course at DigitalCrafts we wer
 ### Frontend
 
 Javascript libraries:
-- AJAX
-- jQuery
+- [AJAX](https://api.jquery.com/category/ajax/)
 
 CSS frameworks:
-- Bulma
-- Bootstrap
+- [Bulma](https://bulma.io/)
+- [Bootstrap](https://getbootstrap.com/)
 
 Other Libraries:
-- Font Awesome 
+- [Font Awesome](https://fontawesome.com/) 
 
 ### API's used
-- Firebase API 
-- Spoonacular
-- Zomato
+- [Firebase API](https://firebase.google.com/docs)
+- [Spoonacular](https://spoonacular.com/food-api)
+- [Zomato](https://developers.zomato.com/api)
 
 ## Features
-Choose from a variety of cuisines, we'll narrow down three different choices to pick from 
-We provide hundreds of different recipes with links to the original sources.
-Don't want to cook? No problem! We'll recommend local restaurants and businesses in your area.
-Email your selections and save them for later
+- Users are prompted to answer a quiz that narrows down the hundreds of choices available.
+- Recommends recipes and restaurants based on user input.
+- Sends email reminder with selections
 
 
 ## Credits
